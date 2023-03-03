@@ -15,20 +15,385 @@
  */
 use Magento\Catalog\Model\Product\ProductList\Toolbar;
 ?>
+
+<style>
+    .toolbar-products {
+        margin-bottom: 2em;
+        align-items: stretch;
+    }
+
+    .toolbar > * {
+        margin: 0;
+    }
+
+    .block-subtitle .filter-current-subtitle {
+        height: 0;
+    }
+
+    .toolbar-products .item input[type="checkbox"] {
+        display: none;
+    }
+    
+    .toolbar-products .item .count {
+        display: none;
+    }
+
+    .toolbar-products .items {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .toolbar-products .item {
+        margin-top: 0.4em;
+    }
+
+    .toolbar-products .item a:hover {
+        border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 0%, rgb(209, 156, 21, 1) 42%, rgba(209, 156, 21, 0.7) 68%, rgba(209, 156, 21, 0) 100%) 0 0 100% 0/1px 0 1px 0 stretch;
+        color: rgb(209, 156, 21) !important;
+        border-bottom: solid 1px;
+    }
+
+    .toolbar-products .item a {
+        padding-left: 2em;
+        padding-right: 2em;
+        padding-bottom: 0.2em;
+        color: white;
+        font-size: 1vw;
+        font-weight: 300;
+    }
+
+    .sorter {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    .filter-current {
+        padding: 0;
+    }
+
+    .filter-current .items {
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 0;
+        margin-bottom: 2em;
+        padding-top: 0;
+    }
+
+    .filter-current .item {
+        margin-bottom: 1em;
+        padding-left: 0.5em;
+        padding-right: 1em;
+        padding-bottom: 0.1em;
+        padding-top: 0.2em;
+        border: 2px solid rgb(251, 176, 59);
+        border-radius: 20px;
+        margin-left: 1em;
+        font-size: 1vw;
+        font-weight: 300;
+    }
+
+    .filter-current .action.remove {
+        content: url(/media/o2sconcept/icon/x.svg);
+        position: relative;
+        width: 0.8vw;
+        margin-left: 0.2em;
+    }
+
+    .toolbar a.porto-product-filters-toggle {
+        font-size: 1vw;
+        font-weight: 300;
+        color: white;
+        border: none;
+        height: auto;
+        text-transform: none;
+        padding: 0;
+        padding-right: 2em;
+        align-items: normal;
+        background-image: -webkit-linear-gradient(15deg, rgb(251, 176, 59) 45%, #060A13 46%)
+    }
+
+    .toolbar a.porto-product-filters-toggle span {
+        padding-top: 0.3em;
+        padding-bottom: 0.1em;
+    }
+
+    .toolbar a.porto-product-filters-toggle span::before {
+        content: url(/media/o2sconcept/icon/triangle.svg);
+        width: 0.8em;
+        height: 20px;
+        transform: rotate(90deg);
+        margin-left: 0.5em;
+        margin-right: 0.2em;
+        display: inline-block;
+    }
+
+    .toolbar a.porto-product-filters-toggle h3 {
+        font-size: inherit;
+        font-weight: inherit;
+        border-bottom: 2px solid rgb(251, 176, 59);
+        margin: 0;
+        padding-left: 4em;
+        margin-top: auto;
+        line-height: 24px;
+    }
+
+    .columns {
+        background-color: #060A13;
+    }
+
+    .catalog-category-view .columns .column.main {
+        width: 100% !important;
+        padding-bottom: 0;
+        padding-left: 4vw;
+        padding-right: 4vw;
+        padding-top: 3vh;
+    }
+
+    .page-main {
+        padding: 0 !important;
+    }
+
+    .toolbar-sorter {
+        display: flex;
+        align-items: stretch;
+        background-image: -webkit-linear-gradient(-15deg, #060A13 45%, rgb(251, 176, 59) 46%);
+        color: white;
+        font-family: 'Josefin Sans', sans-serif;
+        font-size: 1vw;
+        font-weight: 400;
+    }
+
+    .toolbar select {
+        background: rgb(251, 176, 59);
+        border-color: rgb(251, 176, 59);
+        padding: 0;
+        height: auto;
+        margin-top: 2px;
+        width: 7vw;
+        font-weight: 300;
+    }
+
+    .sorter-options {
+        color: white;
+    }
+
+    .sorter-label {
+        border-bottom: 2px solid rgb(251, 176, 59);
+        padding-right: 3em;
+        white-space: nowrap;
+        margin-top: 2px;
+        line-height: 24px;
+        font-weight: 300;
+    }
+
+    .sorter-action::before {
+        content: url(/media/o2sconcept/icon/triangle.svg) !important;
+        width: 0.8em;
+        height: auto;
+        margin-right: 0.5em;
+    }
+
+    .sorter-action.sort-desc::before {
+        transform: rotate(180deg);
+        margin-bottom: 5px;
+    }
+
+    .sorter-action {
+        margin-top: 4px;
+    }
+
+    @media (max-width: 991px) {
+        .toolbar .modes, .toolbar .sorter-label, .toolbar .limiter .label {
+            display: inherit;
+        }
+
+        .toolbar select {
+            text-transform: none;
+            color: white;
+        }
+
+        .toolbar-sorter {
+            font-size: 1em;
+            background-image: -webkit-linear-gradient(-15deg, #060A13 55%, rgb(251, 176, 59) 56%)
+        }
+
+        .toolbar a.porto-product-filters-toggle {
+            font-size: 1em;
+            padding-right: 0;
+        }
+
+        .toolbar-products .items {
+            display: none;
+        }
+
+        .toolbar {
+            background: black;
+        }
+
+        .filter-current .action.remove {
+            width: 0.5em;
+            top: 0;
+        }
+
+        .filter-current .item {
+            font-size: 1em;
+            padding-right: 1em;
+        }
+
+        .toolbar a.porto-product-filters-toggle h3 {
+            padding-left: 2em;
+        }
+
+        .toolbar a.porto-product-filters-toggle {
+            background-image: -webkit-linear-gradient(15deg, rgb(251, 176, 59) 56%, #060A13 57%);
+        }
+    }
+</style>
+
+<style>
+    .product-item-photo {
+        width: 82.1%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .product-item-name {
+        padding-right: 0 !important;
+    }
+    
+    .product-item-name a {
+        text-align: center;
+        color: white;
+        margin-bottom: 0;
+        font-size: 1vw;
+        font-weight: 300;
+    }
+
+    .product-item-name a p {
+        margin: 0;
+        color: rgb(251, 176, 59);
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .product-item-info .product-item-details .price-box {
+        text-align: center;
+    }
+
+    .price-box .price {
+        color: white;
+        font-family: 'Roboto', sans-serif;
+        font-size: 1vw;
+        font-weight: 300;
+    }
+
+    .pages {
+        display: flex;
+        margin-bottom: 3vh;
+    }
+
+    .pages .items {
+        margin: auto;
+    }
+
+    .pages strong.page {
+        border: none;
+        border-radius: 20px;
+        color: white;
+        background: rgb(251, 176, 59);
+    }
+
+    .pages strong.page:hover {
+        background: rgb(251, 176, 59);
+    }
+
+    .pages .page {
+        font-family: 'Roboto', sans-serif;
+        font-size: 1vw !important;
+        font-weight: 400 !important;
+    }
+
+    .pages a.page {
+        border: none;
+        background: transparent;
+        color: white;
+    }
+
+    .pages a.page:hover {
+        border: none;
+    }
+
+    .pages .action.next, .pages .action.previous {
+        border: none;
+    }
+
+    .pages .action.next::before {
+        content: url(/media/o2sconcept/icon/triangle_yellow.svg) !important;
+        width: 0.8em;
+        height: auto;
+        transform: rotate(90deg);
+    }
+
+    .pages .action.previous::before {
+        content: url(/media/o2sconcept/icon/triangle_yellow.svg) !important;
+        width: 0.8em;
+        height: auto;
+        transform: rotate(-90deg);
+    }
+
+    @media (max-width: 991px) {
+        .product-item-name a, .price-box .price {
+            font-size: 1em;
+        }
+
+        .pages strong.page, .pages a.page, .pages .action {
+            font-size: 14px !important;
+        }
+    }
+</style>
+
 <?php if ($block->getCollection()->getSize()): ?>
     <div class="toolbar toolbar-products" data-mage-init='<?php /* @escapeNotVerified */ echo $block->getWidgetOptionsJson(); ?>'>
-        <a href="#" class="porto-product-filters-toggle sidebar-toggle d-inline-flex d-lg-none"><svg data-name="Layer 3" id="Layer_3" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><line class="cls-1" x1="15" x2="26" y1="9" y2="9"></line><line class="cls-1" x1="6" x2="9" y1="9" y2="9"></line><line class="cls-1" x1="23" x2="26" y1="16" y2="16"></line><line class="cls-1" x1="6" x2="17" y1="16" y2="16"></line><line class="cls-1" x1="17" x2="26" y1="23" y2="23"></line><line class="cls-1" x1="6" x2="11" y1="23" y2="23"></line><path class="cls-2" d="M14.5,8.92A2.6,2.6,0,0,1,12,11.5,2.6,2.6,0,0,1,9.5,8.92a2.5,2.5,0,0,1,5,0Z"></path><path class="cls-2" d="M22.5,15.92a2.5,2.5,0,1,1-5,0,2.5,2.5,0,0,1,5,0Z"></path><path class="cls-3" d="M21,16a1,1,0,1,1-2,0,1,1,0,0,1,2,0Z"></path><path class="cls-2" d="M16.5,22.92A2.6,2.6,0,0,1,14,25.5a2.6,2.6,0,0,1-2.5-2.58,2.5,2.5,0,0,1,5,0Z"></path></svg> <span>Filter</span></a>
+        <a href="#" class="porto-product-filters-toggle sidebar-toggle d-inline-flex">
+            <span>All Filters</span>
+            <h3>Chủ đề</h3>
+        </a>
+
+        <?php
+            $catalog_left_nav = $block->getLayout()->getBlock("catalog.leftnav");
+            $filters = $catalog_left_nav->getFilters();
+            $target_filter;
+            foreach ($filters as $key => $filter):
+                $b = $filter->getName();
+                if (str_contains($filter->getName(), "Chủ đề")) {
+                    $target_filter = $filter;
+                    break;
+                }
+                
+            endforeach;
+        ?>
+
+        <div class="filter-options">
+            <?php /* @escapeNotVerified */ echo $catalog_left_nav->getChildBlock('renderer')->setFilter($target_filter)->render($target_filter); ?>
+        </div>
+        
         <?php if ($block->isExpanded()): ?>
             <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/sorter.phtml')) ?>
         <?php endif; ?>
-
-        <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/amount.phtml')) ?>
-
-        <?php echo $block->getPagerHtml() ?>
-
-        <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/limiter.phtml')) ?>
-        <?php if ($block->isExpanded()): ?>
-            <?php include ($block->getTemplateFile('Magento_Catalog::product/list/toolbar/viewmode.phtml')) ?>
-        <?php endif; ?>
     </div>
+    
+    <?php
+        $catalog_state_block = $block->getLayout()->getBlock("catalog.navigation.state");
+        echo $catalog_state_block->toHtml();
+    ?>
 <?php endif ?>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        var scrollpos = localStorage.getItem('scrollpos');
+        if (scrollpos) window.scrollTo(0, scrollpos);
+    });
+
+    window.onbeforeunload = function(e) {
+        localStorage.setItem('scrollpos', window.scrollY);
+    };
+</script>

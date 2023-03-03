@@ -309,8 +309,54 @@ define([
                 });
             });
 
+            var frontCurrentElements = $('#layer-product-list').find('.filter-current a, .filter-actions a');
+            frontCurrentElements.each(function (index) {
+                var el = $(this),
+                    link = self.checkUrl(el.prop('href'));
+                if (!link) {
+                    return;
+                }
+
+                el.bind('click', function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    if (isAjax) {
+                        submitFilterAction(link);
+                    }
+                    else location.href = link;
+                });
+            });
+
             var optionElements = this.element.find('.filter-options a');
             optionElements.each(function (index) {
+                var el = $(this),
+                    link = self.checkUrl(el.prop('href'));
+                if (!link) {
+                    return;
+                }
+
+                el.bind('click', function (e) {
+                    if (el.hasClass('swatch-option-link-layered')) {
+                        self.selectSwatchOption(el);
+                    } else {
+                        var checkboxEl = el.siblings(self.options.checkboxEl);
+                        checkboxEl.prop('checked', !checkboxEl.prop('checked'));
+                    }
+
+                    e.stopPropagation();
+                    e.preventDefault();
+                    self.ajaxSubmit(link);
+                });
+
+                var checkbox = el.siblings(self.options.checkboxEl);
+                checkbox.bind('click', function (e) {
+                    e.stopPropagation();
+                    self.ajaxSubmit(link);
+                });
+            });
+
+            var frontOptionElements = $('#layer-product-list').find('.filter-options a');
+            frontOptionElements.each(function (index) {
                 var el = $(this),
                     link = self.checkUrl(el.prop('href'));
                 if (!link) {

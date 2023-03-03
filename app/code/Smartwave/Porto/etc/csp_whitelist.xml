@@ -19,6 +19,8 @@
         <policy id="style-src">
             <values>
                 <value id="googleapis" type="host">*.googleapis.com</value>
+                <value id="unpkg" type="host">unpkg.com</value>
+                <value id="cdnjs" type="host">cdnjs.cloudflare.com</value>
             </values>
         </policy>
         <policy id="script-src">
@@ -30,6 +32,8 @@
                 <value id="facebook" type="host">*.facebook.com</value>
                 <value id="pinterest" type="host">*.pinterest.com</value>
                 <value id="script_instagram" type="host">*.instagram.com</value>
+                <value id="unpkg" type="host">unpkg.com</value>
+                <value id="cdnjs" type="host">cdnjs.cloudflare.com</value>
             </values>
         </policy>
         <policy id="img-src">

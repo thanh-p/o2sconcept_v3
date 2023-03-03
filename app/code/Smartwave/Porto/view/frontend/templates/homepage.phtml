@@ -1,0 +1,1797 @@
+<style type="text/css">
+    @-webkit-keyframes run {
+      0% {
+        right: 0;
+      }
+      100% {
+        right: 80%;
+      }
+    }
+
+    .glow {
+      color: #fbb03b;
+      /* animation: glow 1s ease-in-out infinite alternate; */
+      animation: 
+        /* glow 5s infinite, */
+        rotate 4s infinite;
+    }
+
+    @-webkit-keyframes rotate {
+      50%,100% {
+        transform: rotateY(360deg) 
+      }
+    }
+
+    @-webkit-keyframes glow {
+      from {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px rgb(252, 193, 100), 0 0 40px rgb(252, 193, 100), 0 0 50px rgb(252, 193, 100), 0 0 60px rgb(252, 193, 100), 0 0 70px rgb(252, 193, 100);
+      }
+
+      to {
+        text-shadow: 0 0 20px #fff, 0 0 30px rgb(251, 184, 79), 0 0 40px rgb(251, 184, 79), 0 0 50px rgb(251, 184, 79), 0 0 60px rgb(251, 184, 79), 0 0 70px rgb(251, 184, 79), 0 0 80px rgb(251, 184, 79);
+      }
+    }
+
+    h1 span {
+      display: inline-block;
+    }
+
+    a:visited, .alink:visited {
+      color: white;
+    }
+
+    .button_landing {
+      display: block;
+      line-height: 1.3;
+      text-align: center;
+      margin-top: 2vw;
+      margin-left: 13.5vw;
+      font-size: 1.5vw;
+      width: 15vw;
+      border-radius: 8vw;
+      font-weight: 400;
+      background-color: rgb(251, 176, 59);
+      color: white;
+      background: rgba(251, 176, 59, 1);
+      border: none;
+      box-shadow: 0 0 1.6vw 0.4vw rgba(251, 176, 59, 0.64);
+      transition: all 0.3s ease-in-out 0s;
+      cursor: pointer;
+      outline: none;
+      position: relative;
+      padding: 0.5vw;
+    }
+
+    .button_landing::before {
+      content: "";
+      min-width: calc(23.2vw + 1vw);
+      min-height: calc(4.6vw + 1vw);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all 0.3s ease-in-out 0s;
+    }
+
+    .button_landing:hover,
+    .button_landing:focus {
+      color: #313133;
+      transform: translateY(-0.5vh);
+      box-shadow: 0 0 1.6vw 0.8vw rgba(251, 176, 59, 0.64);
+    }
+
+    .button_landing:hover::before,
+    .button_landing:focus::before {
+      opacity: 1;
+    }
+
+    .button_landing::after {
+      content: "";
+      width: 2.4vw;
+      height: 2.4vw;
+      border-radius: 100%;
+      border: 0.5vw solid rgba(251, 176, 59);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: ring 1.5s infinite;
+    }
+
+    .button_landing:hover::after,
+    .button_landing:focus::after {
+      animation: none;
+      display: none;
+    }
+
+    .landing_body {
+      position: absolute; 
+      top: 33%; 
+      left: 9%;
+    }
+
+    .landing_title {
+      border-bottom: solid 1px;
+      border-image: linear-gradient(to left, rgba(214, 192, 134, 0) 0%, rgb(214, 192, 134, 1) 42%, rgba(214, 192, 134, 0.7) 68%, rgba(214, 192, 134, 0) 100%) 100% 0 100% 0/1px 0 1px 0 stretch;
+      background-image: linear-gradient(to right, rgb(0, 0, 0, 0), rgb(0, 0, 0, 0.4), rgb(0, 0, 0, 0));
+      background-position: 50% 100%;
+      background-repeat: no-repeat;
+    }
+
+    .landing_title_text {
+      margin-left: 13.5vw; 
+      padding-top: 2.5vw; 
+      padding-bottom: 2.5vw;
+    }
+
+    .landing_title_text h1 {
+      font-size: 4vw;
+      margin-bottom: 0px; 
+      color: white; 
+      font-weight: 500; 
+      letter-spacing: 0px;
+    }
+
+    .landing_title_text h2 {
+      font-size: 1.5vw;
+      color: white; 
+      font-weight: 400; 
+      letter-spacing: 0.4vw; 
+      margin: 0; 
+      padding-left: 0.5vw;
+    }
+
+    .landing_block_image {
+      position: absolute; 
+      top: 29%; 
+      right: 80%; 
+      width: 16%; 
+      -webkit-animation: linear; 
+      -webkit-animation-name: run; 
+      -webkit-animation-duration: 1s; 
+      will-change: transform;
+    }
+
+    .landing_page_gallery {
+      position: absolute;
+      right: 2%;
+      top: -2em;
+      width: 45%;
+      height: 65%;
+      animation: bellshake 7s infinite;
+      will-change: transform;
+    }
+
+    .landing_page_gallery_overlay {
+      position: absolute;
+      width: 19%;
+      right: 30%;
+      top: 22%;
+    }
+
+    @keyframes bellshake {
+      0% { transform: rotate(0); }
+      5% { transform: rotate(3deg); }
+      10% { transform: rotate(-3deg); }
+      15% { transform: rotate(2.5deg); }
+      20% { transform: rotate(-2.5deg); }
+      25% { transform: rotate(2deg); }
+      30% { transform: rotate(-2deg); }
+      35% { transform: rotate(1deg); }
+      40% { transform: rotate(-1deg); }
+      45% { transform: rotate(0.5deg); }
+      50% { transform: rotate(-0.5deg); }
+      55% { transform: rotate(0); }
+      100% { transform: rotate(0); }
+  }
+
+    @keyframes ring {
+      0% {
+        width: 2.4vw;
+        height: 2.4vw;
+        opacity: 1;
+      }
+
+      90% {
+        width: 23.2vw;
+        height: 23.2vw;
+        opacity: 0;
+      }
+
+      100% {
+        width: 2.4vw;
+        height: 2.4vw;
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .landing_title_text h2, .button_landing {
+        font-size: 1.5em;
+      }
+
+      .button_landing {
+        width: 25vw;
+      }
+    }
+</style>
+
+<style type="text/css">
+    .type12 {
+      position: absolute;
+      width: 100%;
+      display: none;
+    }
+
+    .header-bottom {
+      display: block;
+    }
+
+    @media (min-width: 992px) {
+      .show-in-homepage-only {
+        display: inline-block !important;
+      }
+
+      .hide-in-homepage-only {
+        display: none !important;
+      }
+
+      .page-header.type12 .navigation:not(.side-megamenu) .level0 .level-top {
+        text-transform: uppercase !important;
+      }
+    }
+
+</style>
+
+<style type="text/css">
+    .product-items {
+      display: flex;
+      justify-content: center;
+    }
+
+    .cover_window_bg { 
+      background-repeat: no-repeat; background-size: cover; height: 100vh; z-index: 3;
+    }
+
+    .porto-block-html-top {
+      overflow:visible;
+      background-position: center;
+    }
+
+    .smooth-transition-bg-top {
+      content: "";
+      background-image: linear-gradient(rgba(7, 11, 19, 1), rgba(7, 11, 19, 0));
+      height: 5vh;
+      width: 100%;
+      position: absolute;
+      top: 0;
+    }
+
+    .smooth-transition-bg-bottom {
+      content: "";
+      background-image: linear-gradient(rgba(7, 11, 19, 0), rgba(7, 11, 19, 1));
+      height: 5vh;
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+    }
+
+    .service-wrapper {
+      width: 80%;
+      margin: auto;
+    }
+
+    .flip-card {
+      background-color: transparent;
+      perspective: 1000px;
+    }
+
+    .flip-card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    }
+
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .flip-card-front, .flip-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    .flip-card-front {
+      color: white;
+    }
+
+    .flip-card-back {
+      display: flex;
+      justify-content: center;
+      background-color: #2980b9;
+      color: white;
+      transform: rotateY(180deg);
+      background: linear-gradient(210deg, rgb(88, 102, 111) 0%,rgb(109, 128, 140) 50%,rgb(147, 170, 185) 75%, #d2d8e2 100%);
+    }
+
+    .flip-card-back h2 {
+      text-align: left;
+      width: 80%;
+      margin: auto;
+      position: relative;
+      border-bottom: solid 3px;
+      border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 0%,rgb(208, 179, 105) 50%, rgba(209, 156, 21, 0) 100%) 0 0 100% 0/1px 0 3px 0 stretch;
+      padding-bottom: 4vh;
+      filter: brightness(120%);
+      font-size: 1vw;
+    }
+
+    .flip-card-size {
+      width: 16vw;
+      height: 22.9vw;
+    }
+
+    .flip-card-img {
+      filter: brightness(70%);
+      max-width: 100%;
+      max-height: 100%;
+    }
+
+    .products-grid.columns4 .product-item {
+      justify-content: center;
+      display: flex;
+    }
+
+    .service-text {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      padding: 1.5em 0 1.5em 0;
+      background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5));
+    }
+
+    .service-text h2 {
+      border-bottom: solid 3px;
+      border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 20%, rgb(208, 179, 105) 50%, rgba(209, 156, 21, 0) 80%, rgba(209, 156, 21, 0) 100%) 0 0 100% 0/1px 0 3px 0 stretch;
+      padding-bottom: 1vh;
+      filter: brightness(120%);
+      font-size: 1vw;
+    }
+
+    .about-us-cotainer {
+      display: flex;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .about-us-body {
+      margin-right: 8vw;
+      margin-top: auto;
+      margin-bottom: auto;
+    }
+
+    .about-us-body h1 {
+      color: white;
+      text-align: right;
+      font-size: 4vw;
+      font-weight: 600;
+      border-bottom: solid 3px;
+      border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 0%, rgb(208, 179, 105) 30%, rgba(209, 156, 21, 0) 60%, rgba(209, 156, 21, 0) 100%) 0 0 100% 0/1px 0 3px 0 stretch;
+      padding-bottom: 2vh;
+      filter: brightness(120%);
+      margin-bottom: 4vh;
+      margin-top: 0.5vh;
+      padding-top: 1vw;
+    }
+
+    .about-us-body h3 {
+      color: white;
+      text-align: right;
+      font-size: 1.2vw;
+      font-style: italic;
+      font-weight: 350;
+    }
+
+    .about-us-body p{
+      color: white;
+      text-align: right;
+      font-size: 1vw;
+      font-weight: 350;
+      line-height: 1.2em;
+      float: right;
+      margin: 0;
+    }
+
+    .about-us-body a{
+      color: white;
+    }
+
+    .about-us-body>a{
+      float: right;
+      clear: both;
+      font-style: italic;
+      font-size: 1vw;
+      padding-top: 1em;
+      font-weight: 300;
+    }
+
+    .title-decor {
+      width: 100%;
+      text-align: center;
+      color: white;
+      padding-bottom: 2vh;
+      border-bottom: solid 3px;
+      border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 40%, rgb(208, 179, 105) 50%, rgba(209, 156, 21, 0) 60%, rgba(209, 156, 21, 0) 100%) 0 0 100% 0/1px 0 3px 0 stretch;
+      font-size: 1.5vw;
+      font-weight: normal;
+      filter: brightness(120%);
+      margin-bottom: 15vh;
+    }
+
+    @media (max-width: 575px) {
+      .flip-card-back h2 {
+        font-size: 1.5em;
+      }
+
+      .product-items {
+        flex-wrap: wrap;
+      }
+
+      .title-decor {
+        padding-bottom: 0.5em;
+        margin-bottom: 4em;
+        font-size: 2em;
+      }
+
+      .about-us-body {
+        width: 100%;
+      }
+
+      .about-us-body h3, .about-us-body p, .about-us-body>a {
+        font-size: 1.5em;
+      }
+
+      .about-us-body h1 {
+        font-size: 3em;
+        margin-bottom: 0.5em;
+        padding-bottom: 0.5em;
+      }
+
+      .flip-card-size {
+        width: 40vw;
+        height: 57vw;
+      }
+
+      .service-text h2 {
+        font-size: 1.7em;
+        padding-bottom: 0.5em;
+      }
+
+      .products-grid.columns4 .product-item {
+        flex-wrap: wrap;
+      }
+
+      .mobile-bg {
+        height: auto !important;
+        padding-top: 5em;
+        padding-bottom: 5em;
+      }
+    }
+</style>
+
+<style>
+
+:root {
+  --swiper-navigation-color: white;
+  --swiper-navigation-size: 3vw;
+  --swiper-navigation-top-offset: 50%;
+  --swiper-navigation-sides-offset: 5vw;
+
+  --swiper-pagination-bullet-inactive-color: #000;
+  --swiper-theme-color: rgb(209, 156, 21);
+}
+
+.banner-swiper {
+  top: 25%;
+  position: relative;
+}
+
+.swiper-container {
+  margin: auto;
+  overflow-x: hidden;
+}
+
+.swiper-banner-container {
+  width: 70%;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide-banner {
+  height: 25.96vw;
+}
+
+.swiper-banner-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 1.5em 0 1.5em 0;
+  background-image: linear-gradient(rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+}
+
+.swiper-text-banner h2 {
+  font-size: 1vw;
+}
+
+.swiper-text h2 {
+  color: white;
+  text-align: center;
+  margin: 0;
+  font-weight: 300;
+  font-size: 1vw;
+}
+
+@media (max-width: 575px) {
+  .swiper-slide {
+    height: 25vh;
+  }
+
+  .swiper-text h2, .swiper-text-product p {
+    font-size: 1.5em !important;
+    line-height: 1.5em;
+  }
+
+  .banner-swiper {
+    margin-top: 6vh;
+  }
+}
+</style>
+
+<script type="text/javascript">
+require([
+    'jquery'
+], function ($) {
+   $(document).ready(dynamic_css);
+
+   $(window).on('resize', dynamic_css);
+
+   function dynamic_css() {
+      var landing_block = document.getElementById("landing_block");
+      $('.type12').css("top", landing_block.offsetHeight);
+      $('.type12').css("display", 'block');
+
+      var expected_bg5_height = adjust_full_height_css('/media/o2sconcept/img/asset5.png', 'bg5');
+      adjust_full_height_css('/media/o2sconcept/img/asset6.png', 'bg6');
+
+      var featured_element = document.getElementById('featured-product-menu-container-id');
+      featured_element.style.marginTop = expected_bg5_height * 0.24 + "px";
+   }
+
+   function adjust_full_height_css() {
+      var max_h = 1080;
+      var bg= new Image();
+      bg.src= arguments[0];
+      
+      var expected_bg_height = bg.height / max_h * window.innerHeight;
+
+      var bg_element = document.getElementById(arguments[1]);
+      bg_element.style.height = expected_bg_height + "px";
+
+      return expected_bg_height;
+   }
+
+});
+</script>
+
+<script type="text/javascript">
+require([
+    'jquery'
+], function ($) {
+  if ($(window).width() < 575) {
+    
+  }
+});
+</script>
+
+<div id="landing_block" class="porto-block-html-top" style="overflow: visible; background-image: url('/media/o2sconcept/img/asset1.png'); background-size: cover; background-repeat: no-repeat; z-index: 6;">
+  <div>
+    <img
+      alt=""
+      class="landing_block_image"
+      src="/media/logo/default/LOGO_O2S_CONCEPT-01-crop.png"
+    />
+    <div class="landing_body">
+      <div class="landing_title">
+        <div class="landing_title_text">
+          <h1>
+            <span class="glow">O</span>ne <span class="glow">S</span>top <span class="glow">S</span>olutions
+          </h1>
+          <h2>Concept</h2>
+        </div>
+      </div>
+      <a class="button_landing" href="https://beta.o2sconcept.com/visualizer/index/test">Trải nghiệm ngay</a>
+    </div>
+  </div>
+  <img src="/media/o2sconcept/img/asset1_1.png" alt="Image" class="landing_page_gallery"/>
+  <img src="/media/o2sconcept/img/asset1_2.png" alt="Image" class="landing_page_gallery_overlay"/>
+  <img src="/media/o2sconcept/img/asset1.png" alt="Image" style="visibility: hidden;" />
+</div>
+
+<div class="porto-block-html-top swiper-body cover_window_bg mobile-bg" style="background-image: url('/media/o2sconcept/img/asset2.png');">
+    <!-- Swiper -->
+  <div class="banner-swiper">
+    <div class="swiper-container swiper-banner-container">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_3.png);">
+            <a class="swiper-banner-link" href="san-pham/film-trang-tri-kinh.html">
+              <div class="swiper-text swiper-text-banner">
+                <h2> Film trang trí kính </h2>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_6.png);">
+            <a class="swiper-banner-link" href="san-pham/tranh-treo-tuong.html">
+              <div class="swiper-text swiper-text-banner">
+                <h2> Tranh treo tường </h2>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_4.png);">
+            <a class="swiper-banner-link" href="san-pham/tranh-dan-tuong.html">
+              <div class="swiper-text swiper-text-banner">
+                <h2> Tranh dán tường </h2>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_5.png);">
+            <a class="swiper-banner-link" href="san-pham/rem-cuon.html">
+              <div class="swiper-text swiper-text-banner">
+                <h2> Rèm cuộn </h2>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_1.png);">
+            <a class="swiper-banner-link" href="san-pham/decal-dan-san.html">
+              <div class="swiper-text swiper-text-banner">
+                <h2> Decal dán sàn </h2>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_2.png);">
+            <a class="swiper-banner-link" href="san-pham/film-dan-noi-that.html">
+              <div class="swiper-text swiper-text-banner">
+                <h2> Film dán nội thất </h2>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_3.png);">
+            <a class="swiper-banner-link" href="san-pham/film-trang-tri-kinh.html">
+              <div class="swiper-text swiper-text-banner">
+                <h2> Film trang trí kính </h2>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_6.png);">
+            <a class="swiper-banner-link" href="san-pham/tranh-treo-tuong.html">
+              <div class="swiper-text swiper-text-banner">
+                <h2> Tranh treo tường </h2>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_4.png);">
+            <a class="swiper-banner-link" href="san-pham/tranh-dan-tuong.html">
+              <div class="swiper-text swiper-text-banner">
+                <h2> Tranh dán tường </h2>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_5.png);">
+            <a class="swiper-banner-link" href="san-pham/rem-cuon.html">
+              <div class="swiper-text swiper-text-banner">
+                <h2> Rèm cuộn </h2>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_1.png);">
+            <a class="swiper-banner-link" href="san-pham/decal-dan-san.html">
+              <div class="swiper-text swiper-text-banner">
+                <h2> Decal dán sàn </h2>
+              </div>
+            </a>
+          </div>
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_2.png);">
+            <a class="swiper-banner-link" href="san-pham/film-dan-noi-that.html">
+              <div class="swiper-text swiper-text-banner">
+                <h2> Film dán nội thất </h2>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="swiper-pagination swiper-pagination-banner"></div>
+    </div>
+    <div class="swiper-button-prev swiper-button-prev-banner"></div>
+    <div class="swiper-button-next swiper-button-next-banner"></div>
+  </div>
+
+  <!-- Initialize Swiper -->
+  <script type="module">
+    import {Swiper} from '/media/o2sconcept/lib/swiper-bundle.esm.browser.min.js';
+
+    const swiper = new Swiper('.swiper-banner-container', {
+      effect: 'coverflow',
+      centeredSlides: true,
+      slidesPerView: 1,
+      loop: true,
+      speed: 600,
+      grabCursor: true,
+      initialSlide: 2,
+      
+      autoplay: {
+        delay: 3000,
+      },
+      
+      coverflowEffect: {
+        rotate: 45,
+        stretch: -90,
+        depth: 300,
+        modifier: 1,
+        slideShadows: true,
+      },
+      
+      breakpoints: {
+        320: {
+          slidesPerView: 2,
+        },
+        560: {
+          slidesPerView: 3,
+        },
+        990: {
+          slidesPerView: 4,
+        }
+      },
+
+      // pagination: {
+      //   el: '.swiper-pagination-banner',
+      //   clickable: true,
+      // },
+
+      navigation: {
+        nextEl: '.swiper-button-next-banner',
+        prevEl: '.swiper-button-prev-banner',
+      },
+    });
+
+    var previous_menu_element = document.getElementById("san-pham/tranh-dan-tuong");
+    previous_menu_element.classList.add("level-top-hover");
+    swiper.on('slideChange', function () {
+      previous_menu_element.classList.remove("level-top-hover");
+      previous_menu_element = hover_sub_menu_item();
+    });
+
+    function hover_sub_menu_item() {
+      const index_currentSlide = swiper.activeIndex;
+      const currentSlide = swiper.slides[index_currentSlide];
+      var href = currentSlide.getElementsByTagName('a')[0].getAttribute("href");
+      var sub_menu_element = document.getElementById(href.split('.')[0]);
+      sub_menu_element.classList.add("level-top-hover");
+      return sub_menu_element;
+    }
+  </script>
+</div>
+
+<div class="porto-block-html-top cover_window_bg about-us-cotainer mobile-bg" style="background-image: url('/media/o2sconcept/img/asset3.png');">
+  <div class="about-us-body">
+    <h3>Lần đầu tiên ở Việt Nam</h3>
+    <h1>CÔNG NGHỆ IN XANH</h1>
+    <p>
+      &lt;span class="d-block"&gt;...được ứng dụng vào ngành trang trí nội thất nhằm&lt;/span&gt; 
+      &lt;span class="d-block"&gt;mang tới những sản phẩm đạt tiêu chuẩn trên toàn&lt;/span&gt;  
+      &lt;span class="d-block"&gt;cầu: không gây ung thư, bảo vệ sức khỏe người tiêu&lt;/span&gt; 
+      &lt;span class="d-block"&gt;dùng và bảo vệ môi trường. Chúng tôi định hướng&lt;/span&gt;  
+      &lt;span class="d-block"&gt;với mô hình "doanh nghiệp trách nghiệm"...&lt;/span&gt; </p>
+    <a href="gioi-thieu.html">&xrarr; Tìm hiểu thêm</a>
+  </div>
+  <div class="smooth-transition-bg-bottom"></div>
+</div>
+
+<div class="porto-block-html-top mobile-bg d-flex justify-content" style="z-index: 5;height: 100vh;width: 100%;background-color: #070b14;">
+  <div class="service-wrapper">
+    <h1 class="title-decor">DỊCH VỤ</h1>
+    <div class="products wrapper grid columns4 products-grid">
+      <ol class="filterproducts products list items product-items">
+        <li class="item product product-item">
+          <div class="flip-card flip-card-size">
+            <a href="tu-van-cung-kien-truc-su.html">
+              <div class="flip-card-inner">
+                <div class="flip-card-front flip-card-size">
+                  <img class="flip-card-img flip-card-size" src="/media/o2sconcept/img/dichvu1.png" alt="dichvu1">
+                  <div class="service-text">
+                    <h2> Tư vấn cùng kiến trúc sư </h2>
+                  </div>
+                </div>
+                <div class="flip-card-back flip-card-size">
+                  <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h2> 
+                </div>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="product-item">
+          <div class="flip-card flip-card-size">
+            <a href="cai-tao-khong-gian.html">
+              <div class="flip-card-inner">
+                <div class="flip-card-front flip-card-size">
+                  <img class="flip-card-img flip-card-size" src="/media/o2sconcept/img/dichvu2.png" alt="Avatar">
+                  <div class="service-text">
+                    <h2> Cải tạo không gian </h2>
+                  </div>
+                </div>
+                <div class="flip-card-back flip-card-size">
+                  <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h2> 
+                </div>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="product-item">
+          <div class="flip-card flip-card-size">
+            <a href="giai-phap-tron-goi.html">
+              <div class="flip-card-inner">
+                <div class="flip-card-front flip-card-size">
+                  <img class="flip-card-img flip-card-size" src="/media/o2sconcept/img/dichvu3.png" alt="Avatar">
+                  <div class="service-text">
+                    <h2> Giải pháp trọn gói </h2>
+                  </div>
+                </div>
+                <div class="flip-card-back flip-card-size">
+                  <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h2> 
+                </div>
+              </div>
+            </a>
+          </div>
+        </li>
+        <li class="product-item">
+          <div class="flip-card flip-card-size">
+            <a href="giai-phap-theo-yeu-cau.html">
+              <div class="flip-card-inner">
+                <div class="flip-card-front flip-card-size">
+                  <img class="flip-card-img flip-card-size" src="/media/o2sconcept/img/dichvu4.png" alt="Avatar">
+                  <div class="service-text">
+                    <h2> Giải pháp theo yêu cầu </h2>
+                  </div>
+                </div>
+                <div class="flip-card-back flip-card-size">
+                  <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h2> 
+                </div>
+              </div>
+            </a>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </div>
+</div>
+<div id="bg5" class="porto-block-html-top mobile-bg" style="overflow: hidden; background-image: url('/media/o2sconcept/img/asset5.png'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 5;">
+  <style type="text/css">
+
+    .featured-product-menu li a {
+      color: white;
+      font-size: 0.7vw;
+      font-weight: 300;
+      line-height: 1.6vh;
+      letter-spacing: 0;
+    }
+
+    .featured-product-menu li a:hover, .featured-product-menu-li-a-hover {
+      border-bottom: solid 1px;
+      border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 0%, rgb(209, 156, 21, 1) 42%, rgba(209, 156, 21, 0.7) 68%, rgba(209, 156, 21, 0) 100%) 0 0 100% 0/1px 0 1px 0 stretch;
+      color: rgb(209, 156, 21) !important;
+      padding-bottom: 1vh;
+    }
+
+    .swiper-slide-product {
+      height: 24.8vw;
+    }
+
+    .swiper-text-product {
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 2.5em;
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+
+      width: 20%;
+      position: relative;
+      margin: auto;
+      margin-top: 6vh;
+    }
+
+    .swiper-text-product p {
+      color: rgba(209, 156, 21);
+      text-align: center;
+      font-size: 1vw;
+      font-weight: 300;
+      width: 100%;
+      margin: 0;
+    }
+
+    .featured-product-menu {
+      margin-top: 1%;
+    }
+
+    .featured-product-menu ul {
+      display: flex;
+      justify-content: space-between;
+      width: 94%;
+      margin: auto;
+      padding: 3vh 3vw 3vh 3vw;
+      background-color: rgba(0, 0, 0, 0.5);
+      border: 2px solid rgba(209, 156, 21);
+    }
+
+    .featured-product-menu-container {
+        position: relative;
+    }
+
+    .featured-product-title {
+      color: white;
+      font-weight: normal;
+      text-align: center;
+      font-size: 1.5vw;
+      padding-top: 1em;
+      margin-bottom: 6%;
+    }
+
+    .swiper-featured-product {
+      width: 100%;
+    }
+
+    .swiper-featured-product-parent {
+      position: relative; 
+      width: 75%;
+      margin: auto;
+    }
+
+    .swiper-featured-product-link {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-button-next-featured-product {
+      right: 0;
+    }
+
+    .swiper-button-prev-featured-product {
+      left: 0;
+    }
+
+    @media (max-width: 991px) {
+      .swiper-slide-product {
+        height: 42.5vw;
+      }
+
+      .featured-product-menu-container {
+        position: relative;
+        display: inherit;
+        left: 0;
+        margin-top: 15% !important;
+      }
+
+      .featured-product-menu {
+        width:100%;
+        margin: 0;
+      }
+
+      .featured-product-menu ul{
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+
+      .featured-product-menu {
+        border: none;
+      }
+
+      .featured-product-menu li{
+        border-top: none !important;
+        border-bottom: none !important;
+      }
+
+      .featured-product-menu li a{
+        color:white !important;
+        text-align: center;
+      
+        font-size: 0.7em;
+        font-weight: 400;
+        line-height: 1.6vh;
+        letter-spacing: 0;
+        text-transform: capitalize;
+      }
+
+      .featured-product-title {
+        color: white;
+        font-size: 2em;
+        padding-bottom: 0.5em;
+        border-bottom: solid 3px;
+        border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 0%, rgb(209, 156, 21, 1) 42%, rgba(209, 156, 21, 0.7) 68%, rgba(209, 156, 21, 0) 100%) 0 0 100% 0/1px 0 3px 0 stretch;
+        filter: brightness(120%);
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .swiper-container {
+        padding-top: 2em;
+        padding-bottom: 0;
+      }
+
+      .swiper-text-product {
+        width: 40%;
+        margin-top: 5em;
+        margin-bottom: 1em;
+        padding: 1em 0 1em 0;
+      }
+
+      .swiper-featured-product {
+        width: 50%;
+        overflow-y: hidden;
+      }
+
+      /* .swiper-button-prev-featured-product, .swiper-button-next-featured-product {
+        top:30%;
+      } */
+    }
+  </style>
+
+  <!-- Initialize Swiper -->
+  <script type="module">
+    import {Swiper} from '/media/o2sconcept/lib/swiper-bundle.esm.browser.min.js';
+
+    const swiper_featured_product = new Swiper('.swiper-featured-product', {
+      effect: 'coverflow',
+      centeredSlides: true,
+      slidesPerView: 1,
+      loop: true,
+      speed: 600,
+      grabCursor: true,
+      
+      autoplay: {
+        delay: 3000,
+      },
+      
+      coverflowEffect: {
+        rotate: -40,
+        stretch: -70,
+        depth: 200,
+        modifier: 1,
+        slideShadows: true,
+      },
+      
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        560: {
+          slidesPerView: 2,
+        },
+        990: {
+          slidesPerView: 3,
+        }
+      },
+
+      pagination: {
+        el: '.swiper-pagination-featured-product',
+        clickable: true,
+      },
+
+      navigation: {
+        nextEl: '.swiper-button-next-featured-product',
+        prevEl: '.swiper-button-prev-featured-product',
+      },
+    });
+
+    handle_click(6);
+    handle_click(7);
+    handle_click(8, true);
+    handle_click(9);
+    handle_click(10);
+    handle_click(11);
+    var previous_element;
+
+    function handle_click() {
+      var key = arguments[0];
+      var element = document.getElementById("featured-product-" + key);
+      
+      element.addEventListener('click', function() {
+        request_featured_product(key);
+
+        if (previous_element != null) {
+          previous_element.classList.remove("featured-product-menu-li-a-hover");
+        }
+        
+        element.classList.add("featured-product-menu-li-a-hover");
+        previous_element = element;
+      }, false);
+
+      var clicked = arguments[1];
+
+      if (clicked) {
+        element.click();
+      } else {
+        request_featured_product(key);
+      }
+    }
+
+    var token;
+
+    function request_featured_product() {
+      var id = arguments[0];
+
+      if (token == null) {
+        fetch(window.location.href + "rest/default/V1/integration/customer/token", {
+            method: "POST",
+            headers: {
+                "Content-Type": `application/json`
+            },
+            body: JSON.stringify({'username': 'botAPI@o2sconcept.com', 'password': 'botAPI123'})
+        }).then(res => res.json()).then(token => send_request(token, id)).catch(console.error);
+      } else {
+        send_request(token, id);
+      }
+    }
+    
+    function send_request() {
+      const url = window.location.href + "rest/V1/testapi/custom/?id=" + arguments[1];
+      const method = "GET";
+      token = arguments[0];
+
+      fetch(url, {
+          method,
+          headers: {
+              "Authorization": `Bearer ${token}`
+          }
+      }).then(res => res.json()).then(resJson => handle_request(resJson)).catch(console.error);
+    }
+
+    function handle_request() {
+      const obj = JSON.parse(arguments[0]);
+      const collection = document.getElementsByClassName("swiper-slide-product");
+
+      for (let i = 0; i < collection.length; i++) {
+        if (i > obj.length - 1) {
+          break;
+        }
+
+        var name = obj[i][0];
+        var sku = obj[i][1];
+        var url = obj[i][2];
+        var img_url = obj[i][3];
+
+        collection[i].style.backgroundImage = "url('" + img_url + "')";
+        collection[i].dataset.name = name;
+        collection[i].dataset.sku = sku;
+        collection[i].children[0].href = url;
+      }
+
+      update_text();
+    }
+
+    swiper_featured_product.on('slideChange', function () {
+      update_text();
+    });
+
+    function update_text() {
+      const index_currentSlide = swiper_featured_product.activeIndex;
+      const currentSlide = swiper_featured_product.slides[index_currentSlide];
+
+      var text_element = document.getElementById("swiper-text-product-id");
+      text_element.children[0].textContent = currentSlide.dataset.name;
+      text_element.children[1].textContent = currentSlide.dataset.sku;
+    }
+  </script>
+  
+  <div class="smooth-transition-bg-top"></div>
+
+  <div class="featured-product-menu-container" id="featured-product-menu-container-id">
+    <h2 class="featured-product-title">SẢN PHẨM NỔI BẬT</h2>
+    <div class="swiper-featured-product-parent">
+      <div class="swiper-container swiper-featured-product">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-slide-product">
+              <a class="swiper-featured-product-link"></a>
+            </div>
+            <div class="swiper-slide swiper-slide-product">
+              <a class="swiper-featured-product-link"></a>
+            </div>
+            <div class="swiper-slide swiper-slide-product">
+              <a class="swiper-featured-product-link"></a>
+            </div>
+            <div class="swiper-slide swiper-slide-product">
+              <a class="swiper-featured-product-link"></a>
+            </div>
+            <div class="swiper-slide swiper-slide-product">
+              <a class="swiper-featured-product-link"></a>
+            </div>
+            <div class="swiper-slide swiper-slide-product">
+              <a class="swiper-featured-product-link"></a>
+            </div>
+          </div>
+      </div>
+      <div class="swiper-button-prev swiper-button-prev-featured-product"></div>
+      <div class="swiper-button-next swiper-button-next-featured-product"></div>
+    </div>
+
+    <div class="swiper-text swiper-text-product" id="swiper-text-product-id">
+      <h2>  </h2>
+      <p>  </p>
+    </div>
+
+    <div class="featured-product-menu"> 
+      <nav>
+        <ul>
+          <li class="ui-menu-item level0 fullwidth">
+            <a id="featured-product-6" href="javascript:void(0);">FILM TRANG TRÍ KÍNH</a>
+          </li>
+          <li class="ui-menu-item level0 fullwidth">
+            <a id="featured-product-7" href="javascript:void(0);">TRANH TREO TƯỜNG</a>
+          </li>
+          <li class="ui-menu-item level0 fullwidth">
+            <a id="featured-product-8" href="javascript:void(0);">TRANH DÁN TƯỜNG</a>
+          </li>
+          <li class="ui-menu-item level0 fullwidth">
+            <a id="featured-product-9" href="javascript:void(0);">RÈM CUỘN</a>
+          </li>
+          <li class="ui-menu-item level0 fullwidth">
+            <a id="featured-product-10" href="javascript:void(0);">DECAL DÁN SÀN</a>
+          </li>
+          <li class="ui-menu-item level0 fullwidth">
+            <a id="featured-product-11" href="javascript:void(0);">FILM DÁN NỘI THẤT</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+</div>
+
+<div id="bg6" class="porto-block-html-top mobile-bg" style="background-image: url('/media/o2sconcept/img/asset6.png'); background-position: center; background-repeat: no-repeat; background-size: cover; z-index: 5;">
+  <style type="text/css">
+    .swiper-slide-story {
+      height: 25vh;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding-bottom: 8em;
+    }
+
+    .swiper-slide-story h2 {
+      position: relative;
+      text-align: center;
+      bottom: 0;
+      color: white;
+      margin: 0;
+      font-size: 1vw;
+      margin-top: 1em;
+    }
+
+    .swiper-story {
+      width: 75%;
+      padding: 0;
+      overflow-y: hidden;
+    }
+
+    .swiper-parent-story {
+      position: relative;
+      padding-top: 2em;
+      padding-bottom: 2em;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+      border-bottom: solid 1px;
+      border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 0%,rgb(208, 179, 105) 50%, rgba(209, 156, 21, 0) 100%) 100% 0 0 0/3px 0 1px 0 stretch;
+    }
+
+    .story-block {
+      position: absolute; 
+      bottom: 0;
+    }
+
+    .story-body {
+      display: flex; 
+      width: 100%; 
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)); 
+      padding-right: 25vw;
+      margin-bottom: 7em;
+    }
+
+    .story-body h1 {
+      font-size: 1.5vw;
+      font-weight: 400; 
+      text-align: left; 
+      border: none; 
+      padding-top: 0.5em;
+      margin-bottom: 1em;
+    }
+
+    .lity-close {
+      font-size: 3em !important;
+      padding: 0 !important;
+      margin-top: 1em;
+      margin-right: 1em;
+      width: 1em;
+    }
+
+    .swiper-story-icon {
+      position:absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      content: url(/media/o2sconcept/icon/play-circle.svg);
+      font-size: 10em;
+      color: #fff;
+      opacity: .8;
+      text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+      width: 20%;
+    }
+
+    .story-posts {
+      text-align: left !important;
+      line-height: 1.3 !important;
+      float: left !important;
+    }
+
+    .story-posts a {
+      font-size: 1vw;
+      font-weight: 300;
+    }
+
+    .swiper-button-prev-story, .swiper-button-next-story {
+      padding-bottom: 8em;
+    }
+
+    @media (max-width: 575px) {
+      .swiper-story-icon {
+        top: 45%;
+      }
+      .swiper-slide-story h2 {
+        font-size: 1.5em;
+      }
+
+      .swiper-slide-story {
+        padding-bottom: 0;
+        height: 20vh;
+      }
+
+      .story-block {
+        position: relative; 
+      }
+
+      .story-body {
+        flex-wrap: wrap;
+        padding-right: 0;
+      }
+
+      .story-body h1 {
+        font-size: 2em;
+      }
+
+      .story-body h1 {
+        margin-bottom: 0;
+      }
+
+      .story-posts {
+        line-height: 1em !important;
+      }
+
+      .story-posts a {
+        font-size: 1em;
+      }
+    }
+  </style>
+
+  <script type="module">
+    import {Swiper} from '/media/o2sconcept/lib/swiper-bundle.esm.browser.min.js';
+
+    const swiper_story = new Swiper('.swiper-story', {
+      effect: 'coverflow',
+      centeredSlides: true,
+      slidesPerView: 1,
+      loop: false,
+      speed: 600,
+      grabCursor: true,
+      initialSlide: 1,
+      
+      autoplay: {
+        delay: 3000,
+      },
+      
+      coverflowEffect: {
+        rotate: 0,
+        stretch: -50,
+        depth: 0,
+        modifier: 1,
+        slideShadows: false,
+      },
+      
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        560: {
+          slidesPerView: 2,
+        },
+        990: {
+          slidesPerView: 3,
+        }
+      },
+
+      pagination: {
+        el: '.swiper-pagination-story',
+        clickable: true,
+      },
+
+      navigation: {
+        nextEl: '.swiper-button-next-story',
+        prevEl: '.swiper-button-prev-story',
+      },
+    });
+  </script>
+
+  <div class="story-block">
+    <div class="about-us-body story-body">
+      <div style="margin-left: 6vw; margin-top: 3em;">
+        <h1>KHÁM PHÁ CÂU CHUYỆN <span class="d-block">O2S CONCEPT</span></h1>
+        <p class="story-posts">
+          <span class="d-block"><a href="hp-latex-cong-nghe-xanh-tu-tuong-lai.html">HP Latex - Công nghệ xanh đến từ tương lai - Xem thêm</a></span>
+          <span class="d-block"><a href="phong-cach-nghe-thuat-tranh-duong-dai.html">Phong cách nghệ thuật tranh đương đại cho nhà ở - Xem thêm</a></span>
+          <span class="d-block"><a href="vat-lieu-xanh-bao-ve-moi-truong.html">Vật liệu xanh bảo vệ môi trường - Xem thêm</a></span>
+        </p>
+      </div>
+      <img style="margin-left: auto;width: 35%;padding-top: 2em;padding-bottom: 2em;" src="/media/o2sconcept/img/eco_green.png">
+    </div>
+
+    <div class="swiper-parent-story">
+      <div class="swiper-container swiper-story">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-slide-story">
+              <a href="https://youtu.be/S-A0qLTxf-U" data-lity allow="autoplay">
+                <img src="/media/o2sconcept/img/video_thumbnail1.png" >
+                <div class="swiper-story-icon"></div>
+              </a>
+              <h2>Câu chuyện tranh dán tường</h2>
+            </div>
+            <div class="swiper-slide swiper-slide-story">
+              <a href="https://youtu.be/dPMTD7ifzcQ" data-lity allow="autoplay">
+                <img src="/media/o2sconcept/img/video_thumbnail2.png" >
+                <div class="swiper-story-icon"></div>
+              </a>
+              <h2>Câu chuyện rèm cuộn</h2>
+            </div>
+            <div class="swiper-slide swiper-slide-story">
+              <a href="https://youtu.be/QlrHhn5YQNU" data-lity allow="autoplay">
+                <img src="/media/o2sconcept/img/video_thumbnail3.png" >
+                <div class="swiper-story-icon"></div>
+              </a>
+              <h2>Câu chuyện film dán nội thất</h2>
+            </div>
+          </div>
+      </div>
+      <div class="swiper-button-prev swiper-button-prev-story"></div>
+      <div class="swiper-button-next swiper-button-next-story"></div>
+    </div>
+  </div>
+</div>
+
+<div class="porto-block-html-top mobile-bg" style="display: flex; background-image: url('/media/o2sconcept/img/asset7.png'); background-repeat: no-repeat; background-size: cover; width: auto; height:100vh; z-index: 5;">
+  <style type="text/css">
+    .swiper-slide-review {
+      height: 23em;
+      justify-content: center;
+      display: flex;
+      visibility: hidden;
+    }
+
+    .swiper-slide-active, .swiper-slide-prev, .swiper-slide-next {
+      visibility: visible;
+    }
+
+    .swiper-slide-active .swiper-text-review {
+      padding-bottom: 1em;
+    }
+
+    .swiper-review {
+      width: 30%;
+      padding-bottom: 1em;
+      overflow-x: visible;
+    }
+
+    .swiper-text-review {
+      display: flex;
+      justify-content: center
+    }
+
+    .swiper-text-review img {
+      width: 10em;
+      height: 10em;
+      border-radius: 50%;
+      margin-top: auto;
+    }
+
+    .swiper-slide-shadow-left, .swiper-slide-shadow-right {
+      background-image: none !important;
+    }
+
+    .review-comment {
+      position: absolute;
+      width: 50vw;
+      display: none;
+      flex-wrap: wrap;
+    }
+
+    .swiper-slide-active .review-comment {
+      display: flex;
+    }
+
+    .review-comment h2 {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      color: rgb(209, 156, 21);
+      font-weight: 300;
+      font-size: 1vw;
+      margin-top: 1em;
+    }
+
+    .review-comment-para {
+      color: white;
+      width: 100%;
+      display: flex;
+      font-weight: 300;
+      font-size: 1vw;
+    }
+
+    .review-comment-para:before {
+      content: url(/media/o2sconcept/icon/quote-left.svg);
+      width: 20%;
+      display: block;
+      padding-right: 3em;
+      margin-bottom: auto;
+    }
+
+    .review-comment-para:after {
+      content: url(/media/o2sconcept/icon/quote-right.svg);
+      width: 20%;
+      display: block;
+      padding-left: 3em;
+      margin-top: auto;
+    }
+
+    .review-body {
+      margin-top: auto;
+      width: 100%;
+      background-image: radial-gradient(farthest-corner at 50% 36%, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+      margin-bottom: 10em;
+      padding-top: 5em;
+      border-bottom: solid 3px;
+      border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 0%,rgb(208, 179, 105) 50%, rgba(209, 156, 21, 0) 100%) 100% 0 100% 0/3px 0 3px 0 stretch;
+    }
+
+    .review-title-div {
+      justify-content: center;
+      display: flex;
+      margin: auto;
+      margin-bottom: 0.5em;
+      animation: 
+        typing 8s steps(90, end) infinite;
+    }
+
+    .review-title {
+      color: rgb(209, 156, 21);
+      font-weight: 400;
+      font-size: 1.5vw;
+      padding-top: 0.5em;
+
+      overflow: hidden;
+      white-space: nowrap;
+
+      animation: 
+        blink-caret .75s step-end infinite;
+      border-right: 2px solid rgb(209, 156, 21);
+      text-align: center;
+
+      margin-bottom: 2.5em;
+    }
+
+    /* The typing effect */
+    @keyframes typing {
+      from, to { width: 0 }
+      95% { width: 100%}
+      100% { width: 100%}
+    }
+
+    /* The typewriter cursor effect */
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: rgb(209, 156, 21); }
+    }
+
+    @media (max-width: 1500px) {
+      .swiper-review {
+        width: 40%;
+      }
+
+      .swiper-slide-review {
+        height: 20em;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .review-title {
+        font-size: 2em;
+        margin-bottom: 0.5em;
+      }
+
+      .swiper-review {
+        width: 25%;
+      }
+
+      .review-comment-para {
+        line-height: 1.5em;
+        font-size: 1.5em;
+      }
+
+      .swiper-slide-review {
+        height: 25em;
+        padding-bottom: 2em;
+      }
+
+      .review-comment {
+        width: 80vw;
+      }
+
+      .review-comment-para:before {
+        width: 50%;
+        padding-right: 1em;
+      }
+
+      .review-comment-para:after {
+        width: 50%;
+        padding-left: 0;
+      }
+    }
+  </style>
+
+  <script type="module">
+    import {Swiper} from '/media/o2sconcept/lib/swiper-bundle.esm.browser.min.js';
+
+    const swiper_review = new Swiper('.swiper-review', {
+      effect: 'coverflow',
+      centeredSlides: true,
+      slidesPerView: 'auto',
+      loop: true,
+      speed: 600,
+      grabCursor: true,
+      initialSlide: 2,
+      slideToClickedSlide: true,
+      
+      autoplay: {
+        delay: 3000,
+      },
+      
+      coverflowEffect: {
+        rotate: 0,
+        stretch: 0,
+        depth: 300,
+        modifier: 1,
+        slideShadows: true,
+      },
+      
+      breakpoints: {
+        320: {
+          slidesPerView: 1,
+        },
+        560: {
+          slidesPerView: 2,
+        },
+        990: {
+          slidesPerView: 3,
+        }
+      },
+    });
+  </script>
+
+  <div class="review-body">
+    <div class="review-title-div">
+      <h1 class="review-title">ĐÁNH GIÁ CỦA KHÁCH HÀNG</h1>
+    </div>
+    <div>
+      <div class="swiper-container swiper-review">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-slide-review">
+              <div class="swiper-text-review">
+                <div class="review-comment">
+                  <h3 class="review-comment-para">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </h3>
+                  <h2>Reviewer 1</h2>
+                </div>
+                <img src="/media/o2sconcept/img/video_thumbnail1.png" >
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-review">
+              <div class="swiper-text-review">
+                <div class="review-comment">
+                  <h3 class="review-comment-para">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </h3>
+                  <h2>Reviewer 2</h2>
+                </div>
+                <img src="/media/o2sconcept/img/video_thumbnail2.png" >
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-review">
+              <div class="swiper-text-review">
+                <div class="review-comment">
+                  <h3 class="review-comment-para">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </h3>
+                  <h2>Reviewer 3</h2>
+                </div>
+                <img src="/media/o2sconcept/img/video_thumbnail3.png" >
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-review">
+              <div class="swiper-text-review">
+                <div class="review-comment">
+                  <h3 class="review-comment-para">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </h3>
+                  <h2>Reviewer 4</h2>
+                </div>
+                <img src="/media/o2sconcept/img/video_thumbnail1.png" >
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-review">
+              <div class="swiper-text-review">
+                <div class="review-comment">
+                  <h3 class="review-comment-para">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </h3>
+                  <h2>Reviewer 5</h2>
+                </div>
+                <img src="/media/o2sconcept/img/video_thumbnail2.png" >
+              </div>
+            </div>
+            <div class="swiper-slide swiper-slide-review">
+              <div class="swiper-text-review">
+                <div class="review-comment">
+                  <h3 class="review-comment-para">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                  </h3>
+                  <h2>Reviewer 6</h2>
+                </div>
+                <img src="/media/o2sconcept/img/video_thumbnail3.png" >
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  <div>
+</div>

@@ -14,6 +14,9 @@ class Topmenu extends \Magento\Framework\View\Element\Template
     protected $_megamenuConfig;
     protected $_storeManager;
 
+    protected $_main_cateogry_id;
+    protected $_replaceable_cateogry_id;
+
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Catalog\Helper\Category $categoryHelper,
@@ -33,6 +36,18 @@ class Topmenu extends \Magento\Framework\View\Element\Template
         $this->_filterProvider = $filterProvider;
         $this->_blockFactory = $blockFactory;
         $this->_storeManager = $context->getStoreManager();
+
+        $categories = $this->getStoreCategories(true,false,true);
+
+        foreach($categories as $category) {
+            if (str_contains($category->getName(), 'N PH')) {
+                $this->_main_cateogry_id = $category->getId();
+            }
+
+            if (str_contains($category->getName(), 'CH V')) {
+                $this->_replaceable_cateogry_id = $category->getId();
+            }
+        }
 
         parent::__construct($context);
     }
@@ -126,6 +141,64 @@ class Topmenu extends \Magento\Framework\View\Element\Template
 
         return $html;
     }
+
+    public function getSubmenuItemsHtmlById()
+    {
+        $categories = $this->getStoreCategories(true,false,true);
+
+        foreach($categories as $category) {
+            $category_id = $category->getId();
+            
+            if ($category_id == $this->_main_cateogry_id) {
+                $children = $this->getActiveChildCategories($category);
+                return $this->getSubmenuItemsHtmlCustom($children);
+            }
+        }
+    }
+
+    public function getSubmenuItemsHtmlCustom($children, $level = 0, $menu_type = 'fullwidth')
+    {
+        $html = '<ul class="bottom-menu-ul">';
+        foreach($children as $child) {
+            $cat_model = $this->getCategoryModel($child->getId());
+
+            $sw_menu_hide_item = $cat_model->getData('sw_menu_hide_item');
+
+            if (!$sw_menu_hide_item) {
+                $sub_children = $this->getActiveChildCategories($child);
+
+                $sw_menu_cat_label = $cat_model->getData('sw_menu_cat_label');
+                $sw_menu_icon_img = $cat_model->getData('sw_menu_icon_img');
+                $sw_menu_font_icon = $cat_model->getData('sw_menu_font_icon');
+
+                $item_class = 'level'.$level.' ';
+                $item_class .= $menu_type.' ';
+                if(count($sub_children) > 0)
+                    $item_class .= 'parent ';
+                $html .= '<li class="ui-menu-item '.$item_class.' bottom-menu-il">';
+                if(count($sub_children) > 0) {
+                    $html .= '<div class="open-children-toggle"></div>';
+                }
+                if($level == 1 && $sw_menu_icon_img) {
+                    $html .= '<div class="menu-thumb-img"><a class="menu-thumb-link" href="'.$this->_categoryHelper->getCategoryUrl($child).'"><img src="' . $this->_helper->getBaseUrl().'' . $sw_menu_icon_img . '" alt="'.$child->getName().'"/></a></div>';
+                }
+                $html .= '<a class="level-top" id="' .$cat_model->getData('url_path'). '" href="'.$this->_categoryHelper->getCategoryUrl($child).'" title="'.$child->getName().'">';
+                if ($level > 1 && $sw_menu_icon_img)
+                    $html .= '<img class="menu-thumb-icon" src="' . $this->_helper->getBaseUrl().'' . $sw_menu_icon_img . '" alt="'.$child->getName().'"/>';
+                elseif($sw_menu_font_icon)
+                    $html .= '<em class="menu-thumb-icon '.$sw_menu_font_icon.'"></em>';
+                $html .= '<span>'.$child->getName();
+                if($sw_menu_cat_label)
+                    $html .= '<span class="cat-label cat-label-'.$sw_menu_cat_label.'">'.$this->_megamenuConfig['cat_labels'][$sw_menu_cat_label].'</span>';
+                $html .= '</span></a>';
+                $html .= '</li>';
+            }
+        }
+        $html .= '</ul>';
+
+        return $html;
+    }
+
     public function getSubmenuItemsHtml($children, $level = 1, $max_level = 0, $column_width=12, $menu_type = 'fullwidth', $columns = null)
     {
         $html = '';
@@ -159,7 +232,7 @@ class Topmenu extends \Magento\Framework\View\Element\Template
                     if($level == 1 && $sw_menu_icon_img) {
                         $html .= '<div class="menu-thumb-img"><a class="menu-thumb-link" href="'.$this->_categoryHelper->getCategoryUrl($child).'"><img src="' . $this->_helper->getBaseUrl().'' . $sw_menu_icon_img . '" alt="'.$child->getName().'"/></a></div>';
                     }
-                    $html .= '<a href="'.$this->_categoryHelper->getCategoryUrl($child).'" title="'.$child->getName().'">';
+                    $html .= '<a class="sub-level-top" href="'.$this->_categoryHelper->getCategoryUrl($child).'" title="'.$child->getName().'">';
                     if ($level > 1 && $sw_menu_icon_img)
                         $html .= '<img class="menu-thumb-icon" src="' . $this->_helper->getBaseUrl().'' . $sw_menu_icon_img . '" alt="'.$child->getName().'"/>';
                     elseif($sw_menu_font_icon)
@@ -225,6 +298,14 @@ class Topmenu extends \Magento\Framework\View\Element\Template
 
                 $item_class = 'level0 ';
                 $item_class .= $menu_type.' ';
+
+                if ($this->_main_cateogry_id == $category->getId()) {
+                    $item_class .= 'hide-in-homepage-only'.' ';
+                }
+
+                if ($this->_replaceable_cateogry_id == $category->getId()) {
+                    $item_class .= 'show-in-homepage-only'.' ';
+                }
 
                 $menu_top_content = $cat_model->getData('sw_menu_block_top_content');
                 $menu_left_content = $cat_model->getData('sw_menu_block_left_content');

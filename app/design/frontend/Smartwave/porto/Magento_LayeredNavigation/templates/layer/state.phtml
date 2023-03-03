@@ -20,11 +20,10 @@
             role="heading"
             aria-level="2"
             data-role="title"
-            data-count="<?php echo count($_filters); ?>"><?php /* @escapeNotVerified */ echo __('Now Shopping by') ?></strong>
+            data-count="<?php echo count($_filters); ?>"><?php /* @escapeNotVerified */?></strong>
     <ol class="items">
         <?php foreach ($_filters as $_filter): ?>
             <li class="item">
-                <span class="filter-label"><?php echo $block->escapeHtml(__($_filter->getName())); ?></span>
                 <span class="filter-value"><?php /* @escapeNotVerified */ echo $block->stripTags($_filter->getLabel()) ?></span>
                 <?php
                 $clearLinkUrl = $_filter->getClearLinkUrl();

@@ -144,19 +144,6 @@ $_inscroll = $_portohelper->getConfig('layered_navigation/general/infinite_scrol
                                         <?php endif; ?>
                                     <?php endif; ?>
                                 </div>
-                                <?php if ($block->getMode() == 'grid'): ?>
-                                <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow()): ?>
-                                    <a href="#"
-                                       class="action towishlist actions-secondary"
-                                       title="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
-                                       aria-label="<?php echo $block->escapeHtml(__('Add to Wish List')); ?>"
-                                       data-post='<?php echo $block->getAddToWishlistParams($_product); ?>'
-                                       data-action="add-to-wishlist"
-                                       role="button">
-                                        <span><?php echo __('Add to Wish List') ?></span>
-                                    </a>
-                                <?php endif; ?>
-                                <?php endif; ?>
                                 <?php if($_category_config['addtocompare']): ?>
                                 <?php
                                 $compareHelper = $this->helper('Magento\Catalog\Helper\Product\Compare');
@@ -221,7 +208,12 @@ $_inscroll = $_portohelper->getConfig('layered_navigation/general/infinite_scrol
                         <strong class="product name product-item-name">
                             <a class="product-item-link"
                                href="<?php echo $_product->getProductUrl() ?>">
-                                <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                                <span>
+                                    <?php echo $_helper->productAttribute($_product, $_product->getName(), 'name'); ?>
+                                </span>
+                                <p>
+                                    <?php echo $_helper->productAttribute($_product, $_product->getSku(), 'sku'); ?>
+                                </p>
                             </a>
                         </strong>
                         <?php if($_category_config['rating_star']): ?>
@@ -355,7 +347,7 @@ $_inscroll = $_portohelper->getConfig('layered_navigation/general/infinite_scrol
     <?php if(isset($_inscroll) && $_inscroll):?>
     <div class="infinite-loader"><a href="javascript:void(0)" class="loading" style="display: none;"><?php echo __("Loading ..."); ?></a><a href="javascript:void(0)" class="btn-load-more"><?php echo __("Load More ..."); ?></a></div>
     <?php endif;?>
-    <?php echo $block->getToolbarHtml() ?>
+
     <?php if (!$block->isRedirectToCartEnabled()) : ?>
         <script type="text/x-magento-init">
         {
@@ -387,6 +379,11 @@ $_inscroll = $_portohelper->getConfig('layered_navigation/general/infinite_scrol
             });
         </script>
     <?php endif; ?>
+
+    <?php
+        $product_toolbar_block = $block->getLayout()->getBlock("product_list_toolbar"); 
+        echo $product_toolbar_block->getPagerHtml();
+    ?>
 <?php endif; ?>
 <script type="text/javascript">
     require([

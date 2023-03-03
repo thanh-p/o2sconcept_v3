@@ -42,6 +42,10 @@
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo $_helper->getPortoWebDir().'css/custom.css'; ?>">
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo $_helper->getDesignFile()?>">
 <link rel="stylesheet" type="text/css" media="all" href="<?php echo $_helper->getSettingsFile()?>">
+
+<link rel="stylesheet" type="text/css" media="all" href="/media/o2sconcept/css/lity.css">
+<link rel="stylesheet" type="text/css" media="all" href="/media/o2sconcept/css/swiper-bundle.min.css">
+
 <script type="text/javascript">
 var redirect_cart = false;
 <?php if($_redirect_cart):?>
@@ -51,7 +55,8 @@ var porto_config = {
     paths: {
         'parallax': 'js/jquery.parallax.min',
         'owlcarousel': 'owl.carousel/owl.carousel',
-        'floatelement': 'js/jquery.floatelement'
+        'floatelement': 'js/jquery.floatelement',
+        'lity': 'js/lity'
     },
     shim: {
         'owlcarousel': {
@@ -68,28 +73,38 @@ var porto_config = {
 
 require.config(porto_config);
 </script>
+
+<script type="text/javascript">
+  require(["lity"], function(){});
+</script>
+
 <script type="text/javascript">
 require([
     'jquery'
 ], function ($) {
 <?php if ($this->getConfig('porto_settings/header/sticky_header')): ?>
-    var scrolled = false;
+  $(window).ready(function(){
+    var landing_block = document.getElementById("landing_block");
+
+    if (!landing_block) {
+      $('.header-bottom').css("display", 'inherit');
+    }
+  });
+  
+  var scrolled = false;
     $(window).scroll(function(){
         if($(window).width()>=992){
-            if(160<$(window).scrollTop() && !scrolled){
+            var landing_block = document.getElementById("landing_block");
+
+            var threshold_height = 0;
+            if (landing_block) {
+              threshold_height = landing_block.offsetHeight + threshold_height;
+            }
+
+            if(threshold_height<$(window).scrollTop() && !scrolled){
                 $('.page-header:not(.sticky-header)').css("height",$('.page-header:not(.sticky-header)').height()+'px');
                 $('.page-header').addClass("sticky-header");
                 scrolled = true;
-                if($(".page-header").hasClass("type1") || $(".page-header").hasClass("type2") || $(".page-header").hasClass("type6")) {
-                  $('.page-header .minicart-wrapper').after('<div class="minicart-place hide"></div>');
-                  var minicart = $('.page-header .minicart-wrapper').detach();
-                  $('.page-header .navigation').append(minicart);
-
-                  <?php if ($this->getConfig('porto_settings/header/sticky_header_logo')): ?>
-                  var logo_image = $('<div>').append($('.page-header .header .logo').clone()).html();
-                  $('.page-header .navigation').prepend('<div class="sticky-logo">'+logo_image+'</div>');
-                  <?php endif; ?>
-                }
                 <?php if ($this->getConfig('porto_settings/header/sticky_header_logo')): ?>
                 <?php
                 if($logo_src = $this->getConfig('porto_settings/header/sticky_header_logo_src')){
@@ -102,21 +117,18 @@ require([
                 }
                 ?>
                 <?php endif; ?>
+
+                if (landing_block) {
+                  $('.header-bottom').css("display", 'inherit');
+                }
             }
-            if(160>=$(window).scrollTop() && scrolled){
-                $('.page-header.sticky-header').css("height",'auto');
+            if(threshold_height>=$(window).scrollTop() && scrolled){
+                $('.page-header.sticky-header').css("height",'');
                 $('.page-header').removeClass("sticky-header");
                 scrolled = false;
-                if($(".page-header").hasClass("type1") || $(".page-header").hasClass("type2") || $(".page-header").hasClass("type6")) {
-                  var minicart;
-                  minicart = $('.page-header .navigation .minicart-wrapper').detach();
-                  $('.minicart-place').after(minicart);
-                  $('.minicart-place').remove();
-                  $('.page-header .minicart-wrapper-moved').addClass("minicart-wrapper").removeClass("minicart-wrapper-moved").removeClass("hide");
 
-                  <?php if ($this->getConfig('porto_settings/header/sticky_header_logo')): ?>
-                    $('.page-header .navigation > .sticky-logo').remove();
-                  <?php endif; ?>
+                if (landing_block) {
+                  $('.header-bottom').css("display", 'none');
                 }
             }
         }
@@ -153,3 +165,9 @@ require([
 <?php if($this->getConfig('porto_settings/general/smartlayers')): ?>
 <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58378513496862c5"></script>
 <?php endif; ?>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap" rel="stylesheet">
+
+</style>

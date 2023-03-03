@@ -1,160 +1,218 @@
-<?php
-    $footer = $this->getConfig('porto_settings/footer');
-?>
-<div class="footer">
-<?php
-    if( $footer['footer_top'] ){
-?>
-    <div class="footer-top">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                <?php
-                    $area = 'footer_top_block';
-                    $type = $footer[$area];
-                    if( $type == 'custom' && $footer['footer_top_custom'] ){
-                        $block = $this->getLayout()->createBlock('Magento\Cms\Block\Block');
-                        if($block) {
-                            $block->setBlockId($footer['footer_top_custom']);
-                        }
-                        if($block){
-                            echo '<div class="custom-block">'.$block->toHtml().'</div>';
-                        }
-                    }
+<style>
 
-                ?>
+    .short-border {
+        border-left: 1px solid rgb(209, 156, 21);
+        position: absolute;
+        top: 20%;
+        bottom: 20%;
+    }
+
+    .footer-container {
+        background-color: #060A13;
+        padding-top: 1em;
+        color: white;
+    }
+
+    .footer-social a img {
+        width: 3%;
+    }
+
+    .footer-social img {
+        width: 20%;
+        margin-left: 1em;
+    }
+
+    .footer-body {
+        width: 80%;
+        margin: auto;
+        padding-top: 1.5em;
+        padding-bottom: 1em;
+        border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 0%,rgb(208, 179, 105) 50%, rgba(209, 156, 21, 0) 100%) 100% 0 0 0/3px 0 3px 0 stretch;
+        border-top: solid 3px;
+    }
+
+    .footer-company-tax {
+        width: 40%;
+        margin: auto;
+        padding-top: 0.5em;
+        border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 0%,rgb(208, 179, 105) 50%, rgba(209, 156, 21, 0) 100%) 100% 0 0 0/3px 0 3px 0 stretch;
+        border-top: solid 3px;
+    }
+
+    .footer-company-tax h3 {
+        margin: 0;
+    }
+
+    .footer-menu {
+        margin-left: auto;
+        padding-bottom: 1em;
+        float: right;
+    }
+
+    .footer-menu ul {
+        list-style-type: none;
+    }
+
+    .footer-menu .footer-menu-column1 ul {
+        padding-right: 2em;
+        padding-left: 0;
+    }
+
+    .footer-menu .footer-menu-column2 ul {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+
+    .footer-menu .footer-menu-column3 ul {
+        padding-left: 2em;
+    }
+
+    .footer-contact {
+        align-items: center;
+    }
+
+    .footer-contact h3{
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-icon {
+        width: 11.5%;
+        margin-left: 2em;
+        margin-right: 2em;
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    .footer-body-left {
+        padding-top: 2em;
+        width: 100%;
+    }
+
+    .footer-body-right {
+        padding-top: 2em;
+        width: 100%;
+    }
+
+    .footer-contact h3, .footer-company-tax h3, .footer-schedule h3, .footer-menu ul li {
+        line-height: 1.5em;
+        font-weight: 300;
+        font-size: 0.7vw;
+    }
+
+    .footer-menu ul li a {
+        color: white !important;
+    }
+
+    .span-border-left {
+        padding-left: 1em; 
+        border-left: 1px solid rgb(209, 156, 21);
+    }
+
+    .span-text-no-wrap {
+        white-space: nowrap;
+    }
+
+    .footer-social {
+        padding-top: 1em;
+    }
+
+    @media (max-width: 575px) {
+        .footer-social {
+            padding-top: 0;
+        }
+        
+        .footer-body {
+            width: 100%;
+        }
+
+        .span-border-left {
+            padding-left: 0; 
+            border-left: none;
+        }
+
+        .span-text-no-wrap {
+            white-space: normal;
+        }
+
+        .footer-contact h3, .footer-company-tax h3, .footer-schedule h3, .footer-menu ul li {
+            font-size: 1em;
+        }
+
+        .footer-icon {
+            width: 20%;
+        }
+
+        .footer-social a img {
+            width: 5%;
+        }
+    }
+</style>
+
+
+<div class="footer-container d-flex flex-wrap">
+    <div class="footer-body d-flex">
+        <div class="footer-body-left">
+            <div class="footer-menu d-flex">
+                <div class="footer-menu-column1 position-relative">
+                    <ul>
+                        <li class="text-nowrap"><a href="gioi-thieu.html">Giới thiệu</a></li>
+                        <li class="text-nowrap"><a href="san-pham.html">Sản phẩm</a></li>
+                    </ul>
+                </div>
+                <div class="footer-menu-column2 position-relative">
+                    <ul>
+                        <li class="text-nowrap"><a href="dich-vu.html">Dịch vụ</a></li>
+                        <li class="text-nowrap"><a href="chinh-sach.html">Chính sách</a></li>
+                    </ul>
+                    <div class="short-border"></div>
+                </div>
+                <div class="footer-menu-column3 position-relative">
+                    <ul>
+                        <li class="text-nowrap"><a href="tin-tuc.html">Tin tức</a></li>
+                        <li class="text-nowrap"><a href="ban-do.html">Bản đồ</a></li>
+                    </ul>
+                    <div class="short-border"></div>
                 </div>
             </div>
-        </div>
-    </div>
-<?php
-    }
-    if( $footer['footer_middle'] ){
-?>
-    <div class="footer-middle">
-        <div class="container">
-        <?php
-            if( $footer['footer_ribbon'] ){
-        ?>
-            <div class="footer-ribbon">
-                <span><?php echo $footer['footer_ribbon_text'] ?></span>
-            </div>
-        <?php
-            }
-        ?>
-            <div class="row">
-            <?php
-                for( $i = 1; $i <= 4; $i++ ){
-                    $area = 'footer_middle_column_'.$i;
-                    $type = $footer[$area];
-                    if( $type ){
-                        echo '<div class="col-lg-'.$footer[$area.'_size'].'">';
-                    }
-                    if( $type == 'custom' && $footer[$area.'_custom'] ){
-                        $block = $this->getLayout()->createBlock('Magento\Cms\Block\Block');
-                        if($block) {
-                            $block->setBlockId($footer[$area.'_custom']);
-                        }
-                        if($block){
-                            echo $block->toHtml();
-                        }
-                    }
-                    if( $type == 'newsletter' ){
-                        echo $this->getChildHtml('footer.newsletter');
-                    }
-                    if( $type ){
-                        echo '</div>';
-                    }
-                }
-            ?>
+            <div class="footer-schedule w-100">
+                <h3 class="float-right w-100">
+                    <span class="d-block text-right">Thời gian làm việc: Thứ 2 - Chủ nhật</span>
+                    <span class="d-block text-right">8.00 am - 18.00 pm</span>
+                </h3>
             </div>
         </div>
-    </div>
-<?php
-    }
-    if( $footer['footer_middle_2'] ){
-?>
-    <div class="footer-middle footer-middle-2">
-        <div class="container">
-            <div class="row">
-            <?php
-                for( $i = 1; $i <= 4; $i++ ){
-                    $area = 'footer_middle_2_column_'.$i;
-                    $type = $footer[$area];
-                    if( $type ){
-                        echo '<div class="col-lg-'.$footer[$area.'_size'].'">';
-                    }
-                    if( $type == 'custom' && $footer[$area.'_custom'] ){
-                        $block = $this->getLayout()->createBlock('Magento\Cms\Block\Block');
-                        if($block) {
-                            $block->setBlockId($footer[$area.'_custom']);
-                        }
-                        if($block){
-                            echo $block->toHtml();
-                        }
-                    }
-                    if( $type == 'newsletter' ){
-                        echo $this->getChildHtml('footer.newsletter');
-                    }
-                    if( $type ){
-                        echo '</div>';
-                    }
-                }
-            ?>
-            </div>
+        <div class="footer-icon">
+            <img src="/media/logo/default/LOGO_O2S_CONCEPT-01-crop.png">
         </div>
-    </div>
-<?php
-    }
-    if( $footer['footer_bottom'] ){
-?>
-    <div class="footer-bottom">
-        <div class="container">
-            <?php
-            if($footer['footer_logo_src']){
-                
-                $url = $this->getFooterLogoSrc();
-            ?>
-            <?php if ($this->isHomePage()):?>
-                <strong class="logo">
-            <?php else: ?>
-                <a class="logo" href="<?php echo $this->getUrl(''); ?>" title="">
-            <?php endif; ?>
-                <img src="<?php echo $url ?>" alt=""/>
-            <?php if ($this->isHomePage()):?>
-                </strong>
-            <?php else:?>
+        <div class="footer-body-right">
+            <div class="footer-contact d-flex">
+                <h3>
+                    <span style="padding-right: 1em;">Hotline: 084 999 7929</span>
+                    <span class="text-nowrap span-border-left">E-Mail: o2sconcept@gmail.com</span>
+                    <span class="d-block">Lầu 2, 182C, Lê Thị Bạch Cát, Phường 11, Quận 11, TP. Hồ Chí Minh</span>
+                </h3>
+            </div>
+            <div class="footer-social">
+                <a>
+                    <img src = "/media/o2sconcept/icon/instagram.svg"/>
                 </a>
-            <?php endif?>
-            <?php
-            }
-            if($footer['footer_bottom_custom_1']){
-                $block = $this->getLayout()->createBlock('Magento\Cms\Block\Block');
-                if($block) {
-                    $block->setBlockId($footer['footer_bottom_custom_1']);
-                }
-                if($block){
-                    echo '<div class="custom-block">'.$block->toHtml().'</div>';
-                }
-            }
-            ?>
-            <?php
-            if($footer['footer_bottom_custom_2']){
-                $block = $this->getLayout()->createBlock('Magento\Cms\Block\Block');
-                if($block) {
-                    $block->setBlockId($footer['footer_bottom_custom_2']);
-                }
-                if($block){
-                    echo '<div class="custom-block f-right">'.$block->toHtml().'</div>';
-                }
-            }
-            ?>
-            <address><?php echo $footer['footer_bottom_copyrights'] ?></address>
-            <?php if($footer['footer_store_switcher']) echo $this->getChildHtml("footer.store_switcher"); ?>
+                <a>
+                    <img src = "/media/o2sconcept/icon/facebook.svg"/>
+                </a>
+                <a>
+                    <img src = "/media/o2sconcept/icon/tiktok.svg"/>
+                </a>
+                <a>
+                    <img src = "/media/o2sconcept/icon/youtube.svg"/>
+                </a>
+                <img src="/media/o2sconcept/img/dathongbao_bocongthuong.png">
+            </div>
         </div>
     </div>
-<?php
-    }
-?>
+    <div class="footer-company-tax d-flex flex-wrap">
+        <h3 class="w-100 text-center text-nowrap" style="padding-top:1em;">ĐƠN VỊ CHỦ QUẢN: CÔNG TY TNHH CA TI NA VIỆT NAM</h3>
+        <h3 class="w-100 text-center">Mã số thuế: 0309941267</h3>
+        <h3 class="w-100 text-center" style="padding-bottom:1em;">@All rights reserved O2S CONCEPT 2022</h3>
+    </div>
 </div>
-<a href="javascript:void(0)" id="totop"><em class="porto-icon-up-open"></em></a>

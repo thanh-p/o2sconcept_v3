@@ -29,7 +29,7 @@ $filterModel = $this->helper(\Mageplaza\LayeredNavigation\Helper\Data::class)->g
 <ol class="items">
     <?php /** @type \Magento\Catalog\Model\Layer\Filter\Item[] $filterItems */
     foreach ($filterItems as $filterItem) : ?>
-        <li class="item">
+        <li class="item" >
             <?php if ($filterModel->isSliderTypes($filter)) : ?>
                 <div id="ln_slider_container_<?= /** @noEscape */ $attributeCode ?>" class="ln_slider_container">
                     <div id="ln_slider_<?= /** @noEscape */ $attributeCode ?>"></div>

@@ -1,0 +1,6 @@
+<div class="category-custom-description">
+    <h1>TRANH TREO TƯỜNG</h1>
+    <p>Chất liệu canvas cao cấp kết hợp cùng mực gốc nước trên máy in HP Latex thổi hồn vào không gian nghệ thuật đầy tính sáng tạo, bắt kịp sự thay đổi của xu hướng thời đại. Truyền tải đầy đủ và trọn vẹn gu thẩm mỹ của riêng bạn.</p>
+</div>
+
+<img src="/media/o2sconcept/img/asset3.png">
