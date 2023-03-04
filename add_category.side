@@ -1,0 +1,773 @@
+{
+  "id": "f3fe5a09-fab1-47de-af4b-05ffe3805c5a",
+  "version": "2.0",
+  "name": "add_category",
+  "url": "http://test.magento.com/admin_18i22i/catalog/category/edit/key/09edf211b37bcbf26710d77ff5961643dd775d6ebe1389ff87290c652783e844/id/2/",
+  "tests": [{
+    "id": "5c4a1aa4-30ea-4e46-b779-8afe0a1ef3a5",
+    "name": "tst",
+    "commands": [{
+      "id": "053af3da-d996-4507-be8f-5a8b444c99f3",
+      "comment": "",
+      "command": "open",
+      "target": "http://test.magento.com/admin_18i22i/catalog/category/index/key/a5d0a9f8af25c8f38ee047e55f33eac23c4231a495d9714343b0bfdca708f46e/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "94224713-f02d-432e-a343-2853d5805e2e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1053",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f61ebad2-3b1f-485e-a263-b3369f1f61f2",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Default Category')]",
+      "targets": [
+        ["id=extdd-4", "id"],
+        ["css=#extdd-4", "css:finder"],
+        ["xpath=//span[@id='extdd-4']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen21']/span", "xpath:idRelative"],
+        ["xpath=//li/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Default Category (ID: 2) (0)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d651990-f890-4ff5-afa8-c31d196fd1e5",
+      "comment": "",
+      "command": "click",
+      "target": "css=#add_subcategory_button > span",
+      "targets": [
+        ["css=#add_subcategory_button > span", "css:finder"],
+        ["xpath=//button[@id='add_subcategory_button']/span", "xpath:idRelative"],
+        ["xpath=//button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Add Subcategory')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "47a105b6-d1b8-48f7-9c7e-dfc1a9e4fa34",
+      "comment": "",
+      "command": "click",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e635a946-877f-4a7b-ad31-c4521be27bcc",
+      "comment": "",
+      "command": "type",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": "SẢN PHẨM"
+    }, {
+      "id": "813521b0-fc2c-4dc8-8e59-e6486ec06da5",
+      "comment": "",
+      "command": "click",
+      "target": "css=#save > span",
+      "targets": [
+        ["css=#save > span", "css:finder"],
+        ["xpath=//button[@id='save']/span", "xpath:idRelative"],
+        ["xpath=//main/div/div[2]/div/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "13cb396e-ea0f-40d7-bef1-8783691d2701",
+    "name": "tst_1",
+    "commands": [{
+      "id": "f15e645b-3e92-48f0-9c65-14a13f2947f7",
+      "comment": "",
+      "command": "open",
+      "target": "http://test.magento.com/admin_18i22i/catalog/category/index/key/a5d0a9f8af25c8f38ee047e55f33eac23c4231a495d9714343b0bfdca708f46e/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "460a781e-dd09-411e-9ff0-64497e758fa9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1053",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d10a3212-6706-416d-bc2d-18103dcfdaf1",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'SẢN PHẨM')]",
+      "targets": [
+        ["id=extdd-4", "id"],
+        ["css=#extdd-4", "css:finder"],
+        ["xpath=//span[@id='extdd-4']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen21']/span", "xpath:idRelative"],
+        ["xpath=//li/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Default Category (ID: 2) (0)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0e2e6bd-b1be-4b8d-b4a3-1404395ebbbd",
+      "comment": "",
+      "command": "click",
+      "target": "css=#add_subcategory_button > span",
+      "targets": [
+        ["css=#add_subcategory_button > span", "css:finder"],
+        ["xpath=//button[@id='add_subcategory_button']/span", "xpath:idRelative"],
+        ["xpath=//button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Add Subcategory')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d582e91b-29cb-48b6-8356-3ba4a78a0004",
+      "comment": "",
+      "command": "click",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d52ceb8-5862-4943-b3d7-6d74d49de4b1",
+      "comment": "",
+      "command": "type",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Film Trang Trí Kính"
+    }, {
+      "id": "efe7f505-d2e4-4272-b180-261afab26402",
+      "comment": "",
+      "command": "click",
+      "target": "css=#save > span",
+      "targets": [
+        ["css=#save > span", "css:finder"],
+        ["xpath=//button[@id='save']/span", "xpath:idRelative"],
+        ["xpath=//main/div/div[2]/div/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "f225293b-2138-44ac-9f56-70b6a1980bda",
+    "name": "tst_2",
+    "commands": [{
+      "id": "c7e4762a-5e6c-4c75-b984-84b4e973b838",
+      "comment": "",
+      "command": "open",
+      "target": "http://test.magento.com/admin_18i22i/catalog/category/index/key/a5d0a9f8af25c8f38ee047e55f33eac23c4231a495d9714343b0bfdca708f46e/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8905cac7-e5f9-42a8-897e-1b45bfe1f413",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1053",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "61f176c1-0478-4b53-ba00-aecec14e9d2e",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'SẢN PHẨM')]",
+      "targets": [
+        ["id=extdd-4", "id"],
+        ["css=#extdd-4", "css:finder"],
+        ["xpath=//span[@id='extdd-4']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen21']/span", "xpath:idRelative"],
+        ["xpath=//li/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Default Category (ID: 2) (0)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c7cf220-b292-42ae-8967-52357cd90f91",
+      "comment": "",
+      "command": "click",
+      "target": "css=#add_subcategory_button > span",
+      "targets": [
+        ["css=#add_subcategory_button > span", "css:finder"],
+        ["xpath=//button[@id='add_subcategory_button']/span", "xpath:idRelative"],
+        ["xpath=//button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Add Subcategory')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c721285-cda4-4059-8d6b-d4a5e7bce65d",
+      "comment": "",
+      "command": "click",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "06d3cd61-e3a5-4cfb-a448-027828c3d1f5",
+      "comment": "",
+      "command": "type",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Tranh Treo Tường"
+    }, {
+      "id": "d364c46b-74cf-4963-9bda-6a7e7d6a9dbb",
+      "comment": "",
+      "command": "click",
+      "target": "css=#save > span",
+      "targets": [
+        ["css=#save > span", "css:finder"],
+        ["xpath=//button[@id='save']/span", "xpath:idRelative"],
+        ["xpath=//main/div/div[2]/div/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "ea91db94-b14d-4088-9326-17d2fe0b4508",
+    "name": "tst_3",
+    "commands": [{
+      "id": "3197aba7-8782-4f29-b730-1712ef022b4f",
+      "comment": "",
+      "command": "open",
+      "target": "http://test.magento.com/admin_18i22i/catalog/category/index/key/a5d0a9f8af25c8f38ee047e55f33eac23c4231a495d9714343b0bfdca708f46e/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "445626a0-5cca-48eb-a642-1a0a042992b6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1053",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4bec9a2d-dba1-4147-88f5-a9c0741f6cb3",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'SẢN PHẨM')]",
+      "targets": [
+        ["id=extdd-4", "id"],
+        ["css=#extdd-4", "css:finder"],
+        ["xpath=//span[@id='extdd-4']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen21']/span", "xpath:idRelative"],
+        ["xpath=//li/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Default Category (ID: 2) (0)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0a05804-db11-48d5-8e5d-df35a61c3707",
+      "comment": "",
+      "command": "click",
+      "target": "css=#add_subcategory_button > span",
+      "targets": [
+        ["css=#add_subcategory_button > span", "css:finder"],
+        ["xpath=//button[@id='add_subcategory_button']/span", "xpath:idRelative"],
+        ["xpath=//button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Add Subcategory')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc535874-356f-4fc6-8b30-b55075d34c04",
+      "comment": "",
+      "command": "click",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "64e6f5cb-1ac5-4704-af8f-49c0ba19ee32",
+      "comment": "",
+      "command": "type",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Tranh Dán Tường"
+    }, {
+      "id": "4648251c-8ff9-4809-a78b-6854b351097b",
+      "comment": "",
+      "command": "click",
+      "target": "css=#save > span",
+      "targets": [
+        ["css=#save > span", "css:finder"],
+        ["xpath=//button[@id='save']/span", "xpath:idRelative"],
+        ["xpath=//main/div/div[2]/div/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "b0b88b44-0ca6-46f2-abb0-4bd22f520216",
+    "name": "tst_4",
+    "commands": [{
+      "id": "bb6b7f71-fb01-4899-a0c0-fb23680b017c",
+      "comment": "",
+      "command": "open",
+      "target": "http://test.magento.com/admin_18i22i/catalog/category/index/key/a5d0a9f8af25c8f38ee047e55f33eac23c4231a495d9714343b0bfdca708f46e/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8cc48637-9bd8-4e2b-87eb-f1a983733d3e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1053",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "52e9bf3a-9c45-4633-b069-872cf3ba0032",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'SẢN PHẨM')]",
+      "targets": [
+        ["id=extdd-4", "id"],
+        ["css=#extdd-4", "css:finder"],
+        ["xpath=//span[@id='extdd-4']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen21']/span", "xpath:idRelative"],
+        ["xpath=//li/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Default Category (ID: 2) (0)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "aa44354d-529b-4dd9-bbd8-9a366b40f91f",
+      "comment": "",
+      "command": "click",
+      "target": "css=#add_subcategory_button > span",
+      "targets": [
+        ["css=#add_subcategory_button > span", "css:finder"],
+        ["xpath=//button[@id='add_subcategory_button']/span", "xpath:idRelative"],
+        ["xpath=//button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Add Subcategory')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f7db2fce-da07-4836-b0a7-66bf2a7c50f3",
+      "comment": "",
+      "command": "click",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad97794b-cc83-4301-944b-fb255e320a73",
+      "comment": "",
+      "command": "type",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Rèm Cuộn"
+    }, {
+      "id": "5f16456a-b1a4-43bc-8ec3-438160b595dc",
+      "comment": "",
+      "command": "click",
+      "target": "css=#save > span",
+      "targets": [
+        ["css=#save > span", "css:finder"],
+        ["xpath=//button[@id='save']/span", "xpath:idRelative"],
+        ["xpath=//main/div/div[2]/div/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "4785be30-49f6-4946-aa6f-5437d2545bce",
+    "name": "tst_5",
+    "commands": [{
+      "id": "e480118a-ac2b-4434-8570-ede8823d5e01",
+      "comment": "",
+      "command": "open",
+      "target": "http://test.magento.com/admin_18i22i/catalog/category/index/key/a5d0a9f8af25c8f38ee047e55f33eac23c4231a495d9714343b0bfdca708f46e/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1e6f0010-ca43-4683-a521-b43007f583b3",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1053",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "95ddd906-90f2-479a-8b14-4013ab6d9bfb",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'SẢN PHẨM')]",
+      "targets": [
+        ["id=extdd-4", "id"],
+        ["css=#extdd-4", "css:finder"],
+        ["xpath=//span[@id='extdd-4']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen21']/span", "xpath:idRelative"],
+        ["xpath=//li/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Default Category (ID: 2) (0)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e36249e-e6c2-4112-8c78-dec53ab9f572",
+      "comment": "",
+      "command": "click",
+      "target": "css=#add_subcategory_button > span",
+      "targets": [
+        ["css=#add_subcategory_button > span", "css:finder"],
+        ["xpath=//button[@id='add_subcategory_button']/span", "xpath:idRelative"],
+        ["xpath=//button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Add Subcategory')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d7a548ca-35f2-47fd-82d3-d408036dd391",
+      "comment": "",
+      "command": "click",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ae374eb-8d80-4c54-a7b6-2d0e15669eb2",
+      "comment": "",
+      "command": "type",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Decal Dán Sàn"
+    }, {
+      "id": "bed68644-2aeb-4e17-9756-b2b46db542cb",
+      "comment": "",
+      "command": "click",
+      "target": "css=#save > span",
+      "targets": [
+        ["css=#save > span", "css:finder"],
+        ["xpath=//button[@id='save']/span", "xpath:idRelative"],
+        ["xpath=//main/div/div[2]/div/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "99bcf274-0b84-480f-b3f1-b95108d03cd2",
+    "name": "tst_6",
+    "commands": [{
+      "id": "b5e9c523-338f-48e6-b849-e138cbeab66b",
+      "comment": "",
+      "command": "open",
+      "target": "http://test.magento.com/admin_18i22i/catalog/category/index/key/a5d0a9f8af25c8f38ee047e55f33eac23c4231a495d9714343b0bfdca708f46e/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "70a4d1d3-a1d1-4bd0-9e25-7720317eac9e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1053",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ebb1e850-daac-411d-810d-b7282210956c",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'SẢN PHẨM')]",
+      "targets": [
+        ["id=extdd-4", "id"],
+        ["css=#extdd-4", "css:finder"],
+        ["xpath=//span[@id='extdd-4']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen21']/span", "xpath:idRelative"],
+        ["xpath=//li/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Default Category (ID: 2) (0)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "46b5071f-3686-4f60-8137-ab3417016ce9",
+      "comment": "",
+      "command": "click",
+      "target": "css=#add_subcategory_button > span",
+      "targets": [
+        ["css=#add_subcategory_button > span", "css:finder"],
+        ["xpath=//button[@id='add_subcategory_button']/span", "xpath:idRelative"],
+        ["xpath=//button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Add Subcategory')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c06f31a-fa21-4e56-a43f-f77d39b70d34",
+      "comment": "",
+      "command": "click",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5655c1d8-66bb-4e97-aeec-242f3113adbe",
+      "comment": "",
+      "command": "type",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Film Dán Nội Thất"
+    }, {
+      "id": "43537a1e-fb6a-4b97-aafa-3713cb96d55e",
+      "comment": "",
+      "command": "click",
+      "target": "css=#save > span",
+      "targets": [
+        ["css=#save > span", "css:finder"],
+        ["xpath=//button[@id='save']/span", "xpath:idRelative"],
+        ["xpath=//main/div/div[2]/div/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "254bc5b1-a498-4666-bdf9-43c998c0af97",
+    "name": "zdichvu",
+    "commands": [{
+      "id": "59520abb-66f6-47aa-ae67-d0122a51cf93",
+      "comment": "",
+      "command": "open",
+      "target": "http://test.magento.com/admin_18i22i/catalog/category/index/key/a5d0a9f8af25c8f38ee047e55f33eac23c4231a495d9714343b0bfdca708f46e/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "67f50ca2-47da-495e-82ee-4db599d4cf2b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1053",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2cf98a14-a7ac-4bf4-9bc9-401c4fdb564e",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Default Category')]",
+      "targets": [
+        ["id=extdd-4", "id"],
+        ["css=#extdd-4", "css:finder"],
+        ["xpath=//span[@id='extdd-4']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen21']/span", "xpath:idRelative"],
+        ["xpath=//li/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Default Category (ID: 2) (0)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "03bd6018-a7ca-423f-8ee4-ed6dcb2e5289",
+      "comment": "",
+      "command": "click",
+      "target": "css=#add_subcategory_button > span",
+      "targets": [
+        ["css=#add_subcategory_button > span", "css:finder"],
+        ["xpath=//button[@id='add_subcategory_button']/span", "xpath:idRelative"],
+        ["xpath=//button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Add Subcategory')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bf93e85b-9da1-4294-827c-74d386082b77",
+      "comment": "",
+      "command": "click",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6110f7ae-62a5-4604-a06c-601071f63f2f",
+      "comment": "",
+      "command": "type",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": "DỊCH VỤ"
+    }, {
+      "id": "ecb147a6-f3dd-4415-b5c2-2a2e5547b5c1",
+      "comment": "",
+      "command": "click",
+      "target": "css=#save > span",
+      "targets": [
+        ["css=#save > span", "css:finder"],
+        ["xpath=//button[@id='save']/span", "xpath:idRelative"],
+        ["xpath=//main/div/div[2]/div/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "e3683b12-75f2-49ce-b64f-20ca3bdad4fd",
+    "name": "ztruyenthong",
+    "commands": [{
+      "id": "756d44ba-368c-442c-9dda-a09a707ffbd8",
+      "comment": "",
+      "command": "open",
+      "target": "http://test.magento.com/admin_18i22i/catalog/category/index/key/a5d0a9f8af25c8f38ee047e55f33eac23c4231a495d9714343b0bfdca708f46e/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d571b2ae-0a83-4901-a464-67ce8005a9c9",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1920x1053",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f7a6cafd-c8ac-4f0d-93e1-a67474ffaaf2",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Default Category')]",
+      "targets": [
+        ["id=extdd-4", "id"],
+        ["css=#extdd-4", "css:finder"],
+        ["xpath=//span[@id='extdd-4']", "xpath:attributes"],
+        ["xpath=//a[@id='ext-gen21']/span", "xpath:idRelative"],
+        ["xpath=//li/div/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Default Category (ID: 2) (0)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b29879cf-855e-4e02-823a-7ffa2ebdf3d2",
+      "comment": "",
+      "command": "click",
+      "target": "css=#add_subcategory_button > span",
+      "targets": [
+        ["css=#add_subcategory_button > span", "css:finder"],
+        ["xpath=//button[@id='add_subcategory_button']/span", "xpath:idRelative"],
+        ["xpath=//button[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Add Subcategory')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "24d61a16-847c-4647-838b-cb2946a9d6dc",
+      "comment": "",
+      "command": "click",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "86fc6c3f-01fa-4174-9131-a0f39c161083",
+      "comment": "",
+      "command": "type",
+      "target": "name=name",
+      "targets": [
+        ["id=KHWLR58", "id"],
+        ["name=name", "name"],
+        ["css=#KHWLR58", "css:finder"],
+        ["xpath=//input[@id='KHWLR58']", "xpath:attributes"],
+        ["xpath=//div[@id='container']/div/div/div[2]/div/div/fieldset/div[3]/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": "TRUYỀN THÔNG"
+    }, {
+      "id": "90cc1e45-8fe5-4871-9fb1-473777217452",
+      "comment": "",
+      "command": "click",
+      "target": "css=#save > span",
+      "targets": [
+        ["css=#save > span", "css:finder"],
+        ["xpath=//button[@id='save']/span", "xpath:idRelative"],
+        ["xpath=//main/div/div[2]/div/div/button/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Save')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "4b2af896-0b4a-43e2-bf4d-55611255a8df",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://test.magento.com/", "http://test.magento.com/admin_18i22i/catalog/category/edit/key/09edf211b37bcbf26710d77ff5961643dd775d6ebe1389ff87290c652783e844/id/2/"],
+  "plugins": []
+}
