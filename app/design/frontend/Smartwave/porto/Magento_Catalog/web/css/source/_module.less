@@ -1630,22 +1630,23 @@ body.catalog-product-compare-index {
 
 //custom product
 
-.page-wrapper {
+.catalog-product-view .page-wrapper {
   background-color: #060813;
 }
-.layout-fullwidth .page-main,
-.page-layout-1column .page-main{
+// .catalog-product-view .layout-fullwidth .page-main,
+.catalog-product-view .page-main{
   max-width: 1620px !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
-.page-layout-1column .column.main {
+
+.catalog-product-view .column.main {
   display: flex;
   flex-wrap: wrap;
   align-content: flex-start;
 }
 
-.catalog-product-view .product.media,
+.catalog-product-view .product.media, 
 .page-layout-1column .product-info-main {
   height: fit-content;
   width: 50% !important;
@@ -1656,11 +1657,7 @@ body.catalog-product-compare-index {
   height: 850px;
   background: black;
 }
-.catalog-product-view .product.media {
-  // padding-right: 3vw !important;
-  // padding-left: 0;
-  // margin-left: 5%;
-}
+
 .gallery-placeholder {
   width: 600px !important;
   margin-top: 10%;
@@ -1874,7 +1871,7 @@ body.catalog-product-compare-index {
   background: rgba(255, 255, 255, 0) url('/media/o2sconcept/icon/triangle-up.svg') no-repeat 99% 49%;
 }
 .cus-select-down {
-  background: rgba(255, 255, 255, 0) url('/media/o2sconcept/icon/triangle.svg') no-repeat 99% 49%;
+  background: rgba(255, 255, 255, 0) url('/media/o2sconcept/icon/triangle-down.svg') no-repeat 99% 49%;
 }
 .select-icon {
   height: 18px;
@@ -1886,7 +1883,7 @@ body.catalog-product-compare-index {
   background: url('/media/o2sconcept/icon/triangle-up.svg');
 }
 .dir-down {
-  background: url('/media/o2sconcept/icon/triangle.svg');
+  background: url('/media/o2sconcept/icon/triangle-down.svg');
 }
 .policy-icon {
   height: 50px;
@@ -1963,9 +1960,7 @@ body.catalog-product-compare-index {
 .product-options-bottom .price-box .price, .product-info-price .price-box .price {
   color: #ffbd16;
 }
-// .product-info-main .product-reviews-summary .rating-summary .rating-result:before {
-//   color: #ffbd16;
-// }
+
 .product-options-bottom .contact,
 .product-options-bottom .cus-tocart{
   color: #f4f4f4;
@@ -2004,6 +1999,8 @@ body.catalog-product-compare-index {
 .box-tocart .action.tocart {
   text-transform: none !important;
 }
+
+
 // Detail
 .product.data.items>.item.title.active {
   color: #d19c15 !important;
