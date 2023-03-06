@@ -185,7 +185,7 @@ $image_height = ($_category_config['ratio_height'])?$_category_config['ratio_hei
         <div class="block <?= $block->escapeHtmlAttr($class) ?>">
             <?php endif; ?>
             <div class="section-title slider-title">
-                <strong id="block-<?= $block->escapeHtmlAttr($class) ?>-heading" role="heading" aria-level="2"><?= $block->escapeHtml($title) ?></strong>
+                <p id="block-<?= $block->escapeHtmlAttr($class) ?>-heading" role="heading" aria-level="2"><?= $block->escapeHtml($title) ?></p>
             </div>
             <div class="block-content content" aria-labelledby="block-<?= $block->escapeHtmlAttr($class) ?>-heading">
                 <?php if ($type == 'related' && $canItemsAddToCart) :?>

@@ -1,0 +1,31 @@
+<?php
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+/** @var $block Magento\Catalog\Block\Product\View */
+?>
+<?php
+$required = '';
+if ($block->hasRequiredOptions()) {
+    $required = ' data-hasrequired="' . $block->escapeHtmlAttr(__('* Required Fields')) . '"';
+}
+?>
+<div class="product-options-wrapper" id="product-options-wrapper" <?= /* @noEscape */ $required ?>>
+  <div class="fieldset fieldset-custom" tabindex="0">
+    <?= $block->getChildHtml('', true) ?>
+
+    <div class="field qty cus-qty">
+      <label class="label" for="qty">
+        <span style="text-align: center;color: white;">Số lượng:</span></label>
+      <div class="control">
+        <input type="number" name="qty" id="qty" onchange="formatInputValue()" maxlength="12" value="1" title="Qty" class="input-text qty" data-validate="{&quot;required-number&quot;:true,&quot;validate-item-quantity&quot;:{&quot;minAllowed&quot;:1,&quot;maxAllowed&quot;:10000}}">
+        <div class="qty-wrap">
+          <a href="javascript:void(0)" class="qty-inc"><i class="select-icon dir-up"></i></a>
+          <a href="javascript:void(0)" class="qty-dec"><i class="select-icon dir-down"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,35 @@
+<ul class="cus-bottom-container">
+  <li><i class="policy-icon shipping-icon"></i>Ship hàng tận nơi</li>
+  <li><i class="policy-icon setting-icon"></i>Miễn phí lắp đặt trong nội thành</li>
+  <li><i class="policy-icon checking-icon"></i>kiểm tra hàng trước khi thanh toán</li>
+  <li><i class="policy-icon guarantee-icon"></i>Bảo hành 12 tháng</li>
+</ul>
+
+<?php
+    $attribute_set_name = "";
+    try {
+      // $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+      // // get current product
+      // $product = $objectManager->get(\Magento\Framework\Registry::class)->registry('product');
+      // $product->load($product->getId());
+      // $attributeSet = $objectManager->create('Magento\Eav\Api\AttributeSetRepositoryInterface');
+      // $attributeSetRepository = $attributeSet->get($product->getAttributeSetId());
+      // $attribute_set_name = $attributeSetRepository->getAttributeSetName();
+      // $productAttributesManagement = $objectManager->create('Magento\Catalog\Api\ProductAttributeManagementInterface');
+      // $productAttributes = $productAttributesManagement->getAttributes($product->getAttributeSetId());
+      // foreach ($productAttributes as $productAttribute){
+      //   if (a){
+      //     echo "";
+      //   }
+      // }
+  } catch (\Exception $e) {
+      echo "Error: " . $e->getMessage();
+      // Handle the exception as needed
+  }
+
+?>
+<?php if ($attribute_set_name == "o2sconcept"): ?>
+<div class="cus-bottom-block">
+    
+</div>
+<?php endif; ?>

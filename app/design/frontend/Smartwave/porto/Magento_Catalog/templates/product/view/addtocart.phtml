@@ -56,28 +56,11 @@
     <?php endif; ?>
     <div class="fieldset">
         <?php if ($block->shouldRenderQuantity()): ?>
-        <div class="field qty">
-            <label class="label" for="qty"><span><?php /* @escapeNotVerified */ echo __('Qty') ?>:</span></label>
-            <div class="control">
-                <input type="number"
-                       name="qty"
-                       id="qty"
-                       maxlength="12"
-                       value="<?php /* @escapeNotVerified */ echo $block->getProductDefaultQty() * 1 ?>"
-                       title="<?php /* @escapeNotVerified */ echo __('Qty') ?>" class="input-text qty"
-                       data-validate="<?php echo $block->escapeHtml(json_encode($block->getQuantityValidators())) ?>"
-                       />
-                <div class="qty-changer">
-                    <a href="javascript:void(0)" class="qty-inc"><i class="porto-icon-up-dir"></i></a>
-                    <a href="javascript:void(0)" class="qty-dec"><i class="porto-icon-down-dir"></i></a>
-                </div>
-            </div>
-        </div>
         <?php endif; ?>
         <div class="actions">
             <button type="submit"
                     title="<?php /* @escapeNotVerified */ echo $buttonTitle ?>"
-                    class="action primary tocart"
+                    class="action primary tocart cus-tocart"
                     id="product-addtocart-button">
                 <span><?php /* @escapeNotVerified */ echo $buttonTitle ?></span>
             </button>

@@ -313,7 +313,7 @@ require([
 .fotorama__nav-wrap--vertical .fotorama__nav__shaft {margin-top: -<?php echo $block->getVar("gallery/thumbmargin") ?>px;}
 @media (min-width:768px) {
   .fotorama__stage {
-    max-width: calc(100% - <?php echo ($block->getVar("gallery/thumbmargin") + $thumb_width); ?>px);
+    max-width: 600px;
   }
 }
 </style>
@@ -354,7 +354,7 @@ $mainImageData = $mainImage ?
 .fotorama__nav-wrap--vertical .fotorama__nav__shaft {margin-top: -<?php echo $block->getVar("gallery/thumbmargin") ?>px;}
 @media (min-width:992px) {
   .fotorama__stage {
-    max-width: calc(100% - <?php echo ($block->getVar("gallery/thumbmargin") + $thumb_width); ?>px);
+    max-width: 600px;
   }
 }
 <?php endif;?>

@@ -72,8 +72,8 @@
                 <height>120</height>
             </image>
             <image id="product_base_image" type="image">
-                <width>265</width>
-                <height>265</height>
+                <width>1200</width>
+                <height>1200</height>
             </image>
             <image id="product_comparison_list" type="small_image">
                 <width>440</width>
@@ -81,20 +81,20 @@
             </image>
             <image id="product_page_image_large" type="image"/>
             <image id="product_page_image_medium" type="image">
-                <width>600</width>
-                <height>600</height>
+                <width>1200</width>
+                <height>1200</height>
             </image>
             <image id="product_page_image_small" type="thumbnail">
                 <width>120</width>
                 <height>120</height>
             </image>
             <image id="product_page_main_image" type="image">
-                <width>600</width>
-                <height>600</height>
+                <width>1200</width>
+                <height>1200</height>
             </image>
             <image id="product_page_main_image_default" type="image">
-                <width>600</width>
-                <height>600</height>
+                <width>1200</width>
+                <height>1200</height>
             </image>
             <image id="product_page_more_views" type="thumbnail">
                 <width>135</width>
