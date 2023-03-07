@@ -463,14 +463,14 @@ require([
                 if(!loaded){
                     $('.product.media .fotorama__stage .fotorama__loaded--img').trigger('zoom.destroy');
                     $('.product.media .fotorama__stage .fotorama__active').zoom({
-                        touch:false
+                        url:extra.src
                     });
                     loaded = true;
                 }
             });
             $('.product.media .fotorama').on('fotorama:showend', function (e, fotorama, extra) {
                 $('.product.media .fotorama__stage .fotorama__active').zoom({
-                    touch:false
+                    url:extra.src
                 });
             });
             $('.fotorama').off('fotorama:fullscreenenter').on('fotorama:fullscreenenter', function (e, fotorama, extra) {
@@ -484,12 +484,12 @@ require([
                     $(this).after($(this).parent().children("img.fotorama__img--full"));
                 });
                 $('.product.media .fotorama__stage .fotorama__active').zoom({
-                    touch:false
+                    url:extra.src
                 });
                 $('.product.media .fotorama').off('fotorama:showend').on('fotorama:showend', function (e, fotorama, extra) {
                     $('.product.media .fotorama__stage .fotorama__loaded--img').trigger('zoom.destroy');
                     $('.product.media .fotorama__stage .fotorama__active').zoom({
-                        touch:false
+                        url:extra.src
                     });
                 });
             });
