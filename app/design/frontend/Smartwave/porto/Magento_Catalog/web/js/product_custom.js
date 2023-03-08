@@ -1,8 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function(){
     let productAddForm = document.querySelector(".product-add-form");
-    // productAddForm.classList.add("product-add-form-custom");
-    console.log("Hello world!");
     document.querySelector(".columns").scrollIntoView({ behavior: 'auto' });
 });
 function formatInputValue() {
