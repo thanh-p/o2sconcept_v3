@@ -278,14 +278,20 @@ define([
          */
         _configureElement: function (element) {
             this.simpleProduct = this._getSimpleProductId(element);
-
+        
             if (element.value) {
                 this.options.state[element.config.id] = element.value;
-
+        
                 if (element.nextSetting) {
                     element.nextSetting.disabled = false;
+                    var nextId = element.nextSetting.id;
+                    var nextSelectedVal = $("#" + nextId).val();
                     this._fillSelect(element.nextSetting);
                     this._resetChildren(element.nextSetting);
+                    if (nextSelectedVal.length) {
+                        $("#" + nextId).val(nextSelectedVal);
+                        $("#" + nextId).change();
+                    }
                 } else {
                     if (!!document.documentMode) { //eslint-disable-line
                         this.inputSimpleProduct.val(element.options[element.selectedIndex].config.allowedProducts[0]);
@@ -296,7 +302,7 @@ define([
             } else {
                 this._resetChildren(element);
             }
-
+        
             this._reloadPrice();
             this._displayRegularPriceBlock(this.simpleProduct);
             this._displayTierPriceBlock(this.simpleProduct);
@@ -402,10 +408,10 @@ define([
         _resetChildren: function (element) {
             if (element.childSettings) {
                 _.each(element.childSettings, function (set) {
-                    set.selectedIndex = 0;
+                    //set.selectedIndex = 0;
                     set.disabled = true;
                 });
-
+        
                 if (element.config) {
                     this.options.state[element.config.id] = false;
                 }
@@ -441,6 +447,7 @@ define([
             this._clearSelect(element);
             element.options[0] = new Option('', '');
             element.options[0].innerHTML = this.options.spConfig.chooseText;
+            element.options[0].hidden = true;
             prevConfig = false;
 
             if (element.prevSetting) {
@@ -528,15 +535,6 @@ define([
                         index++;
                     }
                     /* eslint-enable max-depth */
-
-                    // Code added to select option
-                    if (i == 0) {
-                        this.options.values[attributeId] = options[i].id;
-                    }
-                }
-                //Code added to check if configurations are set in url and resets them if needed
-                if (window.location.href.indexOf('#') !== -1) {
-                    this._parseQueryParams(window.location.href.substr(window.location.href.indexOf('#') + 1));
                 }
             }
         },
