@@ -30,30 +30,6 @@ $_attributes = $block->decorateArray($block->getAllowAttributes());
             </div>
         </div>
 
-        <script type="text/javascript">
-            require(['jquery'], function ($) {
-                $(document).ready(function () {
-                    setDefaultConfigurableOptions();
-
-                    function setDefaultConfigurableOptions() {
-                        var super_attribute_select_id = '<?php echo $_attribute->getAttributeId() ?>';
-                        if($('#attribute'+super_attribute_select_id+' option').length > 1 && $('.fotorama__img').length > 0)
-                        {
-                            var first_option = $('#attribute'+super_attribute_select_id+' option:eq(1)').val();
-                            $('#attribute'+super_attribute_select_id).val(first_option);
-                            $('#attribute'+super_attribute_select_id).change();                            
-                        }
-                        else
-                        {
-                            setTimeout(setDefaultConfigurableOptions, 100);
-                        }
-                    }
-
-                });
-            });
-        </script>
-
-
     <?php endforeach; ?>
     <script type="text/x-magento-init">
         {

@@ -15312,3 +15312,5 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "Please enter a date from the past.","Vui lòng nhập một ngày từ quá khứ.",lib,web
 "custom.definition","custom.definition",lib,web
 "component.behaviours","component.behaviours",lib,web
+
+"Details", "Mô tả"

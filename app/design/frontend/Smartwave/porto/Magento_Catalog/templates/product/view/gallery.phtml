@@ -463,7 +463,7 @@ require([
                 if(!loaded){
                     $('.product.media .fotorama__stage .fotorama__loaded--img').trigger('zoom.destroy');
                     $('.product.media .fotorama__stage .fotorama__active').zoom({
-                        url:extra.src, 
+                        url:extra.frame.img, 
                         touch:false
                     });
                     loaded = true;

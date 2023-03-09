@@ -288,7 +288,7 @@ define([
                     var nextSelectedVal = $("#" + nextId).val();
                     this._fillSelect(element.nextSetting);
                     this._resetChildren(element.nextSetting);
-                    if (nextSelectedVal.length) {
+                    if (nextSelectedVal && nextSelectedVal.length) {
                         $("#" + nextId).val(nextSelectedVal);
                         $("#" + nextId).change();
                     }
@@ -535,6 +535,10 @@ define([
                         index++;
                     }
                     /* eslint-enable max-depth */
+
+                    if (i == 0) {
+                        this.options.values[attributeId] = options[i].id;
+                    }
                 }
             }
         },
