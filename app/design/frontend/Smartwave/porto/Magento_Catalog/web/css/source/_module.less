@@ -1641,16 +1641,58 @@ body.catalog-product-compare-index {
   }
 
   .fieldset > .field.qty, .nested.options-list > .field.qty {
-    margin-right: 0;
-    padding-right: 1em;
+    margin-right: 5%;
+    padding-right: 2em;
   }
 
   .product.data.items>.item.title>.switch {
     font-size: 1.5em !important;
+    text-align: center;
   }
 
   .fieldset-custom .cus-qty .input-text.qty {
     padding-right: 1em;
+  }
+
+  .product-info-main .field-custom , .fieldset-custom .cus-qty {
+    width: 100%;
+  }
+
+  .fieldset > .field.field-custom .control {
+    margin-right: 1.5em;
+  }
+
+  .product-info-main .page-title-wrapper, .fieldset > .field.field-custom .label, .fieldset-custom .cus-qty .label, .product-options-bottom, .product-info-price {
+    margin-left: 1em;
+  }
+
+  .product-info-main .product-add-form .fieldset-custom {
+    margin-left: 1em;
+    margin-bottom: 1em;
+  }
+
+  .product-options-bottom .contact, .product-options-bottom .cus-tocart {
+    padding-right: 1em !important;
+    padding-left: 1em !important;
+  }
+
+  .product-options-bottom {
+    margin-bottom: 0;
+  }
+
+  .product-social-links {
+    display: none;
+  }
+
+  .product-info-main .cus-bottom-container {
+    margin-top: 0;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .policy-icon {
+    height: 40px;
+    width: 40px;
   }
 }
 
@@ -1704,8 +1746,7 @@ body.catalog-product-compare-index {
   max-width: 35vw;
 }
 .product-info-main .field-custom{
-  width: 45% !important;
-  height: 50px;
+  width: 45%;
   margin-right: 5%;
   display: flex;
   justify-content: space-between;
@@ -1815,7 +1856,6 @@ body.catalog-product-compare-index {
   background: #333;
   display: flex !important;
   width: 45%;
-  height: 50px;
   justify-content: space-between;
   border-radius: 30px;
   float: right;
@@ -1876,6 +1916,7 @@ body.catalog-product-compare-index {
   display: block;
   background-size: contain !important;
   background-repeat: no-repeat !important;
+  background-position: center !important;
 }
 .shipping-icon {
   background: url('/media/o2sconcept/icon/shipping-icon.png');
@@ -1957,7 +1998,6 @@ body.catalog-product-compare-index {
   display: flex;
   align-items: center;
   font-size: 1vw !important;
-  height: 50px !important;
   font-weight: 400 !important;
   white-space: nowrap;
   padding: 0 1vw 0 1vw !important;
