@@ -2217,7 +2217,7 @@ and the product descriptor can be up to 18, 14, or 9 characters respectively (wi
 "We can't find products matching the selection.","Chúng tôi không thể tìm thấy sản phẩm phù hợp với việc lựa chọn.",module,Magento_Catalog
 "Learn More","Tìm hiểu thêm",module,Magento_Catalog
 "Add to Compare","Thêm vào so sánh",module,Magento_Catalog
-"We found other products you might like!","Chúng tôi tìm thấy các sản phẩm khác, bạn có thể thích!",module,Magento_Catalog
+"We found other products you might like!","Sản phẩm liên quan",module,Magento_Catalog
 "More Choices:","Nhiều lựa chọn:",module,Magento_Catalog
 "Check items to add to the cart or","Kiểm tra các mục để thêm vào giỏ hàng hoặc",module,Magento_Catalog
 "select all","chọn tất cả",module,Magento_Catalog
