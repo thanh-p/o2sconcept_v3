@@ -15314,3 +15314,4 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "component.behaviours","component.behaviours",lib,web
 
 "Details", "Mô tả"
+"Add to Cart","Đặt hàng"
