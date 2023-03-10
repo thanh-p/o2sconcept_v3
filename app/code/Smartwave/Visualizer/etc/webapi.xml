@@ -11,6 +11,12 @@
             <resource ref="anonymous"/>
         </resources>
     </route>
+    <route method="GET" url="/V1/custom/getMoreProductSelectionsById/">
+        <service class="Smartwave\Visualizer\Api\CustomInterface" method="getMoreProductSelectionsById"/>
+        <resources>
+            <resource ref="anonymous"/>
+        </resources>
+    </route>
     <route method="GET" url="/V1/custom/getVisualImage/">
         <service class="Smartwave\Visualizer\Api\CustomInterface" method="getVisualImage"/>
         <resources>

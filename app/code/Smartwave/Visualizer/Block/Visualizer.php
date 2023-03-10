@@ -90,13 +90,13 @@ const PARAM_NAME_URL_ENCODED = 'uenc';
                     }
                 }
             }
-            // get all product from category ex: Film trang trí kính. Include all types
-            $productSelectionsHtml = $this->_helper->getProductSelectionsHtml($subCategory->getId(),$subCategory->getId());
+            // get all product from category ex: Film trang trí kính. Include all types. Because the first time => current page = 1
+            $productSelectionsHtml = $this->_helper->getMoreProductSelectionsHtml($subCategory->getId(),$subCategory->getId(), 1);
         }
 
         $result = $result . '
         <div class="tab__content-item">
-            <div class="tab__list">
+            <div class="tab__list"><div class="title-tab-list">không gian của bạn</div>
                 ' . $this->getTabList($subCategoryName) . '
             </div>
             <div class="tab__contents" id="VisualImage' . $subCategory->getId() . '" src="" alt="hình ảnh ' . $subCategory->getName() . '">
@@ -109,7 +109,7 @@ const PARAM_NAME_URL_ENCODED = 'uenc';
                 '</div>
                 <div style="width: inherit; margin-top: auto;">
                 <button id="next_type_button' . $subCategory->getId() . '" class=" scene_carousel_button" style="width: 100% !important"> 
-                    <small class="show" style="font-size: 80%;">Chuyển qua</small> Chọn loại ' . $subCategoryName . ' 
+                    Chọn loại ' . $subCategoryName . ' 
                 </button>
                 </div>
             </div>
@@ -117,8 +117,7 @@ const PARAM_NAME_URL_ENCODED = 'uenc';
                 $this->getProductTypes($subCategory) . '
                 <div class="button-group">
                 <button id="back_to_scene_button' . $subCategory->getId() . '" type="button" class=" scene_carousel_button"> 
-                    <i class="fas fa-angle-left scene_carousel_icon" ></i>
-                    <small class="show" style="font-size: 80%;">Quay lại</small> Chọn bối cảnh
+                    <i class="fas fa-angle-left scene_carousel_icon" ></i>Trở về trước
                 </button>
                 <button id="see_all' . $subCategory->getId() . '" class="scene_carousel_button attention-button" > Xem tất cả</button>
                 </div>
@@ -129,8 +128,7 @@ const PARAM_NAME_URL_ENCODED = 'uenc';
                 '</div>
                 <div class="button-group">
                     <button id="back_to_type_button' . $subCategory->getId() . '" type="button" class=" scene_carousel_button"> 
-                        <i class="fas fa-angle-left scene_carousel_icon" ></i>
-                        <small class="show" style="font-size: 80%;">Quay lại</small> Chọn loại ' . $subCategoryName . ' 
+                        <i class="fas fa-angle-left scene_carousel_icon" ></i>Chọn loại ' . $subCategoryName . ' 
                     </button>
                     <button id="shop-this-product' . $subCategory->getId() . '" onclick="" type="button" class="scene_carousel_button attention-button" disabled="disabled">Mua sản phẩm này</button>
                 </div>

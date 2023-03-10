@@ -8,7 +8,7 @@ for (let i = 0; i < visualContents.length; i++) {
     tabDataItem.indexSelectedScene = -1;
     tabDataItem.selectedProductId = "";
     tabDataItem.indexSelectedProduct = -1;
-    tabData.push({...tabDataItem });
+    tabData.push({ ...tabDataItem });
 }
 var useUrl = {};
 var usedUrls = [];
@@ -20,7 +20,10 @@ function tabify(visualTabContent, index) {
     if (tabList) {
         let tabItems = [...tabList.querySelectorAll('.tab-text')];
         let sceneCarousels = visualTabContent.querySelector(".scene_carousels");
-        let productSelections = [...sceneCarousels.children];
+        // let productSelections = [...sceneCarousels.children];
+        let productSelections = [...sceneCarousels.querySelectorAll(".scene_carousel")];
+
+        let product_selections = document.getElementById("product_selections" + visualTabContent.id);
         let tabIndex = 0;
 
         tabIndex = tabItems.findIndex((item, index) => {
@@ -59,10 +62,12 @@ function tabify(visualTabContent, index) {
         back_to_type_button.addEventListener("click", () => setTab(1));
         //add listener for see all
         let see_all = document.getElementById("see_all" + visualTabContent.id);
+
         see_all.addEventListener("click", () => {
-            let product_selections = document.getElementById("product_selections" + visualTabContent.id);
             let categoryId = visualTabContent.id;
-            let apiUrl = window.location.protocol + '//' + window.location.hostname + '/rest/V1/custom/getProductSelectionsById/?categoryId=' + categoryId + '&parentCategoryId=' + visualTabContent.id;
+            let apiUrl = window.location.protocol + '//' + window.location.hostname + '/rest/V1/custom/getMoreProductSelectionsById/?categoryId=' + categoryId + '&parentCategoryId=' + visualTabContent.id + '&currentPage=' + 1;
+            // reset product_selections before load all products
+            product_selections.innerHTML = "";
             fetch(apiUrl)
                 .then((response) => response.json())
                 .then((data) => {
@@ -70,8 +75,8 @@ function tabify(visualTabContent, index) {
                     //add listener for new products
                     let products = [...productSelections[2].querySelectorAll('.product-overlay')]
                     addEventListenerProduct(products);
+                    handleSeeMore(product_selections);
                 });
-            product_selections.innerHTML = "";
             setTab(2);
         });
 
@@ -80,9 +85,8 @@ function tabify(visualTabContent, index) {
         let productTypes = [...productSelections[1].querySelectorAll('.product-wrap')];
         productTypeWraps.forEach((selection, i) => {
             selection.addEventListener("click", () => {
-                let product_selections = document.getElementById("product_selections" + visualTabContent.id);
                 let categoryId = selection.id;
-                let apiUrl = window.location.protocol + '//' + window.location.hostname + '/rest/V1/custom/getProductSelectionsById/?categoryId=' + categoryId + '&parentCategoryId=' + visualTabContent.id;
+                let apiUrl = window.location.protocol + '//' + window.location.hostname + '/rest/V1/custom/getMoreProductSelectionsById/?categoryId=' + categoryId + '&parentCategoryId=' + visualTabContent.id + '&currentPage=' + 1;
                 product_selections.innerHTML = "";
                 //reset data for selected product
                 tabData[index].selectedProductId = '';
@@ -91,9 +95,11 @@ function tabify(visualTabContent, index) {
                     .then((response) => response.json())
                     .then((data) => {
                         product_selections.innerHTML = data;
+
                         //add listener for new products
                         let products = [...productSelections[2].querySelectorAll('.product-overlay')]
                         addEventListenerProduct(products);
+                        handleSeeMore(product_selections);
                     });
                 //active type
                 setActiveClass(productTypeWraps, i);
@@ -121,25 +127,7 @@ function tabify(visualTabContent, index) {
                     tabData[index].currentScene = selection.getAttribute("data-sku");
                     tabData[index].indexSelectedScene = i;
                     tabData[index].selectedSceneId = selection.id.replace('-' + visualTabContent.id, "");
-                    // if (tabData[index].selectedProductId != '') {
                     setVisualImage(VisualizerImage, index);
-                    // } else {
-                    //     let apiUrl = window.location.protocol + '//' + window.location.hostname + '/rest/V1/custom/getProductUrlById/?id=' + tabData[index].selectedSceneId;
-                    //     let imageUrl = getUsedUrl(apiUrl);
-                    //     if (imageUrl == '') {
-                    //         fetch(apiUrl)
-                    //             .then((response) => response.json())
-                    //             .then((data) => {
-                    //                 VisualizerImage.style.backgroundImage = "url('" + data + "')";
-                    //                 useUrl.url = apiUrl;
-                    //                 useUrl.data = data;
-                    //                 usedUrls.push({...useUrl });
-                    //             });
-                    //     } else {
-                    //         VisualizerImage.style.backgroundImage = "url('" + imageUrl + "')";
-                    //     }
-                    // }
-
                     //restore overlay value
                     sceneOverlays.forEach(sceneOverlay => {
                         sceneOverlay.querySelector('.overlay-content').innerHTML = 'Chọn bối cảnh';
@@ -162,38 +150,75 @@ function tabify(visualTabContent, index) {
         let products = [...productSelections[2].querySelectorAll('.product-overlay')]
         addEventListenerProduct(products);
 
+        // handle "Xem them" in the first time load page
+        handleSeeMore(product_selections);
+
+        function handleSeeMore(product_selections) {
+            let seeMoreBtn = product_selections.querySelector('.see-more-btn')
+            if (seeMoreBtn) {
+                let nextPage = seeMoreBtn.getAttribute("data-nextPage");
+                let subCategoryId = seeMoreBtn.getAttribute("data-subCategoryId");
+                let parentCategoryId = seeMoreBtn.getAttribute("data-parentCategoryId");
+                let loader = product_selections.querySelector(".loader");
+
+                seeMoreBtn.addEventListener("click", () => {
+                    let apiUrl = window.location.protocol + '//' + window.location.hostname + '/rest/V1/custom/getMoreProductSelectionsById/?categoryId=' + subCategoryId + '&parentCategoryId=' + parentCategoryId + '&currentPage=' + nextPage;
+                    seeMoreBtn.style.display = "none";
+                    loader.style.display = "block";
+                    fetch(apiUrl)
+                        .then((response) => response.json())
+                        .then((data) => {
+                            product_selections.removeChild(seeMoreBtn);
+                            product_selections.removeChild(loader);
+                            product_selections.innerHTML = product_selections.innerHTML + data;
+                            //add listener for new products
+                            let products = [...productSelections[2].querySelectorAll('.product-overlay')]
+                            addEventListenerProduct(products);
+                            handleSeeMore(product_selections);
+                        });
+                })
+            }
+        }
         function addEventListenerProduct(products) {
             products.forEach((selection, i) => {
                 if (selection.getAttribute('listener') !== 'true') {
                     selection.addEventListener("click", () => {
+                            let shopThisProductBtn = document.getElementById("shop-this-product" + visualTabContent.id);
                         //unset proudct if this already selected
                         if (tabData[index].selectedProductId == selection.id.replace('-' + visualTabContent.id, "")) {
+                            //set content overlay
+                            if (tabData[index].indexSelectedProduct > -1) {
+                                products[tabData[index].indexSelectedProduct].querySelector('.overlay-content').innerHTML = 'Chọn sản phẩm';
+                            }
+                            //disable ship this product button
+                            if (shopThisProductBtn.getAttribute('disabled') == null) {                            
+                                shopThisProductBtn.setAttribute("disabled", "disabled");
+                            }
                             tabData[index].selectedProductId = '';
                             tabData[index].indexSelectedProduct = -1;
+                            
                         } else {
                             tabData[index].selectedProductId = selection.id.replace('-' + visualTabContent.id, "");
                             tabData[index].indexSelectedProduct = i;
+                            //set content overlay
+                            selection.querySelector('.overlay-content').innerHTML = 'Bỏ Chọn';
+
+                            //change href for shopThisProduct Btn
+                            let productUrl = selection.getAttribute('data');
+                            //enable ship this product button
+                            if (shopThisProductBtn.getAttribute('disabled') != null) {
+                                shopThisProductBtn.removeAttribute("disabled")
+                            }
+                            shopThisProductBtn.setAttribute('onclick', 'location.href="' + productUrl + '"');
                         }
 
+                            //active product
+                            let allProducts = [...productSelections[2].querySelectorAll('.product-overlay')]
+                            setActiveProduct(allProducts, i);
+                            let allWraps = [...productSelections[2].querySelectorAll('.product-wrap')]
+                            setActiveProduct(allWraps, i);                            
+
                         setVisualImage(VisualizerImage, index);
-                        //change href for shopThisProduct Btn
-                        let shopThisProductBtn = document.getElementById("shop-this-product" + visualTabContent.id);
-                        let productUrl = selection.getAttribute('data');
-                        shopThisProductBtn.setAttribute('onclick', 'location.href="' + productUrl + '"');
-                        //enable ship this product button
-                        if (shopThisProductBtn.getAttribute('disabled') != null) {
-                            shopThisProductBtn.removeAttribute("disabled")
-                        }
-                        //active product
-                        let allProducts = [...productSelections[2].querySelectorAll('.product-overlay')]
-                        setActiveProduct(allProducts, i);
-                        let allWraps = [...productSelections[2].querySelectorAll('.product-wrap')]
-                        setActiveProduct(allWraps, i);
-                        //set content overlay
-                        if (tabData[index].indexSelectedProduct > -1) {
-                            products[tabData[index].indexSelectedProduct].querySelector('.overlay-content').innerHTML = 'Chọn sản phẩm';
-                        }
-                        selection.querySelector('.overlay-content').innerHTML = 'BỎ CHỌN';
                     })
                     selection.setAttribute('listener', 'true');
                 }
@@ -231,7 +256,7 @@ function setVisualImage(VisualizerImage, index) {
                     }
                     useUrl.url = apiUrl;
                     useUrl.data = data;
-                    usedUrls.push({...useUrl });
+                    usedUrls.push({ ...useUrl });
                 });
         } else {
             VisualizerImage.style.backgroundImage = "url('" + imageUrl + "')";
@@ -244,9 +269,11 @@ function visualizerTabify(visualWrap) {
 
     if (tabList) {
         let labelInsideTabItems = [...tabList.querySelectorAll(".tab-text")];
-        let tabItems = [...tabList.children];
+        // let tabItems = [...tabList.children];
+
+        let tabItems = [...tabList.querySelectorAll(".tab__item-head")];
         let tabContent = visualWrap.querySelector(".visual_content");
-        let tabContentItems = [...tabContent.children];
+        let tabContentItems = [...tabContent.querySelectorAll(".visual_tab_content")];
         let tabIndex = 0;
 
         tabIndex = tabItems.findIndex((item, index) => {

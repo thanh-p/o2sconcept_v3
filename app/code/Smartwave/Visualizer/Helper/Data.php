@@ -45,7 +45,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $helperImport = $objectManager->get('\Magento\Catalog\Helper\Image');
         return $helperImport->init($product, 'product_page_image_small')
             ->setImageFile($product->getThumbnail()) // image,small_image,thumbnail
-            ->resize(300, 245)
+            ->resize(150, 150)
             ->getUrl();
     }
     public function getSceneThumbnailUrl($product)
@@ -82,9 +82,6 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
             $productCollection->setPageSize(5);
 
             if ($productCollection) {
-                // if ($productCollection->count() > 2) {
-                //     $productCollection =array_slice($productCollection, 0, 2);
-                // }
                 foreach ($productCollection as $product) {
                     if ($product) {
                         $productSelectionsHtml = $productSelectionsHtml . '
@@ -107,6 +104,37 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         } 
     }
     
+    public function getMoreProductSelectionsHtml($subCategoryId, $parentCategoryId, $currentPage){
+        $productSelectionsHtml = '';
+        if ($subCategoryId) {
+            $productCollection = $this->getProductCollectionByCategories($subCategoryId);
+            $productCollection->setPageSize(3);
+            $productCollection->setCurPage($currentPage);
+
+            if ($productCollection) {
+                foreach ($productCollection as $product) {
+                    if ($product) {
+                        $productSelectionsHtml = $productSelectionsHtml . '
+                    <div class="product-wrap">
+                        <div class="visualizer_product" >
+                            <img class="selection-image" alt="hình ảnh của ' . $product->getName() . '"  title="hình ảnh của ' . $product->getName() . '"  src="' . $this->getProductThumbnailUrl($product) . '">
+                        </div>
+                        <div class="product-overlay" id="' . $product->getId() . '-' . $parentCategoryId . '" data="' . $product->getProductUrl() . '">
+                        <div class="overlay-content">Chọn sản phẩm</div>
+                        </div>
+                    </div>';
+                    }
+                }
+            }
+        }
+        if($this ->hasNextPage($currentPage, $productCollection)){
+            $nextPage = $currentPage + 1;
+            return $productSelectionsHtml.'<button data-nextpage="'.$nextPage.'" data-parentCategoryId="'.$parentCategoryId.'" data-subCategoryId="'.$subCategoryId.'" id="see-more'. $parentCategoryId . '" onclick="" type="button" class="attention-button see-more-btn" >Xem thêm</button>
+            <div class="loader"></div>';
+        } else {
+            return $productSelectionsHtml;
+        } 
+    }
     public function hasNextPage($currentPage, $collection)
     {
         $lastPageNumber = $collection->getLastPageNumber();
@@ -126,11 +154,10 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
                     $typeSelectionsHtml = $typeSelectionsHtml . '
                 <div class="product-wrap">
                     <div class="visualizer_product" >
-                        <img class="selection-type-image" alt="hình ảnh của ' . $product->getName() . '"  title="hình ảnh của ' . $product->getName() . '"  src="' . $this->getProductTypeThumbnailUrl($product) . '">
+                        <div class="selection-type-image" alt="hình ảnh của ' . $product->getName() . '"  title="hình ảnh của ' . $product->getName() . '"  style="background-image: url('. $this->getProductTypeThumbnailUrl($product) . ')"></div>
                         <div class="type-selection">'.$subCategory->getName().'</div>
                     </div>
                     <div class="product-overlay" id="' . $subCategory->getId() . '" >
-                    <div class="overlay-content">Chọn loại '.strtok($subCategory->getName(), " ").'</div>
                     </div>
                 </div>';
                 }
@@ -138,23 +165,6 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         }
         return $typeSelectionsHtml;
     }
-    // public function testApi()
-    // {
-    //     $sceneCategoryId = 51;
-    //     $disabledProducts =
-    //         $this->_productCollectionFactory->create()
-    //             ->addAttributeToSelect('*');
-    //             // ->addAttributeToFilter('status', Status::STATUS_DISABLED)
-    //             // ->addCategoriesFilter(['in' => $sceneCategoryId]);
-
-    //     $productImageUrl = "test";
-    //     foreach ($disabledProducts as $product) {
-    //         if ($product) {
-    //             $productImageUrl =  $productImageUrl.'<br>'.$product->getImage();
-    //         }
-    //     }
-    //     return $productImageUrl;
-    // }
     public function getVariableValue($code)
     {
         $value = $this->_variable->loadByCode($code)->getPlainValue();

@@ -30,8 +30,11 @@ class Custom extends \Magento\Framework\View\Element\Template
         $this->_productCollectionFactory = $productCollectionFactory;
         $this->jsonResultFactory = $jsonResultFactory;
         parent::__construct($context);
-
     }
+
+    /**
+    * @inheritdoc
+    */
     public function getProductById($id)
 	{
 		return $this->_productRepository->getById($id);
@@ -69,6 +72,11 @@ class Custom extends \Magento\Framework\View\Element\Template
         // get product in a type from category ex: Film trang trí kính 1. Include products in a type product.
         return $this->_helper->getProductSelectionsHtml($categoryId, $parentCategoryId);
     }
+
+    /**
+     * @inheritdoc
+     */
+
     public function getVisualImage($id, $selectedScene)
     {
         $productImageUrls = [];
@@ -85,5 +93,13 @@ class Custom extends \Magento\Framework\View\Element\Template
             }
         }
         return $productImageUrl;
+    }
+
+    /**
+     * @inheritdoc
+     */
+
+    public function getMoreProductSelectionsById($categoryId, $parentCategoryId, $currentPage){
+        return $this->_helper->getMoreProductSelectionsHtml($categoryId, $parentCategoryId, $currentPage);
     }
 }

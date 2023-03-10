@@ -27,4 +27,14 @@ interface CustomInterface
      */
  
      public function getVisualImage($id, $selectedScene);
+
+        /**
+     * GET for getMoreProductSelectionsById
+     * @param int $categoryId
+     * @param int $parentCategoryId
+     * @param int $currentPage
+     * @return string
+     */
+
+     public function getMoreProductSelectionsById($categoryId, $parentCategoryId, $currentPage);
 }
