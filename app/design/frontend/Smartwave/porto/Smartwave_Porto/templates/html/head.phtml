@@ -4,14 +4,14 @@
     $_redirect_cart = $porto_helper->getConfig('checkout/cart/redirect_to_cart');
 ?>
 
-<link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/media/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/media/favicon/favicon-16x16.png">
-<link rel="manifest" href="/media/favicon/site.webmanifest">
-<link rel="mask-icon" href="/media/favicon/safari-pinned-tab.svg">
-<link rel="shortcut icon" href="/media/favicon/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="<?php echo $block->getViewFileUrl('favicon/apple-touch-icon.png'); ?>">
+<link rel="icon" type="image/png" sizes="32x32" href="<?php echo $block->getViewFileUrl('favicon/favicon-32x32.png'); ?>">
+<link rel="icon" type="image/png" sizes="16x16" href="<?php echo $block->getViewFileUrl('favicon/favicon-16x16.png'); ?>">
+<link rel="manifest" href="<?php echo $block->getViewFileUrl('favicon/site.webmanifest'); ?>">
+<link rel="mask-icon" href="<?php echo $block->getViewFileUrl('favicon/safari-pinned-tab.svg'); ?>">
+<link rel="shortcut icon" href="<?php echo $block->getViewFileUrl('favicon/favicon.ico'); ?>">
 <meta name="msapplication-TileColor" content="#da532c">
-<meta name="msapplication-config" content="/media/favicon/browserconfig.xml">
+<meta name="msapplication-config" content="<?php echo $block->getViewFileUrl('favicon/browserconfig.xml'); ?>">
 <meta name="theme-color" content="#333333">
 
 <?php
