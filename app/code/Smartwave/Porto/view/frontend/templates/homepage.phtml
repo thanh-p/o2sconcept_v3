@@ -222,13 +222,27 @@
       }
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: 1200px) {
+      .landing_title_text h1 {
+        font-size: 7em;
+      }
+
       .landing_title_text h2, .button_landing {
-        font-size: 1.5em;
+        font-size: 5em;
       }
 
       .button_landing {
-        width: 25vw;
+        width: 10em;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .landing_title_text h1 {
+        font-size: 3em;
+      }
+
+      .landing_title_text h2, .button_landing {
+        font-size: 2em;
       }
     }
 </style>
@@ -262,7 +276,7 @@
       }
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: 1200px) {
       .porto-block-html-top {
         font-size: 6px;
       }
@@ -374,6 +388,7 @@
     .products-grid.columns4 .product-item {
       justify-content: center;
       display: flex;
+      width: 50%;
     }
 
     .service-text {
@@ -462,9 +477,14 @@
       margin-bottom: 15vh;
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: 1200px) {
+      .about-us-cotainer {
+        padding-top: 20em !important;
+        padding-bottom: 20em !important;
+      }
+
       .flip-card-back h2 {
-        font-size: 1.5em;
+        font-size: 3em;
       }
 
       .product-items {
@@ -474,21 +494,48 @@
       .title-decor {
         padding-bottom: 0.5em;
         margin-bottom: 4em;
-        font-size: 2em;
+        font-size: 5em;
       }
 
       .about-us-body {
-        width: 100%;
+        margin-bottom: 5em;
       }
 
       .about-us-body h3, .about-us-body p, .about-us-body>a {
-        font-size: 1.5em;
+        font-size: 3em;
       }
 
       .about-us-body h1 {
-        font-size: 3em;
+        font-size: 5em;
         margin-bottom: 0.5em;
         padding-bottom: 0.5em;
+      }
+
+      .flip-card-size {
+        width: 30vw;
+        height: 43vw;
+      }
+
+      .service-text h2 {
+        font-size: 4em;
+        padding-bottom: 0.5em;
+      }
+
+      .products-grid.columns4 .product-item {
+        flex-wrap: wrap;
+        width: 39%;
+      }
+
+      .mobile-bg {
+        height: auto !important;
+        padding-top: 15em;
+        padding-bottom: 15em;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .products-grid.columns4 .product-item {
+        width: 50%;
       }
 
       .flip-card-size {
@@ -496,17 +543,30 @@
         height: 57vw;
       }
 
-      .service-text h2 {
+      .flip-card-back h2 {
         font-size: 1.7em;
-        padding-bottom: 0.5em;
       }
 
-      .products-grid.columns4 .product-item {
-        flex-wrap: wrap;
+      .about-us-body h3, .about-us-body p, .about-us-body>a {
+        font-size: 2em;
+      }
+
+      .about-us-body h1 {
+        font-size: 3em;
+      }
+
+      .service-text h2 {
+        font-size: 2em;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .about-us-cotainer {
+        padding-top: 5em !important;
+        padding-bottom: 5em !important;
       }
 
       .mobile-bg {
-        height: auto !important;
         padding-top: 5em;
         padding-bottom: 5em;
       }
@@ -574,18 +634,24 @@
   font-size: 1vw;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1200px) {
   .swiper-slide {
     height: 25vh;
   }
 
   .swiper-text h2, .swiper-text-product p {
-    font-size: 1.5em !important;
+    font-size: 3em !important;
     line-height: 1.5em;
   }
 
   .banner-swiper {
     margin-top: 6vh;
+  }
+}
+
+@media (max-width: 991px) {
+  .swiper-text h2, .swiper-text-product p {
+    font-size: 2em !important;
   }
 }
 </style>
@@ -1011,9 +1077,21 @@ require([
       left: 0;
     }
 
-    @media (max-width: 991px) {
-      .swiper-slide-product {
-        height: 42.5vw;
+    @media (max-width: 1200px) {
+      .swiper-banner-container {
+        width: 80%;
+      }
+
+      .featured-product-title {
+        font-size: 5em;
+      }
+
+      .featured-product-menu li a{
+        font-size: 2em;
+      }
+
+      .swiper-featured-product-parent {
+        width: 80%;
       }
 
       .featured-product-menu-container {
@@ -1021,6 +1099,12 @@ require([
         display: inherit;
         left: 0;
         margin-top: 15% !important;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .swiper-slide-product {
+        height: 42.5vw;
       }
 
       .featured-product-menu {
@@ -1031,6 +1115,7 @@ require([
       .featured-product-menu ul{
         padding-top: 0;
         padding-bottom: 0;
+        flex-wrap: wrap;
       }
 
       .featured-product-menu {
@@ -1040,22 +1125,22 @@ require([
       .featured-product-menu li{
         border-top: none !important;
         border-bottom: none !important;
+        width: 30%;
+        text-align: center;
       }
 
       .featured-product-menu li a{
         color:white !important;
-        text-align: center;
-      
-        font-size: 0.7em;
+        font-size: 1.3em;
         font-weight: 400;
         line-height: 1.6vh;
         letter-spacing: 0;
-        text-transform: capitalize;
+        padding-bottom: 0.5em !important;
       }
 
       .featured-product-title {
         color: white;
-        font-size: 2em;
+        font-size: 2.5em;
         padding-bottom: 0.5em;
         border-bottom: solid 3px;
         border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 0%, rgb(209, 156, 21, 1) 42%, rgba(209, 156, 21, 0.7) 68%, rgba(209, 156, 21, 0) 100%) 0 0 100% 0/1px 0 3px 0 stretch;
@@ -1078,13 +1163,19 @@ require([
       }
 
       .swiper-featured-product {
-        width: 50%;
+        width: 90%;
         overflow-y: hidden;
       }
 
-      /* .swiper-button-prev-featured-product, .swiper-button-next-featured-product {
-        top:30%;
-      } */
+      .swiper-featured-product-parent {
+        width: 90%;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .swiper-featured-product {
+        width: 60%;
+      }
     }
   </style>
 
@@ -1391,17 +1482,24 @@ require([
       padding-bottom: 8em;
     }
 
-    @media (max-width: 991px) {
+    .story-body img {
+      margin-left: auto;
+      width: 35%;
+      padding-top: 2em;
+      padding-bottom: 2em;
+    }
+
+    @media (max-width: 1200px) {
       .swiper-story-icon {
         top: 45%;
       }
       .swiper-slide-story h2 {
-        font-size: 1.5em;
+        font-size: 2.5em;
       }
 
       .swiper-slide-story {
         padding-bottom: 0;
-        height: 20vh;
+        height: auto;
       }
 
       .story-block {
@@ -1414,10 +1512,8 @@ require([
       }
 
       .story-body h1 {
-        font-size: 2em;
-      }
-
-      .story-body h1 {
+        font-size: 5em;
+        line-height: 1.5em;
         margin-bottom: 0;
       }
 
@@ -1427,6 +1523,21 @@ require([
 
       .story-posts a {
         font-size: 1em;
+        line-height: 1.5em;
+      }
+
+      .story-body img {
+        margin: auto;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .story-body img {
+        width: 50%;
+      }
+
+      .story-body h1 {
+        font-size: 2.5em;
       }
     }
   </style>
@@ -1489,7 +1600,7 @@ require([
           <span class="d-block"><a href="vat-lieu-xanh-bao-ve-moi-truong">Vật liệu xanh bảo vệ môi trường - Xem thêm</a></span>
         </p>
       </div>
-      <img style="margin-left: auto;width: 35%;padding-top: 2em;padding-bottom: 2em;" src="/media/o2sconcept/img/eco_green.png">
+      <img src="/media/o2sconcept/img/eco_green.png">
     </div>
 
     <div class="swiper-parent-story">
@@ -1667,9 +1778,9 @@ require([
       }
     }
 
-    @media (max-width: 991px) {
+    @media (max-width: 1200px) {
       .review-title {
-        font-size: 2em;
+        font-size: 5em;
         margin-bottom: 0.5em;
       }
 
@@ -1679,11 +1790,11 @@ require([
 
       .review-comment-para {
         line-height: 1.5em;
-        font-size: 1.5em;
+        font-size: 3em;
       }
 
       .swiper-slide-review {
-        height: 25em;
+        height: 40em;
         padding-bottom: 2em;
       }
 
@@ -1692,13 +1803,49 @@ require([
       }
 
       .review-comment-para:before {
-        width: 50%;
+        width: 20%;
         padding-right: 1em;
       }
 
       .review-comment-para:after {
-        width: 50%;
+        width: 20%;
         padding-left: 0;
+      }
+
+      .review-comment h2 {
+        font-size: 4em;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .review-comment-para:before {
+        width: 10em;
+      }
+
+      .review-comment-para:after {
+        width: 10em;
+      }
+
+      .review-comment h2 {
+        font-size: 2em;
+      }
+
+      .review-title {
+        font-size: 2.5em;
+      }
+
+      .review-comment-para {
+        font-size: 2em;
+      }
+
+      .swiper-slide-review {
+        height: 29em;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .swiper-slide-review {
+        height: 35em;
       }
     }
   </style>

@@ -176,8 +176,18 @@ text-transform: capitalize;
     }
   }
 
-  @media (max-width: 575px) {
+  @media (max-width: 992px) {
     .hide-in-small-scr {
       display: none !important;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .header-bottom {
+      display: none !important;
+    }
+
+    .page-header.type12 .navigation:not(.side-megamenu) .level0 .level-top {
+      font-size: 1em;
     }
   }
