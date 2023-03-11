@@ -228,7 +228,7 @@
       }
 
       .landing_title_text h2, .button_landing {
-        font-size: 5em;
+        font-size: 4em;
       }
 
       .button_landing {
@@ -238,11 +238,25 @@
 
     @media (max-width: 991px) {
       .landing_title_text h1 {
+        font-size: 5em;
+      }
+
+      .landing_title_text h2, .button_landing {
+        font-size: 3em;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .landing_title_text h1 {
         font-size: 3em;
       }
 
       .landing_title_text h2, .button_landing {
         font-size: 2em;
+      }
+
+      .landing_body {
+        z-index: 99;
       }
     }
 </style>
@@ -494,11 +508,11 @@
       .title-decor {
         padding-bottom: 0.5em;
         margin-bottom: 3em;
-        font-size: 3em;
+        font-size: 4em;
       }
 
       .about-us-body {
-        margin-bottom: 5em;
+        margin-bottom: 10em;
       }
 
       .about-us-body h3, .about-us-body p, .about-us-body>a {
@@ -512,18 +526,18 @@
       }
 
       .flip-card-size {
-        width: 30vw;
-        height: 43vw;
+        width: 25vw;
+        height: 35.8vw;
       }
 
       .service-text h2 {
-        font-size: 4em;
+        font-size: 3em;
         padding-bottom: 0.5em;
       }
 
       .products-grid.columns4 .product-item {
         flex-wrap: wrap;
-        width: 39%;
+        width: 34%;
       }
 
       .mobile-bg {
@@ -543,6 +557,32 @@
         height: 57vw;
       }
 
+      .title-decor {
+        font-size: 4em;
+      }
+
+      .flip-card-back h2 {
+        font-size: 2.7em;
+      }
+
+      .about-us-body h3, .about-us-body p, .about-us-body>a {
+        font-size: 3em;
+      }
+
+      .about-us-body h1 {
+        font-size: 4em;
+      }
+
+      .service-text h2 {
+        font-size: 3em;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .title-decor {
+        font-size: 3em;
+      }
+
       .flip-card-back h2 {
         font-size: 1.7em;
       }
@@ -558,9 +598,7 @@
       .service-text h2 {
         font-size: 2em;
       }
-    }
 
-    @media (max-width: 575px) {
       .about-us-cotainer {
         padding-top: 10em !important;
         padding-bottom: 5em !important;
@@ -635,23 +673,42 @@
 }
 
 @media (max-width: 1200px) {
-  .swiper-slide {
-    height: 25vh;
-  }
-
   .swiper-text h2, .swiper-text-product p {
-    font-size: 3em !important;
+    font-size: 2.5em !important;
     line-height: 1.5em;
   }
 
   .banner-swiper {
     margin-top: 6vh;
   }
+
+  .banner-bg {
+    padding-top: 20em;
+    padding-bottom: 20em;
+  }
 }
 
 @media (max-width: 991px) {
   .swiper-text h2, .swiper-text-product p {
+    font-size: 2.5em !important;
+  }
+
+  .swiper-slide-banner {
+    height: 35vw;
+  }
+}
+
+@media (max-width: 575px) {
+  .banner-bg {
+    padding-top: 15em;
+  }
+
+  .swiper-text h2, .swiper-text-product p {
     font-size: 2em !important;
+  }
+
+  .swiper-slide-banner {
+    height: 50vw;
   }
 }
 </style>
@@ -726,7 +783,7 @@ require([
   <img src="/media/o2sconcept/img/asset1.png" alt="Image" style="visibility: hidden;" />
 </div>
 
-<div class="porto-block-html-top swiper-body cover_window_bg mobile-bg" style="background-image: url('/media/o2sconcept/img/asset2.png');">
+<div class="porto-block-html-top swiper-body cover_window_bg mobile-bg banner-bg" style="background-image: url('/media/o2sconcept/img/asset2.png');">
     <!-- Swiper -->
   <div class="banner-swiper">
     <div class="swiper-container swiper-banner-container">
@@ -1078,12 +1135,21 @@ require([
     }
 
     @media (max-width: 1200px) {
+      .featured-product-menu ul {
+        padding-top: 2.5em;
+        padding-bottom: 2.5em;
+      }
+
       .swiper-banner-container {
         width: 80%;
       }
 
+      .swiper-slide-product {
+        height: 30vw;
+      }
+
       .featured-product-title {
-        font-size: 5em;
+        font-size: 4em;
       }
 
       .featured-product-menu li a{
@@ -1091,7 +1157,7 @@ require([
       }
 
       .swiper-featured-product-parent {
-        width: 80%;
+        width: 90%;
       }
 
       .featured-product-menu-container {
@@ -1104,7 +1170,7 @@ require([
 
     @media (max-width: 991px) {
       .swiper-slide-product {
-        height: 50vw;
+        height: 40vw;
       }
 
       .featured-product-menu {
@@ -1174,6 +1240,10 @@ require([
     }
 
     @media (max-width: 575px) {
+      .swiper-slide-product {
+        height: 50vw;
+      }
+
       .swiper-featured-product {
         width: 60%;
       }
@@ -1513,7 +1583,7 @@ require([
       }
 
       .story-body h1 {
-        font-size: 5em;
+        font-size: 4em;
         line-height: 1.5em;
         margin-bottom: 0;
       }
@@ -1781,8 +1851,8 @@ require([
 
     @media (max-width: 1200px) {
       .review-title {
-        font-size: 5em;
-        margin-bottom: 0.5em;
+        font-size: 4em;
+        margin-bottom: 2em;
       }
 
       .swiper-review {
@@ -1814,11 +1884,15 @@ require([
       }
 
       .review-comment h2 {
-        font-size: 4em;
+        font-size: 3em;
       }
     }
 
     @media (max-width: 991px) {
+      .review-title {
+        margin-bottom: 0.5em;
+      }
+
       .review-comment-para:before {
         width: 10em;
       }
@@ -1827,6 +1901,24 @@ require([
         width: 10em;
       }
 
+      .review-comment h2 {
+        font-size: 3em;
+      }
+
+      .review-title {
+        font-size: 4em;
+      }
+
+      .review-comment-para {
+        font-size: 3em;
+      }
+
+      .swiper-slide-review {
+        height: 40em;
+      }
+    }
+
+    @media (max-width: 575px) {
       .review-comment h2 {
         font-size: 2em;
       }
@@ -1837,10 +1929,6 @@ require([
 
       .review-comment-para {
         font-size: 2em;
-      }
-
-      .swiper-slide-review {
-        height: 29em;
       }
 
       .swiper-slide-review {
