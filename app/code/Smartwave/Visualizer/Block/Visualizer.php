@@ -107,8 +107,8 @@ const PARAM_NAME_URL_ENCODED = 'uenc';
                 <div class="selections">' .
                     $sceneSelectionsHtml . 
                 '</div>
-                <div style="width: inherit; margin-top: auto;">
-                <button id="next_type_button' . $subCategory->getId() . '" class=" scene_carousel_button" style="width: 100% !important"> 
+                <div class="button-group">
+                <button id="next_type_button' . $subCategory->getId() . '" class=" scene_carousel_button" "> 
                     Chọn loại ' . $subCategoryName . ' 
                 </button>
                 </div>

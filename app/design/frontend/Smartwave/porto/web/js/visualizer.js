@@ -181,7 +181,9 @@ function tabify(visualTabContent, index) {
         }
         function addEventListenerProduct(products) {
             products.forEach((selection, i) => {
-                if (selection.getAttribute('listener') !== 'true') {
+                // todo: add listener for new product only
+                // if (selection.getAttribute('listener') !== 'true') {
+                if (1) {
                     selection.addEventListener("click", () => {
                             let shopThisProductBtn = document.getElementById("shop-this-product" + visualTabContent.id);
                         //unset proudct if this already selected
@@ -321,36 +323,36 @@ visualizerTabify(visualWrap);
 
 
 
-// blur visualizer page
+// // blur visualizer page
 
-let blurItemList = [];
-// let hideItemList = [];
-let headerLeft = document.querySelector(".header-left");
-let headerRight = document.querySelector(".header-right");
-let navigation = document.querySelector(".navigation");
-let menuItemslv0s = navigation.querySelectorAll(".level0");
-let subchildmenu = document.querySelector(".subchildmenu");
-let menuItemslv1s = subchildmenu.querySelectorAll(".level1");
+// let blurItemList = [];
+// // let hideItemList = [];
+// let headerLeft = document.querySelector(".header-left");
+// let headerRight = document.querySelector(".header-right");
+// let navigation = document.querySelector(".navigation");
+// let menuItemslv0s = navigation.querySelectorAll(".level0");
+// let subchildmenu = document.querySelector(".subchildmenu");
+// let menuItemslv1s = subchildmenu.querySelectorAll(".level1");
 
-// hideItemList.push({...headerLeft });
-// hideItemList.push({...headerRight });
+// // hideItemList.push({...headerLeft });
+// // hideItemList.push({...headerRight });
 
-function blur(blurItemList) {
-    blurItemList.forEach((item) => item.classList.add("blur"));
-}
+// function blur(blurItemList) {
+//     blurItemList.forEach((item) => item.classList.add("blur"));
+// }
 
-function blurItemLv1(blurItemList) {
-    if (blurItemList) {
-        blurItemList.forEach((item) => item.children[0].classList.add("blur-white"));
-    }
+// function blurItemLv1(blurItemList) {
+//     if (blurItemList) {
+//         blurItemList.forEach((item) => item.children[0].classList.add("blur-white"));
+//     }
 
-}
+// }
 
-blur(menuItemslv0s);
-blurItemLv1(menuItemslv1s);
-hide(headerLeft);
-hide(headerRight);
+// blur(menuItemslv0s);
+// blurItemLv1(menuItemslv1s);
+// hide(headerLeft);
+// hide(headerRight);
 
-function hide(hideItem) {
-    hideItem.classList.add("hide");
-}
+// function hide(hideItem) {
+//     hideItem.classList.add("hide");
+// }
