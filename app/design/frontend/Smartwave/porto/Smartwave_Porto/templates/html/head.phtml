@@ -4,10 +4,10 @@
     $_redirect_cart = $porto_helper->getConfig('checkout/cart/redirect_to_cart');
 ?>
 
-<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="manifest" href="/site.webmanifest">
+<link rel="apple-touch-icon" sizes="180x180" href="<?php echo $block->getViewFileUrl('favicon/apple-touch-icon.png'); ?>">
+<link rel="icon" type="image/png" sizes="32x32" href="<?php echo $block->getViewFileUrl('favicon/favicon-32x32.png'); ?>">
+<link rel="icon" type="image/png" sizes="16x16" href="<?php echo $block->getViewFileUrl('favicon/favicon-16x16.png'); ?>">
+<link rel="manifest" href="<?php echo $block->getViewFileUrl('favicon/site.webmanifest'); ?>">
 
 <?php
     $d = $this->getConfig('porto_design');
