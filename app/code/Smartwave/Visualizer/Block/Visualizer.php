@@ -84,7 +84,6 @@ const PARAM_NAME_URL_ENCODED = 'uenc';
                     <div class="visualizer_scene">
                         <img class="selection-scene-image" title="hình ảnh của '.$scene->getName().'" src="' . $this->_helper->getSceneThumbnailUrl($scene) . '">
                         <div class="scene-overlay"  id="' . $scene->getId() . '-' . $subCategory->getId() . '" data-sku="' . $scene->getSku() . '">
-                        <div class="overlay-content">Chọn bối cảnh</div>
                         </div>
                     </div>';
                     }
@@ -117,7 +116,7 @@ const PARAM_NAME_URL_ENCODED = 'uenc';
                 $this->getProductTypes($subCategory) . '
                 <div class="button-group">
                 <button id="back_to_scene_button' . $subCategory->getId() . '" type="button" class=" scene_carousel_button"> 
-                    <i class="fas fa-angle-left scene_carousel_icon" ></i>Trở về trước
+                    <i class="pre-action scene_carousel_icon" ></i>Trở về trước
                 </button>
                 <button id="see_all' . $subCategory->getId() . '" class="scene_carousel_button attention-button" > Xem tất cả</button>
                 </div>
@@ -128,7 +127,7 @@ const PARAM_NAME_URL_ENCODED = 'uenc';
                 '</div>
                 <div class="button-group">
                     <button id="back_to_type_button' . $subCategory->getId() . '" type="button" class=" scene_carousel_button"> 
-                        <i class="fas fa-angle-left scene_carousel_icon" ></i>Chọn loại ' . $subCategoryName . ' 
+                        <i class="pre-action scene_carousel_icon" ></i>Chọn loại ' . $subCategoryName . ' 
                     </button>
                     <button id="shop-this-product' . $subCategory->getId() . '" onclick="" type="button" class="scene_carousel_button attention-button" disabled="disabled">Mua sản phẩm này</button>
                 </div>

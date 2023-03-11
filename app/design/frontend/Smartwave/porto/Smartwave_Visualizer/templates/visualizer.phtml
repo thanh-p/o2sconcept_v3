@@ -1,12 +1,17 @@
 <div id="myNav" class="overlay">
 </div>
 <div class="visualizer-wrap">
-    <div class="head_tab__list">
+    <div id="head-tab-list" class="head_tab__list">
         <div class="title-head-tab-list">Sản phẩm</div>
-        <div class="head-tab-list-wrap">
+        <div id="title-head-tab-list" class="title-head-tab-list title-action">Sản phẩm</div>
+        <div id="head-wrap-desktop" class="head-tab-list-wrap-desktop">
             <?php echo $this->getVisualHeader(); ?>
         </div>
-        <div class="cus-select-down select-arrow"></div>
+        <div id="wrap-mobile-overlay" class="wrap-mobile-overlay"></div>
+        <div id="head-wrap-mobile" class="head-tab-list-wrap head-tab-list-wrap-mobile">
+            <?php echo $this->getVisualHeader(); ?>
+        </div>
+        <!-- <div class="cus-select-down select-arrow"></div> -->
     </div>
     <div class="visual_content">
         <?php echo $this->getVisualContent(); ?>

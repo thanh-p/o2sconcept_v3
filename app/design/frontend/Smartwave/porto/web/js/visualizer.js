@@ -1,5 +1,8 @@
 var visualContents = document.querySelectorAll(".visual_tab_content");
+var wrapMobileOverlay = document.getElementById("wrap-mobile-overlay");
+var headTabList = document.getElementById("head-wrap-mobile");
 var visualWrap = document.querySelector(".visualizer-wrap");
+var titleHeadTabList = document.getElementById("title-head-tab-list");
 var tabDataItem = {};
 var tabData = [];
 for (let i = 0; i < visualContents.length; i++) {
@@ -128,15 +131,10 @@ function tabify(visualTabContent, index) {
                     tabData[index].indexSelectedScene = i;
                     tabData[index].selectedSceneId = selection.id.replace('-' + visualTabContent.id, "");
                     setVisualImage(VisualizerImage, index);
-                    //restore overlay value
-                    sceneOverlays.forEach(sceneOverlay => {
-                        sceneOverlay.querySelector('.overlay-content').innerHTML = 'Chọn bối cảnh';
-                    })
-                    selection.querySelector('.overlay-content').innerHTML = 'Bối cảnh hiện tại';
+
                     //active scene
                     setActiveClass(sceneOverlays, i);
                     setActiveClass(scenes, i);
-
 
                     //next to select product type
                     if (tabData[index].selectedProductId == '') {
@@ -185,7 +183,7 @@ function tabify(visualTabContent, index) {
                 // if (selection.getAttribute('listener') !== 'true') {
                 if (1) {
                     selection.addEventListener("click", () => {
-                            let shopThisProductBtn = document.getElementById("shop-this-product" + visualTabContent.id);
+                        let shopThisProductBtn = document.getElementById("shop-this-product" + visualTabContent.id);
                         //unset proudct if this already selected
                         if (tabData[index].selectedProductId == selection.id.replace('-' + visualTabContent.id, "")) {
                             //set content overlay
@@ -193,12 +191,12 @@ function tabify(visualTabContent, index) {
                                 products[tabData[index].indexSelectedProduct].querySelector('.overlay-content').innerHTML = 'Chọn sản phẩm';
                             }
                             //disable ship this product button
-                            if (shopThisProductBtn.getAttribute('disabled') == null) {                            
+                            if (shopThisProductBtn.getAttribute('disabled') == null) {
                                 shopThisProductBtn.setAttribute("disabled", "disabled");
                             }
                             tabData[index].selectedProductId = '';
                             tabData[index].indexSelectedProduct = -1;
-                            
+
                         } else {
                             tabData[index].selectedProductId = selection.id.replace('-' + visualTabContent.id, "");
                             tabData[index].indexSelectedProduct = i;
@@ -214,11 +212,11 @@ function tabify(visualTabContent, index) {
                             shopThisProductBtn.setAttribute('onclick', 'location.href="' + productUrl + '"');
                         }
 
-                            //active product
-                            let allProducts = [...productSelections[2].querySelectorAll('.product-overlay')]
-                            setActiveProduct(allProducts, i);
-                            let allWraps = [...productSelections[2].querySelectorAll('.product-wrap')]
-                            setActiveProduct(allWraps, i);                            
+                        //active product
+                        let allProducts = [...productSelections[2].querySelectorAll('.product-overlay')]
+                        setActiveProduct(allProducts, i);
+                        let allWraps = [...productSelections[2].querySelectorAll('.product-wrap')]
+                        setActiveProduct(allWraps, i);
 
                         setVisualImage(VisualizerImage, index);
                     })
@@ -268,36 +266,72 @@ function setVisualImage(VisualizerImage, index) {
 
 function visualizerTabify(visualWrap) {
     let tabList = visualWrap.querySelector(".head_tab__list");
+    let tabListMobile = document.getElementById("head-wrap-mobile");
+    let tabListDesktop = document.getElementById("head-wrap-desktop");
 
     if (tabList) {
         let labelInsideTabItems = [...tabList.querySelectorAll(".tab-text")];
         // let tabItems = [...tabList.children];
 
-        let tabItems = [...tabList.querySelectorAll(".tab__item-head")];
+        // sync product type in mobile and  desktop
+        let tabItemsDesktop = [...tabListDesktop.querySelectorAll(".tab__item-head")];
+        let tabItemsMobile = [...tabListMobile.querySelectorAll(".tab__item-head")];
         let tabContent = visualWrap.querySelector(".visual_content");
         let tabContentItems = [...tabContent.querySelectorAll(".visual_tab_content")];
         let tabIndex = 0;
 
-        tabIndex = tabItems.findIndex((item, index) => {
+        tabIndex = tabItemsDesktop.findIndex((item, index) => {
             return [...item.classList].indexOf("is--active") > -1;
         });
-
+        if (!tabIndex > -1) {
+            tabIndex = tabItemsMobile.findIndex((item, index) => {
+                return [...item.classList].indexOf("is--active") > -1;
+            });
+        }
         tabIndex > -1 ? (tabIndex = tabIndex) : (tabIndex = 0);
 
+        let headTabListMobile = document.getElementById("head-wrap-mobile");
+        let headItems = headTabListMobile.querySelectorAll(".tab__item-head");
+
+        function setTabMobile(index) {
+            setActiveClass(tabContentItems, index);
+            // sync active product
+            setActiveClass(tabItemsDesktop, index);
+            setActiveClass(tabItemsMobile, index);
+            //set active for label inside tabitem
+            setActiveClass(labelInsideTabItems, index);
+            hideWrapMobile();
+        }
         function setTab(index) {
             setActiveClass(tabContentItems, index);
-            setActiveClass(tabItems, index);
+            // sync active product
+            setActiveClass(tabItemsDesktop, index);
+            setActiveClass(tabItemsMobile, index);
             //set active for label inside tabitem
             setActiveClass(labelInsideTabItems, index);
         }
-
-        tabItems.forEach((x, index) =>
+        function hideWrapMobile(){
+            headItems.forEach((item) => {
+                item.style.display = "none";
+                wrapMobileOverlay.style.display = "none";
+            })
+        }
+        tabItemsDesktop.forEach((x, index) =>
             x.addEventListener("click", () => {
                 setTab(index);
             })
         );
+        tabItemsMobile.forEach((x, index) =>
+            x.addEventListener("click", () => {
+                setTabMobile(index);
+            })
+        );
         setTab(tabIndex);
-
+        setTabMobile(tabIndex)
+        wrapMobileOverlay.addEventListener("click", () => {
+            wrapMobileOverlay.style.display = "none";
+            hideWrapMobile();
+        })
     }
 }
 
@@ -316,43 +350,20 @@ function setActiveProduct(list, index) {
 
 }
 
+//handle for change product type
+function handleChangeProduct() {
+    titleHeadTabList.addEventListener("click", () => {
+        let headItems = headTabList.querySelectorAll(".tab__item-head");
+        headItems.forEach((item) => {
+            item.style.display = "block";
+        })
+        wrapMobileOverlay.style.display = "block";
+    });
+}
+
+
 visualContents.forEach((visualContent, index) =>
     tabify(visualContent, index)
 );
 visualizerTabify(visualWrap);
-
-
-
-// // blur visualizer page
-
-// let blurItemList = [];
-// // let hideItemList = [];
-// let headerLeft = document.querySelector(".header-left");
-// let headerRight = document.querySelector(".header-right");
-// let navigation = document.querySelector(".navigation");
-// let menuItemslv0s = navigation.querySelectorAll(".level0");
-// let subchildmenu = document.querySelector(".subchildmenu");
-// let menuItemslv1s = subchildmenu.querySelectorAll(".level1");
-
-// // hideItemList.push({...headerLeft });
-// // hideItemList.push({...headerRight });
-
-// function blur(blurItemList) {
-//     blurItemList.forEach((item) => item.classList.add("blur"));
-// }
-
-// function blurItemLv1(blurItemList) {
-//     if (blurItemList) {
-//         blurItemList.forEach((item) => item.children[0].classList.add("blur-white"));
-//     }
-
-// }
-
-// blur(menuItemslv0s);
-// blurItemLv1(menuItemslv1s);
-// hide(headerLeft);
-// hide(headerRight);
-
-// function hide(hideItem) {
-//     hideItem.classList.add("hide");
-// }
+handleChangeProduct();
