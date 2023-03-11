@@ -43,6 +43,10 @@
 
 @media (max-width: 1200px) {
     .category-custom-description {
+        top: 8%;
+    }
+    
+    .category-custom-description {
         padding-bottom: 2em;
         padding-top: 2em;
     }
