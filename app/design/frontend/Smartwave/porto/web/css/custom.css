@@ -116,7 +116,11 @@ html .btn-v-dark {color: #fff !important;background-color: #222529 !important;bo
 }
 .layout-fullwidth .container,.layout-fullwidth .block.category.event,.layout-fullwidth .footer.content,.layout-fullwidth .header.content,.layout-fullwidth .navigation,.layout-fullwidth .page-main,.layout-fullwidth .page-wrapper>.breadcrumbs >ul,.layout-fullwidth .page-wrapper>.page-bottom,.layout-fullwidth .page-wrapper>.widget,.layout-fullwidth .top-container{max-width:100%;padding-left: 20px;padding-right: 20px;}
 @media (min-width:1200px){.layout-fullwidth.page-layout-2columns-left .sidebar-main,.layout-fullwidth.page-layout-2columns-right .sidebar-main{width:20%}
-.layout-fullwidth.page-layout-2columns-left .column.main,.layout-fullwidth.page-layout-2columns-right .column.main{width:80%}
+.layout-fullwidth.page-layout-2columns-left .column.main,.layout-fullwidth.page-layout-2columns-right .column.main{
+    width:80%;
+    margin: auto;
+    float: none;
+}
 }
 .cms-index-index .page-main {max-width: 100%;padding: 0;}
 .d-none{display:none!important}
