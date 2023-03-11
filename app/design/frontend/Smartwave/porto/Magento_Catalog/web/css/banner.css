@@ -43,7 +43,8 @@
 
 @media (max-width: 1200px) {
     .category-custom-description {
-        top: 5.5%;
+        padding-bottom: 2em;
+        padding-top: 2em;
     }
 
     .category-custom-description h1 {
@@ -57,7 +58,7 @@
 
 @media (max-width: 991px) {
     .category-custom-description {
-        top: 4.5%;
+        top: 8%;
         padding-bottom: 2em;
         padding-top: 2em;
         font-size: 12px;

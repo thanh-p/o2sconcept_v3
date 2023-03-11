@@ -202,6 +202,20 @@ use Magento\Catalog\Model\Product\ProductList\Toolbar;
         margin-top: 4px;
     }
 
+    @media (max-width: 1200px) {
+        .toolbar a.porto-product-filters-toggle, .toolbar-sorter, .filter-current .item {
+            font-size: 1.25em;
+        }
+
+        .toolbar-products .items {
+            display: none;
+        }
+
+        .toolbar {
+            background: #060A13;
+        }
+    }
+
     @media (max-width: 991px) {
         .toolbar .modes, .toolbar .sorter-label, .toolbar .limiter .label {
             display: inherit;
@@ -213,21 +227,11 @@ use Magento\Catalog\Model\Product\ProductList\Toolbar;
         }
 
         .toolbar-sorter {
-            font-size: 1em;
             background-image: -webkit-linear-gradient(-15deg, #060A13 55%, rgb(251, 176, 59) 56%)
         }
 
         .toolbar a.porto-product-filters-toggle {
-            font-size: 1em;
             padding-right: 0;
-        }
-
-        .toolbar-products .items {
-            display: none;
-        }
-
-        .toolbar {
-            background: black;
         }
 
         .filter-current .action.remove {
@@ -236,7 +240,6 @@ use Magento\Catalog\Model\Product\ProductList\Toolbar;
         }
 
         .filter-current .item {
-            font-size: 1em;
             padding-right: 1em;
         }
 
@@ -246,6 +249,16 @@ use Magento\Catalog\Model\Product\ProductList\Toolbar;
 
         .toolbar a.porto-product-filters-toggle {
             background-image: -webkit-linear-gradient(15deg, rgb(251, 176, 59) 56%, #060A13 57%);
+        }
+
+        .toolbar a.porto-product-filters-toggle, .toolbar-sorter, .filter-current .item {
+            font-size: 1.5em;
+        }
+    }
+
+    @media (max-width: 575px) {
+        .toolbar a.porto-product-filters-toggle, .toolbar-sorter, .filter-current .item {
+            font-size: 1em;
         }
     }
 </style>
@@ -340,11 +353,21 @@ use Magento\Catalog\Model\Product\ProductList\Toolbar;
         transform: rotate(-90deg);
     }
 
-    @media (max-width: 991px) {
-        .product-item-name a, .price-box .price {
-            font-size: 1em;
+    @media (max-width: 1200px) {
+        .product-item-info .product-item-details .price-box {
+            margin-top: 0.5em;
         }
 
+        .product-item-name a {
+            font-size: 1.25em;
+        }
+
+        .price-box .price {
+            font-size: 1em;
+        }
+    }
+
+    @media (max-width: 991px) {
         .pages strong.page, .pages a.page, .pages .action {
             font-size: 14px !important;
         }
