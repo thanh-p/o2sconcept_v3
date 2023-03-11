@@ -383,20 +383,27 @@ use Magento\Catalog\Model\Product\ProductList\Toolbar;
 
         <?php
             $catalog_left_nav = $block->getLayout()->getBlock("catalog.leftnav");
-            $filters = $catalog_left_nav->getFilters();
-            $target_filter;
-            foreach ($filters as $key => $filter):
-                $b = $filter->getName();
-                if (str_contains($filter->getName(), "Chủ đề")) {
-                    $target_filter = $filter;
-                    break;
-                }
-                
-            endforeach;
+
+            if ($catalog_left_nav) {
+                $filters = $catalog_left_nav->getFilters();
+                $target_filter;
+                foreach ($filters as $key => $filter):
+                    $b = $filter->getName();
+                    if (str_contains($filter->getName(), "Chủ đề")) {
+                        $target_filter = $filter;
+                        break;
+                    }
+                    
+                endforeach;
+            }
         ?>
 
         <div class="filter-options">
-            <?php /* @escapeNotVerified */ echo $catalog_left_nav->getChildBlock('renderer')->setFilter($target_filter)->render($target_filter); ?>
+            <?php /* @escapeNotVerified */ 
+                if ($catalog_left_nav) {
+                    echo $catalog_left_nav->getChildBlock('renderer')->setFilter($target_filter)->render($target_filter); 
+                }
+            ?>
         </div>
         
         <?php if ($block->isExpanded()): ?>
@@ -406,7 +413,10 @@ use Magento\Catalog\Model\Product\ProductList\Toolbar;
     
     <?php
         $catalog_state_block = $block->getLayout()->getBlock("catalog.navigation.state");
-        echo $catalog_state_block->toHtml();
+
+        if ($catalog_state_block) {
+            echo $catalog_state_block->toHtml();
+        }
     ?>
 <?php endif ?>
 
