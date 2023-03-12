@@ -143,11 +143,6 @@ const PARAM_NAME_URL_ENCODED = 'uenc';
         if ($subCategories) {
             foreach ($subCategories as $subCategory) {
                 $productTypesHtml = $productTypesHtml . $this->_helper->getProducTypestHtml($subCategory);
-
-                // $productTypesHtml = $productTypesHtml . '
-                // <li id="'. $subCategory->getId() .'" class="ng-scope">
-                // <label><span class="ng-binding">' . $subCategory->getName() . '</span></label>
-                // </li>';
             }
         }
         return
