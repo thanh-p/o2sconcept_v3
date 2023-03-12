@@ -642,7 +642,7 @@ article.post .post-date .month, .post-item .post-date .month {box-shadow: 0 -1px
 .catalog-category-view .mobile-sidebar, .catalog-product-view .mobile-sidebar,.catalogsearch-result-index .mobile-sidebar {position: fixed !important;background: #fff;padding-bottom: 0;margin-top: 0!important;padding-left: 0!important;padding-right: 0!important;height: 100%;width: 260px;top: 0;bottom: 0;left: 0;z-index: 9000;transform: translateX(-100%);transition: transform 0.2s ease-in-out;}
 .page-layout-2columns-right.catalog-category-view .mobile-sidebar,.page-layout-2columns-right.catalog-product-view .mobile-sidebar,.page-layout-2columns-right.catalogsearch-result-index .mobile-sidebar {left: auto;right: 0;transform: translateX(100%);}
 .mobile-sidebar .ln_overlay {display: none !important;}
-.page-wrapper {transition: left .3s;position: relative;left: 0;}
+.page-wrapper {transition: left .3s;position: relative;left: 0; min-height: 100vh;}
 .page-layout-2columns-right .page-wrapper {transition: right .3s;position: relative;left: auto; right: 0;}
 html.sidebar-opened .mobile-sidebar {z-index: 9000;transition: transform 0.3s;transform: translateX(0) !important;}
 html.sidebar-opened .page-wrapper {left: 260px;overflow: visible;padding-left: 0;}
