@@ -13,6 +13,7 @@
         <referenceContainer name="after.body.start">
             <block class="Magento\Newsletter\Block\Subscribe" name="porto_newsletter_popup" template="subscribe_popup.phtml" before="-"/>
             <block class="Smartwave\Porto\Block\Template" name="porto_sidebar_sticky" template="html/sidebar_sticky.phtml" after="-"/> 
+            <block class="Smartwave\Porto\Block\Template" name="chatbox" template="html/chatbox.phtml"/>
         </referenceContainer>
         <referenceContainer name="page.wrapper">
             <block class="Smartwave\Porto\Block\Template" name="porto_header" template="html/header.phtml" before="main.content">
