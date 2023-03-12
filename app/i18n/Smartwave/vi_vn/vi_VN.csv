@@ -3064,7 +3064,7 @@ Time in seconds between the widget updates.,module,Magento_CatalogWidget
 "You have no items in your shopping cart.","Bạn có không có sản phẩm nào trong giỏ hàng của bạn.",module,Magento_Checkout
 "Click <a href=""%1"">here</a> to continue shopping.","Bấm vào <a href=""%1""> đây</a> để tiếp tục mua sắm.",module,Magento_Checkout
 "Estimate Tax","Ước tính thuế",module,Magento_Checkout
-"Estimate Shipping and Tax","ước tính vận chuyển và thuế",module,Magento_Checkout
+"Estimate Shipping and Tax","Uớc tính vận chuyển và thuế",module,Magento_Checkout
 "Excl. Tax","Chưa bao gồm thuế",module,Magento_Checkout
 "You added %1 to your <a href=""%2"">shopping cart</a>.","You added %1 to your <a href=""%2"">shopping cart</a>.",module,Magento_Checkout
 "Loading...","Đang tải...",module,Magento_Checkout
@@ -15315,3 +15315,5 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 
 "Details", "Mô tả"
 "Add to Cart","Đặt hàng"
+"You added %1 to your <a href=""%2"">shopping cart</a>.","Bạn đã thêm %1 vào <a href=""%2"">giỏ mua hàng</a>."
+"The requested qty is not available","Không đủ số lượng sản phẩm yêu cầu."

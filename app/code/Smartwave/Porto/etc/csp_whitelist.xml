@@ -34,6 +34,7 @@
                 <value id="script_instagram" type="host">*.instagram.com</value>
                 <value id="unpkg" type="host">unpkg.com</value>
                 <value id="cdnjs" type="host">cdnjs.cloudflare.com</value>
+                <value id="facebook-chatbox" type="host">*.facebook.net</value>
             </values>
         </policy>
         <policy id="img-src">
@@ -64,6 +65,8 @@
                 <value id="cardinalcommerce" type="host">*.cardinalcommerce.com</value>
                 <value id="instagram" type="host">*.graph.instagram.com</value>
                 <value id="googleanalytics" type="host">*.google-analytics.com</value>
+                <value id="facebook-chatbox-connect" type="host">*.facebook.net</value>
+                <value id="facebook-chatbox-connect2" type="host">*.facebook.com</value>
             </values>
         </policy>
         <policy id="frame-src">
@@ -71,6 +74,7 @@
                 <value id="google" type="host">*.google.com</value>
                 <value id="addthis" type="host">*.addthis.com</value>
                 <value id="pinterest" type="host">*.pinterest.com</value>
+                <value id="facebook-chatbox-frame" type="host">*.facebook.com</value>
             </values>
         </policy>
     </policies>

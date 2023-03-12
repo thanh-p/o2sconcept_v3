@@ -41,6 +41,17 @@
     width: 100%;
 }
 
+.page.messages {
+    font-size: 20px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.page.messages a {
+    font-family: 'Roboto', sans-serif;
+}
+
 @media (max-width: 1200px) {
     .category-custom-description {
         top: 8%;
