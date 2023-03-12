@@ -29,7 +29,6 @@
                 <block class="Smartwave\Porto\Block\Template" name="custom_block_menu" template="html/header_custom_block_menu.phtml" after="-"/>
             <block class="Smartwave\Porto\Block\Template" name="porto_custom_notice" template="html/custom_notice.phtml" after="-"/>
             </block>
-            <block class="Smartwave\Porto\Block\Template" name="chatbox" template="html/chatbox.phtml" before="main.content"/>
         </referenceContainer>
         <move element="navigation.sections" destination="porto_header"/>
         <move element="top.search" destination="porto_header"/>
