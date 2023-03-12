@@ -79,7 +79,7 @@
                            }, value: qty"
                            type="number"
                            size="4"
-                           class="item-qty cart-item-qty">
+                           class="item-qty cart-item-qty" disabled>
                     <button data-bind="attr: {
                            id: 'update-cart-item-'+item_id,
                            'data-cart-item': item_id,
@@ -89,22 +89,6 @@
                             style="display: none">
                         <span data-bind="i18n: 'Update'"></span>
                     </button>
-                </div>
-            </div>
-
-            <div class="product actions">
-                <!-- ko if: is_visible_in_site_visibility -->
-                <div class="primary">
-                    <a data-bind="attr: {href: configure_url, title: $t('Edit item')}" class="action edit">
-                        <span data-bind="i18n: 'Edit'"></span>
-                    </a>
-                </div>
-                <!-- /ko -->
-                <div class="secondary">
-                    <a href="#" data-bind="attr: {'data-cart-item': item_id, title: $t('Remove item')}"
-                       class="action delete">
-                        <span data-bind="i18n: 'Remove'"></span>
-                    </a>
                 </div>
             </div>
         </div>

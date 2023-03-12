@@ -325,7 +325,7 @@ html .btn-v-dark {color: #fff !important;background-color: #222529 !important;bo
 .minicart-items .action.edit:before {content: '\f826';font-family: 'porto-icons';font-size: 14px;color: inherit;}
 .minicart-wrapper .product .actions > .secondary a span, .minicart-items .action.edit > span {display: none;}
 .minicart-items .product-item-details > *:not(.product-item-name) {font-weight: 400;font-size: .8125rem;}
-.minicart-items .product-item-pricing .label {width: 30px;color: #777;}
+.minicart-items .product-item-pricing .label {width: 60px;color: #777;}
 .minicart-items .product-item-details .product.options {flex: 0 0 100%;margin-bottom: 2px;}
 .minicart-items .product-item-details .product.options dd,.minicart-items .product-item-details .product.options dt {margin: 0;}
 .minicart-items .product-item-details .details-qty {display: flex;align-items: center;}
