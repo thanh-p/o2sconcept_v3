@@ -1,7 +1,7 @@
 <?php
 namespace Smartwave\Visualizer\Controller\Index;
 
-class Test extends \Magento\Framework\App\Action\Action
+class Content extends \Magento\Framework\App\Action\Action
 {
 	protected $_pageFactory;
 
