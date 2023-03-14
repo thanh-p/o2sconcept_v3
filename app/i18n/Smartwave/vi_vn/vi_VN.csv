@@ -2246,7 +2246,7 @@ and the product descriptor can be up to 18, 14, or 9 characters respectively (wi
 "Choose existing category.","Chọn thể loại hiện có.",module,Magento_Catalog
 "Image Detail","Hình ảnh chi tiết",module,Magento_Catalog
 "Adding...","Đang thêm...",module,Magento_Catalog
-"Added","đã thêm",module,Magento_Catalog
+"Added","Đã thêm",module,Magento_Catalog
 "remaining","remaining",module,Magento_Catalog
 "too many","too many",module,Magento_Catalog
 "does not implement Storage Interface","không thể triển khai Giao diện bộ nhớ",module,Magento_Catalog
@@ -6074,7 +6074,7 @@ Email template chosen based on theme fallback when ""Default"" option is selecte
 "Communications","Thông tin liên lạc",module,Magento_Email
 "No Templates Found","Không có bản mẫu được tìm thấy",module,Magento_Email
 "ID","ID",module,Magento_Email
-"Added","đã thêm",module,Magento_Email
+"Added","Đã thêm",module,Magento_Email
 "Updated","Đã cập nhật",module,Magento_Email
 "Subject","Chủ đề",module,Magento_Email
 "Template Type","Loại mẫu",module,Magento_Email
@@ -7818,7 +7818,7 @@ it will make no affect on Price filter.",module,Magento_LayeredNavigation
 "Wish List Search Template","Tìm mẫu Danh sách yêu thích",module,Magento_MultipleWishlist
 "CSV","CSV",module,Magento_MultipleWishlist
 "Excel XML","Excel XML",module,Magento_MultipleWishlist
-"Added","đã thêm",module,Magento_MultipleWishlist
+"Added","Đã thêm",module,Magento_MultipleWishlist
 "Customer","Khách hàng",module,Magento_MultipleWishlist
 "Status","Trạng thái",module,Magento_MultipleWishlist
 "Public","Công khai",module,Magento_MultipleWishlist
@@ -8470,7 +8470,7 @@ information on installing the agent is available <a target=""_blank"" href=""%1"
 "No Templates Found","Không có bản mẫu được tìm thấy",module,Magento_Newsletter
 "ID","ID",module,Magento_Newsletter
 "Template","Mẫu",module,Magento_Newsletter
-"Added","đã thêm",module,Magento_Newsletter
+"Added","Đã thêm",module,Magento_Newsletter
 "Updated","Đã cập nhật",module,Magento_Newsletter
 "Sender","Người gửi",module,Magento_Newsletter
 "Template Type","Loại mẫu",module,Magento_Newsletter
