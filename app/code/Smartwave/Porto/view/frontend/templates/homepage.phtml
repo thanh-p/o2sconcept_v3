@@ -592,9 +592,13 @@
         font-size: 1.7em;
       }
 
-      .about-us-body h3, .about-us-body p, .about-us-body>a, .service-text h2 {
-        font-size: 2em;
+      .about-us-body h3, .about-us-body p, .about-us-body>a {
+        font-size: 2.5em;
         text-align: center;
+      }
+
+      .service-text h2 {
+        font-size: 2em;
       }
 
       .about-us-body h1 {
@@ -1613,6 +1617,12 @@ require([
 
       .story-body h1 {
         font-size: 3em;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .story-posts a {
+        font-size: 0.8em;
       }
     }
   </style>
