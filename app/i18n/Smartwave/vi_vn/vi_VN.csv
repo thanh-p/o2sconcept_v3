@@ -4337,12 +4337,13 @@ You need to create a simple product for each configuration (Ex: a product for ea
 "Enter the comment and try again.","Enter the comment and try again.",module,Magento_Contact
 "The email address is invalid. Verify the email address and try again.","The email address is invalid. Verify the email address and try again.",module,Magento_Contact
 "* Required Fields","* Bắt buộc",module,Magento_Contact
-"Write Us","Viết cho chúng tôi",module,Magento_Contact
+"Write Us","Gửi thông tin tư vấn",module,Magento_Contact
+"Contact Details","Thông tin liên hệ",module,Magento_Contact
 "Jot us a note and we’ll get back to you as quickly as possible.","Gửi một lưu ý cho chúng tôi và chúng tôi sẽ trả lời bạn nhanh nhất có thể.",module,Magento_Contact
 "Name","Tên",module,Magento_Contact
 "Email","Email",module,Magento_Contact
 "Phone Number","Số Điện thoại",module,Magento_Contact
-"What’s on your mind?","Bạn đang nghĩ gì?",module,Magento_Contact
+"What’s on your mind?","Thông tin tư vấn",module,Magento_Contact
 "Submit","Gửi",module,Magento_Contact
 "Contact Form","Mẫu liên hệ",module,Magento_Contact
 "Phone","Phone",module,Magento_Contact
