@@ -116,12 +116,6 @@
         padding-top: 1em;
     }
 
-    @media (max-width: 575px) {
-        .footer-container {
-            font-size: 6px !important;
-        }
-    }
-
     @media (max-width: 991px) {
         .footer-container {
             font-size: inherit;
@@ -156,6 +150,24 @@
             width: 5%;
         }
     }
+
+    @media (max-width: 575px) {
+        .footer-container {
+            font-size: 6px !important;
+        }
+
+        .footer-contact h3, .footer-company-tax h3, .footer-schedule h3, .footer-menu ul li {
+            font-size: 1.5em;
+        }
+
+        .footer-company-tax {
+            width: 100%;
+        }
+
+        .footer-body-left {
+            margin-left: 1em;
+        }
+    }
 </style>
 
 
@@ -187,7 +199,7 @@
             <div class="footer-schedule w-100">
                 <h3 class="float-right w-100">
                     <span class="d-block text-right">Thời gian làm việc: Thứ 2 - Chủ nhật</span>
-                    <span class="d-block text-right">8.00 am - 18.00 pm</span>
+                    <span class="d-block text-right">8.00 am - 8.00 pm</span>
                 </h3>
             </div>
         </div>
