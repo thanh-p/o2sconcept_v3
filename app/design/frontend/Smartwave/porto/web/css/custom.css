@@ -376,7 +376,7 @@ html .fancybox-close:hover,.modal-custom .action-close:hover,.modal-popup .actio
   header.page-header .nav-sections-item-title[aria-controls="store.menu"]>a:before{font-size:14px;line-height:1;content:'\f827';font-family:porto-icons;vertical-align:middle;display:inline-block;font-weight:400;margin:-2px 5px 0 0}
   .navigation {padding-left: 0;padding-right: 0;}
   .navigation .parent .level-top:after{right:15px}
-  .navigation li.level0>a.ui-state-active{color:#333!important}
+  .navigation li.level0>a.ui-state-active{color:rgb(251, 176, 59)!important}
   .sw-megamenu.navigation li.level0.staticwidth>.submenu{border-radius:0!important}
   header.page-header .nav-sections-item-title{height:63px}
   header.page-header .nav-sections-item-content{margin-top:63px}
