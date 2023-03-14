@@ -4331,7 +4331,7 @@ You need to create a simple product for each configuration (Ex: a product for ea
 "Searchable","Có thể tìm kiếm",module,Magento_ConfigurableProductStaging
 "Comparable","Có thể so sánh",module,Magento_ConfigurableProductStaging
 "Page not found.","Không tìm thấy trang.",module,Magento_Contact
-"Thanks for contacting us with your comments and questions. We'll respond to you very soon.","Cảm ơn bạn đã liên hệ với chúng tôi với các ý kiến và câu hỏi của bạn. Chúng tôi sẽ sớm trả lời bạn.",module,Magento_Contact
+"Thanks for contacting us with your comments and questions. We'll respond to you very soon.","Cảm ơn bạn đã liên hệ với O2sconcept. O2sconcept sẽ sớm trả lời bạn.",module,Magento_Contact
 "An error occurred while processing your form. Please try again later.","An error occurred while processing your form. Please try again later.",module,Magento_Contact
 "Enter the Name and try again.","Enter the Name and try again.",module,Magento_Contact
 "Enter the comment and try again.","Enter the comment and try again.",module,Magento_Contact
