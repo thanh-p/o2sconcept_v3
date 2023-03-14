@@ -579,6 +579,11 @@
     }
 
     @media (max-width: 575px) {
+      .about-us-body {
+        margin-right: auto;
+        margin-left: auto;
+      }
+
       .title-decor {
         font-size: 3em;
       }
@@ -587,16 +592,15 @@
         font-size: 1.7em;
       }
 
-      .about-us-body h3, .about-us-body p, .about-us-body>a {
-        font-size: 2em;
+      .about-us-body h3, .about-us-body p, .about-us-body>a, .service-text h2 {
+        font-size: 2.5em;
+        text-align: center;
       }
 
       .about-us-body h1 {
         font-size: 3em;
-      }
-
-      .service-text h2 {
-        font-size: 2em;
+        text-align: center;
+        border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 0%, rgb(209, 156, 21) 50%, rgba(209, 156, 21, 0) 100%) 0 0 100% 0/1px 0 3px 0 stretch;
       }
 
       .about-us-cotainer {
@@ -686,6 +690,10 @@
     padding-top: 20em;
     padding-bottom: 20em;
   }
+
+  .swiper-banner-container {
+    width: 80%;
+  }
 }
 
 @media (max-width: 991px) {
@@ -703,12 +711,12 @@
     padding-top: 15em;
   }
 
-  .swiper-text h2, .swiper-text-product p {
-    font-size: 2em !important;
+  .swiper-banner-container {
+    width: 50%;
   }
 
   .swiper-slide-banner {
-    height: 50vw;
+    height: 65vw;
   }
 }
 </style>
@@ -906,7 +914,7 @@ require([
       
       breakpoints: {
         320: {
-          slidesPerView: 2,
+          slidesPerView: 1,
         },
         560: {
           slidesPerView: 3,
@@ -1138,10 +1146,6 @@ require([
       .featured-product-menu ul {
         padding-top: 2.5em;
         padding-bottom: 2.5em;
-      }
-
-      .swiper-banner-container {
-        width: 80%;
       }
 
       .swiper-slide-product {
