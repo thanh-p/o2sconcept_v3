@@ -108,7 +108,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $productSelectionsHtml = '';
         if ($subCategoryId) {
             $productCollection = $this->getProductCollectionByCategories($subCategoryId);
-            $productCollection->setPageSize(3);
+            $productCollection->setPageSize(20);
             $productCollection->setCurPage($currentPage);
 
             if ($productCollection) {
