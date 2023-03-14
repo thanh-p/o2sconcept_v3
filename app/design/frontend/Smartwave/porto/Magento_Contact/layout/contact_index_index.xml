@@ -15,7 +15,7 @@
         </referenceContainer>
         <referenceContainer name="content">
             <block class="Smartwave\Porto\Block\Template" name="contactPage" template="Magento_Contact::contact_page.phtml">
-                <block class="Magento\Contact\Block\ContactForm" name="contactForm" template="Magento_Contact::form.phtml">
+                <block class="Magento\Contact\Block\ContactForm" name="contactForm" template="Magento_Contact::form.phtml" remove="true">
                     <container name="form.additional.info" label="Form Additional Info"/>
                 </block>
             </block>

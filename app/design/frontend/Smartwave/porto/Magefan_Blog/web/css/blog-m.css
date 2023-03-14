@@ -31,7 +31,7 @@
     width: 45px;
 }
 .post-holder .post-date .day {
-    color: #08c;
+    color: rgb(251, 176, 59);
     background-color: #f4f4f4;
     border-radius: 2px 2px 0 0;
     display: block;
@@ -43,7 +43,7 @@
 }
 .post-holder .post-date .month {
     color: #fff;
-    background-color: #08c;
+    background-color: rgb(251, 176, 59);
     border-radius: 0 0 2px 2px;
     box-shadow: 0 -1px 0 0 rgba(0,0,0,.07) inset;
     display: block;
@@ -149,7 +149,7 @@
 .widget.block-recent-posts ul li a {
     font-family: inherit;
     font-size: inherit;
-    color: #08c;
+    color: rgb(251, 176, 59);
     line-height: 18px;
 }
 .widget.block-recent-posts ul li div.post-time {
