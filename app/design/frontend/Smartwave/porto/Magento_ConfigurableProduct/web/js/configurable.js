@@ -447,7 +447,7 @@ define([
             this._clearSelect(element);
             element.options[0] = new Option('', '');
             element.options[0].innerHTML = this.options.spConfig.chooseText;
-            element.options[0].hidden = true;
+            element.options[0].style.display = 'none';
             prevConfig = false;
 
             if (element.prevSetting) {

@@ -3139,7 +3139,7 @@ Time in seconds between the widget updates.,module,Magento_CatalogWidget
 "Something went wrong with your request. Please try again later.","Something went wrong with your request. Please try again later.",module,Magento_Checkout
 "Are you sure you want to remove all items from your shopping cart?","Are you sure you want to remove all items from your shopping cart?",module,Magento_Checkout
 "Are you sure you would like to remove this item from the shopping cart?","Bạn có chắc bạn muốn loại bỏ sản phẩm này khỏi giỏ mua hàng?",module,Magento_Checkout
-"Review & Payments","đánh giá và thanh toán",module,Magento_Checkout
+"Review & Payments","Đánh giá và thanh toán",module,Magento_Checkout
 "Select a new payment method","Chọn một phương thức thanh toán mới",module,Magento_Checkout
 "Shipping","Vận chuyển",module,Magento_Checkout
 "Save Address","Lưu địa chỉ",module,Magento_Checkout
@@ -10276,8 +10276,8 @@ target=""_blank"">DevDocs' Release Information</a>.,module,Magento_ReleaseNotifi
 "Click <a href=""%1"">here</a> to see the review.","Bấm vào <a href=""%1""> đây</a> để xem các bài đánh giá.",module,Magento_Review
 "Product: ""%1"" reviewed by: %2","Sản phẩm: ""%1"" được đánh giá bởi: %2",module,Magento_Review
 "Pending Reviews RSS","Đang chờ giải quyết giá RSS",module,Magento_Review
-"Reviews %1","đánh Giá %1",module,Magento_Review
-"Reviews","Các đánh giá",module,Magento_Review
+"Reviews %1","Đánh giá %1",module,Magento_Review
+"Reviews","Đánh giá",module,Magento_Review
 "The review has been deleted.","đánh giá đã bị xóa.",module,Magento_Review
 "Something went wrong  deleting this review.","Một cái gì đó đã đi sai xoá nhận xét này.",module,Magento_Review
 "You don’t have permission to perform this operation. The selected review must be in Pending Status.","You don’t have permission to perform this operation. The selected review must be in Pending Status.",module,Magento_Review
@@ -10297,7 +10297,7 @@ target=""_blank"">DevDocs' Release Information</a>.,module,Magento_ReleaseNotifi
 "Ratings","Xếp hạng",module,Magento_Review
 "You saved the rating.","Bạn đã lưu các xếp hạng.",module,Magento_Review
 "My Product Reviews","Đánh giá sản phẩm của tôi",module,Magento_Review
-"You submitted your review for moderation.","Bạn đã gửi nhận xét của bạn để kiểm duyệt.",module,Magento_Review
+"You submitted your review for moderation.","Bạn đã gửi nhận xét để kiểm duyệt.",module,Magento_Review
 "We can't post your review right now.","Chúng tôi không thể đăng bài nhận xét của bạn ngay bây giờ.",module,Magento_Review
 "The storage key wasn't set. Add the storage key and try again.","The storage key wasn't set. Add the storage key and try again.",module,Magento_Review
 "Approved","Chấp thuận",module,Magento_Review
@@ -15318,3 +15318,4 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "Add to Cart","Đặt hàng"
 "You added %1 to your <a href=""%2"">shopping cart</a>.","Bạn đã thêm %1 vào <a href=""%2"">giỏ mua hàng</a>."
 "The requested qty is not available","Không đủ số lượng sản phẩm yêu cầu."
+"View Cart", "Xem giỏ hàng"
