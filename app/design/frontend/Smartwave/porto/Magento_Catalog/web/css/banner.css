@@ -59,6 +59,10 @@
     color: white !important;
 }
 
+.product-item-photo .product-item-inner .product-item-actions > .actions-primary {
+    display: none;
+}
+
 @media (max-width: 1200px) {
     .category-custom-description {
         top: 8%;
