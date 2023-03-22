@@ -1,11 +1,11 @@
 <?php
     $categoryHelper = $this->helper('\Magento\Catalog\Helper\Category');
     $categories = $categoryHelper->getStoreCategories(true,false,true);
-    $sanpham_arr = array();
-    $sanpham_href_arr = array();
+    $sanpham_arr = array(6, 7, 8, 9, 10, 11);
+    $sanpham_href_arr = array('san-pham/film-trang-tri-kinh.html', 'san-pham/tranh-treo-tuong.html', 'san-pham/tranh-dan-tuong.html', 'san-pham/rem-cuon.html', 'san-pham/decal-dan-san.html', 'san-pham/film-dan-noi-that.html');
 
     foreach($categories as $category) {
-        if (str_contains($category->getName(), 'N PH')) {
+        if (str_contains($category->getName(), "N PH")) {
           foreach($category->getChildren() as $sub_category) {
              $sanpham_arr[] = $sub_category->getId();
              $sanpham_href_arr[] = $sub_category->getRequestPath();
