@@ -92,6 +92,7 @@ switch ($type = $block->getType()) {
 		$title = __('We found other products you might like!');
 		// $items = $block->getItemCollection()->getItems();
 		$items = $block->getRandomItems($upsell_columns);
+		$exist = count($items);
 		$limit = $block->getItemLimit('upsell');
 		$shuffle = 0;
 
