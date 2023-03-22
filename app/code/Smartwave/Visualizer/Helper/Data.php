@@ -74,12 +74,20 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
                 ->addCategoriesFilter(['in' => $ids]);
         return $collection;
     }
-
+    public function getConfigProductCollectionByCategories($ids)
+    {
+        $collection = $this->_productCollectionFactory->create()
+            ->addAttributeToSelect('*')
+            ->addCategoriesFilter(['in' => $ids])
+            ->addAttributeToFilter('type_id', \Magento\ConfigurableProduct\Model\Product\Type\Configurable::TYPE_CODE);
+    
+        return $collection;
+    }
     public function getProductSelectionsHtml($subCategoryId, $parentCategoryId){
         $productSelectionsHtml = '';
         if ($subCategoryId) {
-            $productCollection = $this->getProductCollectionByCategories($subCategoryId);
-            $productCollection->setPageSize(5);
+            $productCollection = $this->getConfigProductCollectionByCategories($subCategoryId);
+            $productCollection->setPageSize(20);
 
             if ($productCollection) {
                 foreach ($productCollection as $product) {
@@ -107,7 +115,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getMoreProductSelectionsHtml($subCategoryId, $parentCategoryId, $currentPage){
         $productSelectionsHtml = '';
         if ($subCategoryId) {
-            $productCollection = $this->getProductCollectionByCategories($subCategoryId);
+            $productCollection = $this->getConfigProductCollectionByCategories($subCategoryId);
             $productCollection->setPageSize(20);
             $productCollection->setCurPage($currentPage);
 
@@ -147,7 +155,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function getProducTypestHtml($subCategory){
         $typeSelectionsHtml = '';
         if ($subCategory) {
-            $productCollection = $this->getProductCollectionByCategories($subCategory->getId());
+            $productCollection = $this->getConfigProductCollectionByCategories($subCategory->getId());
             if ($productCollection) {
                 $product = $productCollection->getFirstItem();
                 if ($product) {
