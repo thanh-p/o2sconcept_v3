@@ -86,9 +86,9 @@ class Upsell extends AbstractProduct implements IdentityInterface
         ProductVisibility $catalogProductVisibility,
         CheckoutSession $checkoutSession,
         Manager $moduleManager,
-        array $data = [],
         \Magento\Catalog\Model\CategoryFactory $categoryFactory,
-        \Magento\Catalog\Api\ProductRepositoryInterface $productRepository
+        \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
+        array $data = [],
     ) {
         $this->_checkoutCart = $checkoutCart;
         $this->_catalogProductVisibility = $catalogProductVisibility;
