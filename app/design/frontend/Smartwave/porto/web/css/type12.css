@@ -147,6 +147,18 @@ text-transform: capitalize;
     font-family: 'Josefin Sans', sans-serif;
   }
 
+  .catalogsearch-result-index .page-title-wrapper {
+    background: #060A13;
+  }
+
+  .catalogsearch-result-index .page-title-wrapper h1 {
+    visibility: hidden;
+  }
+
+  .catalogsearch-result-index .page-main {
+    background: #060A13;
+  }
+
   @media (min-width: 992px) {
     .hide-in-large-scr, .show-in-homepage-only {
       display: none !important;
