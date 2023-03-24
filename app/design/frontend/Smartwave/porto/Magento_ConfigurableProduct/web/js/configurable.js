@@ -447,8 +447,8 @@ define([
             this._clearSelect(element);
             element.options[0] = new Option('', '');
             element.options[0].innerHTML = this.options.spConfig.chooseText;
-            element.options[0].prop("disabled", true); // for safari
-            element.options[0].hide();
+            element.options[0].style.display = 'none';
+            element.options[0].style.disabled = 'true';
             prevConfig = false;
 
             if (element.prevSetting) {
