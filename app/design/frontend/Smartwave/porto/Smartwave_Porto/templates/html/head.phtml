@@ -4,6 +4,8 @@
     $_redirect_cart = $porto_helper->getConfig('checkout/cart/redirect_to_cart');
 ?>
 
+<meta http-equiv="Content-Security-Policy" content="frame-ancestors https://www.facebook.com">
+<meta http-equiv="X-Frame-Options" content="ALLOW-FROM https://www.facebook.com">
 <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $block->getViewFileUrl('favicon/apple-touch-icon.png'); ?>">
 <link rel="icon" type="image/png" sizes="32x32" href="<?php echo $block->getViewFileUrl('favicon/favicon-32x32.png'); ?>">
 <link rel="icon" type="image/png" sizes="16x16" href="<?php echo $block->getViewFileUrl('favicon/favicon-16x16.png'); ?>">
