@@ -7,6 +7,10 @@
 -->
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
     <body>
+        <referenceContainer name="head">
+            <block class="Magento\Framework\View\Element\Template" name="head.additional" template="html/head_additional.phtml" />
+        </referenceContainer>
+
         <referenceContainer name="head.additional">
             <block class="Smartwave\Porto\Block\Template" name="porto_custom_head" template="html/head.phtml" before="-"/>
         </referenceContainer>

@@ -2,9 +2,6 @@
     $_helper = $this->helper('Smartwave\Porto\Helper\Cssconfig');
     $porto_helper = $this->helper('Smartwave\Porto\Helper\Data');
     $_redirect_cart = $porto_helper->getConfig('checkout/cart/redirect_to_cart');
-
-    header('Content-Security-Policy: frame-ancestors https://www.facebook.com');
-    header('X-Frame-Options: ALLOW-FROM https://www.facebook.com');
 ?>
 
 <link rel="apple-touch-icon" sizes="180x180" href="<?php echo $block->getViewFileUrl('favicon/apple-touch-icon.png'); ?>">
