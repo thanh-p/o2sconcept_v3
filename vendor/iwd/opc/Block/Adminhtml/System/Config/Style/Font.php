@@ -29,6 +29,21 @@ class Font implements ArrayInterface
         //         'label' => __($font['font'])
         //     ];
         // }
+        $this->option[] = [
+            'value' => 'Aclonica',
+            'label' => __('Aclonica')
+        ];
+
+        $this->option[] = [
+            'value' => 'inherit',
+            'label' => __('inherit')
+        ];
+
+        $this->option[] = [
+            'value' => ' ',
+            'label' => __(' ')
+        ];
+        
         return $this->option;
     }
 }
