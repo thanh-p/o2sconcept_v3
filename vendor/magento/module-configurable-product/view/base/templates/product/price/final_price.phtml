@@ -22,7 +22,7 @@ $schema = ($block->getZone() == 'item_view') ? true : false;
         'schema' => $schema,
     ]);
 
-        $pattern = '/class="price">.*</';
+        $pattern = '/class="price">0.*</';
         echo preg_replace($pattern, 'class="price">Liên hệ<', $price);
     ?>
 </span>
