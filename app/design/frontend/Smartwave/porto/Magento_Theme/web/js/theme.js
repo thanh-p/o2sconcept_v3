@@ -176,7 +176,7 @@ require([
         });
         $(".qty-dec").unbind('click').click(function(){
             if($(this).parents('.field.qty,.control.qty').find("input.input-text.qty").is(':enabled')){
-                $(this).parents('.field.qty,.control.qty').find("input.input-text.qty").val(($(this).parents('.field.qty,.control.qty').find("input.input-text.qty").val() - 1 > 0) ? ($(this).parents('.field.qty,.control.qty').find("input.input-text.qty").val() - 1) : 0);
+                $(this).parents('.field.qty,.control.qty').find("input.input-text.qty").val(($(this).parents('.field.qty,.control.qty').find("input.input-text.qty").val() - 1 > 1) ? ($(this).parents('.field.qty,.control.qty').find("input.input-text.qty").val() - 1) : 1);
                 $(this).parents('.field.qty,.control.qty').find("input.input-text.qty").trigger('change');
                 $(this).focus();
             }
