@@ -172,7 +172,10 @@ define([
                     self.enableAddToCartButton(form);
 
                     $('html, body').animate({ scrollTop: 0 }, 'slow');
-                    document.querySelector('.header-right .minicart-wrapper .action.showcart').click();
+                    // Delay opening the mini cart for 1.2 second
+                    setTimeout(function() {
+                        document.querySelector('.header-right .minicart-wrapper .action.showcart').click();
+                    }, 1200);
                 },
 
                 /** @inheritdoc */
