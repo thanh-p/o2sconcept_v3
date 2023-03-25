@@ -14318,8 +14318,8 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "The password reset token is incorrect. Verify the token and try again.","The password reset token is incorrect. Verify the token and try again.",module,Magento_User
 "Your account is temporarily disabled. Please try again later.","Your account is temporarily disabled. Please try again later.",module,Magento_User
 """User Name"" is required. Enter and try again.","""User Name"" is required. Enter and try again.",module,Magento_User
-"""First Name"" is required. Enter and try again.","""First Name"" is required. Enter and try again.",module,Magento_User
-"""Last Name"" is required. Enter and try again.","""Last Name"" is required. Enter and try again.",module,Magento_User
+"""First Name"" is required. Enter and try again.","""Tên"" được yêu cầu. Vui lòng nhập tên và thử lại.",module,Magento_User
+"""Last Name"" is required. Enter and try again.","""Họ"" được yêu cầu. EVui lòng nhập họ và thử lại.",module,Magento_User
 "Please enter a valid email.","Vui lòng nhập email hợp lệ.",module,Magento_User
 "Password is required field.","Mật khẩu là trường bắt buộc.",module,Magento_User
 "Your password must be at least %1 characters.","Mật khẩu của bạn phải ít nhất %1 ký tự.",module,Magento_User
@@ -15319,3 +15319,16 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "You added %1 to your <a href=""%2"">shopping cart</a>.","Bạn đã thêm %1 vào <a href=""%2"">giỏ mua hàng</a>."
 "The requested qty is not available","Không đủ số lượng sản phẩm yêu cầu."
 "View Cart", "Xem giỏ hàng"
+"Secure Checkout","Thanh Toán"
+"Secured Checkout","Thanh Toán"
+"First Name","Tên"
+"Last Name","Họ"
+"Town / City","Tỉnh / Thành Phố"
+"Postcode / Zip","Mã bưu chính"
+"Phone","Số điện thoại"
+"Check / Money order","Thanh toán khi nhận hàng"
+"Street Address","Địa chỉ"
+"Apartment / Suite / Building","Quận / Huyện"
+"Apply a Promo Code","Thêm mã giảm giá"
+"Subtotal","Tạm tính"
+"Total to pay","Thanh toán"
