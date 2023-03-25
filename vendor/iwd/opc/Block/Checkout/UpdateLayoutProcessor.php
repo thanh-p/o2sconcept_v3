@@ -868,7 +868,7 @@ class UpdateLayoutProcessor implements LayoutProcessorInterface
             $fieldConfig['filterBy']['target'] = '${ $.provider }:${ $.parentScope }.country_id';
             $fieldConfig['filterBy']['field'] = 'country_id';
         } else if ($fieldCode === 'city') {
-            $fieldConfig['label'] = new \Magento\Framework\Phrase('Quận / Huyện *');
+            $fieldConfig['label'] = new \Magento\Framework\Phrase('Tỉnh/ Thành phố *');
             $fieldConfig['sortOrder'] = '60';
             $fieldConfig['placeholder'] = __('Town / City *');
             $fieldConfig['config']['template'] = 'IWD_Opc/form/field';
