@@ -52,11 +52,34 @@ class Template extends \Magento\Framework\View\Element\Template {
         }
 
         $productImageUrls = $loaded_product->getMediaGalleryImages();
-        $productImageUrl;
+        $productImageUrl = "";
         if ($productImageUrls != NULL) {
             $productImageUrl = $productImageUrls->getFirstItem()->getUrl();
         }
         return $productImageUrl;
+    }
+
+    public function getReviewBySku($sku) {
+        $output = array("", "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.", "");
+
+        try {
+            $loaded_product = $this->productRepository->get($sku);
+        }  catch (\Exception $e) {
+            return $output;
+        }
+
+        $productImageUrls = $loaded_product->getMediaGalleryImages();
+        $productImageUrl = "";
+        if ($productImageUrls != NULL) {
+            $productImageUrl = $productImageUrls->getFirstItem()->getUrl();
+        }
+
+
+        $output[0] = $loaded_product->getName();
+        $output[1] = strip_tags($loaded_product->getShortDescription());
+        $output[2] = $productImageUrl;
+
+        return $output;
     }
 }
 ?>

@@ -19,6 +19,13 @@
     $img_url_rem_cuon = $this->getProductImageBySku("homepage_category_img_rem_cuon");
     $img_url_decal_dan_san = $this->getProductImageBySku("homepage_category_img_decal_dan_san");
     $img_url_tranh_treo_tuong = $this->getProductImageBySku("homepage_category_img_tranh_treo_tuong");
+
+    $review1 = $this->getReviewBySku("homepage_review_1_data6686");
+    $review2 = $this->getReviewBySku("homepage_review_2_data6686");
+    $review3 = $this->getReviewBySku("homepage_review_3_data6686");
+    $review4 = $this->getReviewBySku("homepage_review_4_data6686");
+    $review5 = $this->getReviewBySku("homepage_review_5_data6686");
+    $review6 = $this->getReviewBySku("homepage_review_6_data6686");
 ?>
 
 <style type="text/css">
@@ -2012,66 +2019,66 @@ require([
               <div class="swiper-text-review">
                 <div class="review-comment">
                   <h3 class="review-comment-para">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <?php echo $review1[1];?>
                   </h3>
-                  <h2>Reviewer 1</h2>
+                  <h2><?php echo $review1[0];?></h2>
                 </div>
-                <img src="/media/o2sconcept/img/video_thumbnail1.png" >
+                <img src="<?php echo $review1[2];?>" >
               </div>
             </div>
             <div class="swiper-slide swiper-slide-review">
               <div class="swiper-text-review">
                 <div class="review-comment">
                   <h3 class="review-comment-para">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <?php echo $review2[1];?>
                   </h3>
-                  <h2>Reviewer 2</h2>
+                  <h2><?php echo $review2[0];?></h2>
                 </div>
-                <img src="/media/o2sconcept/img/video_thumbnail2.png" >
+                <img src="<?php echo $review2[2];?>" >
               </div>
             </div>
             <div class="swiper-slide swiper-slide-review">
               <div class="swiper-text-review">
                 <div class="review-comment">
                   <h3 class="review-comment-para">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <?php echo $review3[1];?>
                   </h3>
-                  <h2>Reviewer 3</h2>
+                  <h2><?php echo $review3[0];?></h2>
                 </div>
-                <img src="/media/o2sconcept/img/video_thumbnail3.png" >
+                <img src="<?php echo $review3[2];?>" >
               </div>
             </div>
             <div class="swiper-slide swiper-slide-review">
               <div class="swiper-text-review">
                 <div class="review-comment">
                   <h3 class="review-comment-para">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <?php echo $review4[1];?>
                   </h3>
-                  <h2>Reviewer 4</h2>
+                  <h2><?php echo $review4[0];?></h2>
                 </div>
-                <img src="/media/o2sconcept/img/video_thumbnail1.png" >
+                <img src="<?php echo $review4[2];?>" >
               </div>
             </div>
             <div class="swiper-slide swiper-slide-review">
               <div class="swiper-text-review">
                 <div class="review-comment">
                   <h3 class="review-comment-para">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <?php echo $review5[1];?>
                   </h3>
-                  <h2>Reviewer 5</h2>
+                  <h2><?php echo $review5[0];?></h2>
                 </div>
-                <img src="/media/o2sconcept/img/video_thumbnail2.png" >
+                <img src="<?php echo $review5[2];?>" >
               </div>
             </div>
             <div class="swiper-slide swiper-slide-review">
               <div class="swiper-text-review">
                 <div class="review-comment">
                   <h3 class="review-comment-para">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    <?php echo $review6[1];?>
                   </h3>
-                  <h2>Reviewer 6</h2>
+                  <h2><?php echo $review6[0];?></h2>
                 </div>
-                <img src="/media/o2sconcept/img/video_thumbnail3.png" >
+                <img src="<?php echo $review6[2];?>" >
               </div>
             </div>
           </div>
