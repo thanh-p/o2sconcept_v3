@@ -12,6 +12,13 @@
           }
         }
     }
+
+    $img_url_film_trang_tri_kinh = $this->getProductImageBySku("homepage_category_img_film_trang_tri_kinh");
+    $img_url_tranh_dan_tuong = $this->getProductImageBySku("homepage_category_img_tranh_dan_tuong");
+    $img_url_film_dan_noi_that = $this->getProductImageBySku("homepage_category_img_film_dan_noi_that");
+    $img_url_rem_cuon = $this->getProductImageBySku("homepage_category_img_rem_cuon");
+    $img_url_decal_dan_san = $this->getProductImageBySku("homepage_category_img_decal_dan_san");
+    $img_url_tranh_treo_tuong = $this->getProductImageBySku("homepage_category_img_tranh_treo_tuong");
 ?>
 
 <style type="text/css">
@@ -804,84 +811,84 @@ require([
   <div class="banner-swiper">
     <div class="swiper-container swiper-banner-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_3.png);">
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(<?php echo $img_url_film_trang_tri_kinh; ?>);">
             <a class="swiper-banner-link" href="<?php echo $sanpham_href_arr[0]; ?>">
               <div class="swiper-text swiper-text-banner">
                 <h2> Film trang trí kính </h2>
               </div>
             </a>
           </div>
-          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_6.png);">
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(<?php echo $img_url_tranh_treo_tuong; ?>);">
             <a class="swiper-banner-link" href="<?php echo $sanpham_href_arr[1]; ?>">
               <div class="swiper-text swiper-text-banner">
                 <h2> Tranh treo tường </h2>
               </div>
             </a>
           </div>
-          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_4.png);">
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(<?php echo $img_url_tranh_dan_tuong; ?>);">
             <a class="swiper-banner-link" href="<?php echo $sanpham_href_arr[2]; ?>">
               <div class="swiper-text swiper-text-banner">
                 <h2> Tranh dán tường </h2>
               </div>
             </a>
           </div>
-          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_5.png);">
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(<?php echo $img_url_rem_cuon; ?>);">
             <a class="swiper-banner-link" href="<?php echo $sanpham_href_arr[3]; ?>">
               <div class="swiper-text swiper-text-banner">
                 <h2> Rèm cuộn </h2>
               </div>
             </a>
           </div>
-          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_1.png);">
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(<?php echo $img_url_decal_dan_san; ?>);">
             <a class="swiper-banner-link" href="<?php echo $sanpham_href_arr[4]; ?>">
               <div class="swiper-text swiper-text-banner">
                 <h2> Decal dán sàn </h2>
               </div>
             </a>
           </div>
-          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_2.png);">
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(<?php echo $img_url_film_dan_noi_that; ?>);">
             <a class="swiper-banner-link" href="<?php echo $sanpham_href_arr[5]; ?>">
               <div class="swiper-text swiper-text-banner">
                 <h2> Film dán nội thất </h2>
               </div>
             </a>
           </div>
-          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_3.png);">
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(<?php echo $img_url_film_trang_tri_kinh; ?>);">
             <a class="swiper-banner-link" href="<?php echo $sanpham_href_arr[0]; ?>">
               <div class="swiper-text swiper-text-banner">
                 <h2> Film trang trí kính </h2>
               </div>
             </a>
           </div>
-          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_6.png);">
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(<?php echo $img_url_tranh_treo_tuong; ?>);">
             <a class="swiper-banner-link" href="<?php echo $sanpham_href_arr[1]; ?>">
               <div class="swiper-text swiper-text-banner">
                 <h2> Tranh treo tường </h2>
               </div>
             </a>
           </div>
-          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_4.png);">
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(<?php echo $img_url_tranh_dan_tuong; ?>);">
             <a class="swiper-banner-link" href="<?php echo $sanpham_href_arr[2]; ?>">
               <div class="swiper-text swiper-text-banner">
                 <h2> Tranh dán tường </h2>
               </div>
             </a>
           </div>
-          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_5.png);">
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(<?php echo $img_url_rem_cuon; ?>);">
             <a class="swiper-banner-link" href="<?php echo $sanpham_href_arr[3]; ?>">
               <div class="swiper-text swiper-text-banner">
                 <h2> Rèm cuộn </h2>
               </div>
             </a>
           </div>
-          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_1.png);">
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(<?php echo $img_url_decal_dan_san; ?>);">
             <a class="swiper-banner-link" href="<?php echo $sanpham_href_arr[4]; ?>">
               <div class="swiper-text swiper-text-banner">
                 <h2> Decal dán sàn </h2>
               </div>
             </a>
           </div>
-          <div class="swiper-slide swiper-slide-banner" style="background-image: url(/media/o2sconcept/img/asset2_2.png);">
+          <div class="swiper-slide swiper-slide-banner" style="background-image: url(<?php echo $img_url_film_dan_noi_that; ?>);">
             <a class="swiper-banner-link" href="<?php echo $sanpham_href_arr[5]; ?>">
               <div class="swiper-text swiper-text-banner">
                 <h2> Film dán nội thất </h2>

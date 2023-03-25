@@ -8,9 +8,11 @@ class Template extends \Magento\Framework\View\Element\Template {
     public function __construct(
         \Magento\Backend\Block\Template\Context $context,
         \Magento\Framework\Registry $coreRegistry,
+        \Magento\Catalog\Api\ProductRepositoryInterface $productRepository,
         array $data = []
     ) {
         $this->_coreRegistry = $coreRegistry;
+        $this->productRepository = $productRepository;
         parent::__construct($context, $data);
     }
     
@@ -40,6 +42,21 @@ class Template extends \Magento\Framework\View\Element\Template {
         $currentUrl = $this->getUrl('', ['_current' => true]);
         $urlRewrite = $this->getUrl('*/*/*', ['_current' => true, '_use_rewrite' => true]);
         return $currentUrl == $urlRewrite;
+    }
+
+    public function getProductImageBySku($sku) {
+        try {
+            $loaded_product = $this->productRepository->get($sku);
+        }  catch (\Exception $e) {
+            return "";
+        }
+
+        $productImageUrls = $loaded_product->getMediaGalleryImages();
+        $productImageUrl;
+        if ($productImageUrls != NULL) {
+            $productImageUrl = $productImageUrls->getFirstItem()->getUrl();
+        }
+        return $productImageUrl;
     }
 }
 ?>
