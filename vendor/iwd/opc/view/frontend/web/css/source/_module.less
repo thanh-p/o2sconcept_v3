@@ -484,13 +484,17 @@
                                             .content{
                                                 .item-options{
                                                     margin: 0;
-                                                    display: inline-block;
+                                                    display: flex;
                                                     width: 100%;
+                                                    flex-wrap: wrap;
+                                                    align-content: space-between;
+                                                    justify-content: flex-start;
 
                                                     &::before{
                                                         content: none;
                                                     }
-                                                    dt,dd{
+                                                    dt,dd{                                     
+                                                        width: 45%;
                                                         margin-bottom: 8px;
                                                         font-size: 13px;
                                                         line-height: 18px;
@@ -500,6 +504,14 @@
                                                 }
                                                 .details-qty{
                                                     margin: 0;
+                                                    dt,dd{                                     
+                                                        width: 45%;
+                                                        margin-bottom: 8px;
+                                                        font-size: 13px;
+                                                        line-height: 18px;
+                                                        color: #676767;
+                                                        text-transform: capitalize;
+                                                    }
                                                 }
                                             }
                                         }
