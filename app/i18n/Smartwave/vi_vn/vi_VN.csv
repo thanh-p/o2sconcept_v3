@@ -3493,7 +3493,7 @@ See Magento documentation for more information,module,Magento_CmsStaging
 "Country:","Country:",module,Magento_Company
 "State/Province:","State/Province:",module,Magento_Company
 "ZIP/Postal Code:","ZIP/Postal Code:",module,Magento_Company
-"Phone Number:","Phone Number:",module,Magento_Company
+"Phone Number:","Số điện thoại:",module,Magento_Company
 "Job Title:","Job Title:",module,Magento_Company
 "Email Address:","Địa chỉ email:",module,Magento_Company
 "Prefix:","Prefix:",module,Magento_Company
@@ -4346,7 +4346,7 @@ You need to create a simple product for each configuration (Ex: a product for ea
 "What’s on your mind?","Thông tin tư vấn",module,Magento_Contact
 "Submit","Gửi",module,Magento_Contact
 "Contact Form","Mẫu liên hệ",module,Magento_Contact
-"Phone","Phone",module,Magento_Contact
+"Phone","Điện thoại",module,Magento_Contact
 "Message","Message",module,Magento_Contact
 "Contacts Section","Phần liên hệ",module,Magento_Contact
 "Contacts","Liên hệ",module,Magento_Contact
@@ -15332,3 +15332,7 @@ formElements/*[name(.)=../../@formElement]/settings/title,module,Magento_Ui
 "Apply a Promo Code","Thêm mã giảm giá"
 "Subtotal","Tạm tính"
 "Total to pay","Thanh toán"
+"Place Order","Đặt hàng"
+"Log in","Đăng nhập"
+"to your account or continue as a guest and create one after order is placed.","vào tài khoản của bạn hoặc tiếp tục đặt hàng và tạo tài khoản sau."
+"Delivery Comments","Ghi chú"
