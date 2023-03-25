@@ -1215,7 +1215,7 @@ class UpdateLayoutProcessor implements LayoutProcessorInterface
                                                 'subtotal' =>[
                                                     'component' => 'IWD_Opc/js/view/summary/subtotal',
                                                     'config' => [
-                                                        'title' => 'Subtotal',
+                                                        'title' => 'Tạm tính',
                                                     ],
                                                 ],
                                                 'discount' => [
@@ -1234,7 +1234,7 @@ class UpdateLayoutProcessor implements LayoutProcessorInterface
                                                 'grand-total' => [
                                                     'component' => 'IWD_Opc/js/view/summary/grand-total',
                                                     'config' => [
-                                                        'title' => 'Total to pay'
+                                                        'title' => 'Thành tiền'
                                                     ],
                                                 ],
                                             ],
