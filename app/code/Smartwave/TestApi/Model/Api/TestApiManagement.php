@@ -38,8 +38,17 @@ class TestApiManagement implements \Smartwave\TestApi\Api\TestApiManagementInter
 
             $category = $this->categoryFactory->create()->load($id);
             $outputs = array();
+            $collection = $category->getProductCollection();
+            $collection->getSelect()->orderRand();
+            $max_items = 6;
+            $counter = 0;
 
-            foreach ($category->getProductCollection() as $product) {
+            foreach ($collection as $product) {
+                $counter = $counter + 1;
+                if ($counter > $max_items) {
+                    break;
+                }
+
                 $sku = $product->getSku();
                 $loaded_product = $this->productRepository->get($sku);
                 $name = $loaded_product->getName();
@@ -58,12 +67,6 @@ class TestApiManagement implements \Smartwave\TestApi\Api\TestApiManagementInter
                 $output = array($name, $sku, $url, $productImageUrl);
                 array_push($outputs, $output);
             }
-
-            // if (!$model->getId()) {
-            //     throw new \Magento\Framework\Exception\LocalizedException(
-            //         __('no data found')
-            //     );
-            // }
 
             return json_encode($outputs);
         } catch (\Magento\Framework\Exception\LocalizedException $e) {
