@@ -26,6 +26,10 @@
     $review4 = $this->getReviewBySku("homepage_review_4_data6686");
     $review5 = $this->getReviewBySku("homepage_review_5_data6686");
     $review6 = $this->getReviewBySku("homepage_review_6_data6686");
+
+    $story_video1 = $this->getReviewBySku("story_video_1_data6686");
+    $story_video2 = $this->getReviewBySku("story_video_2_data6686");
+    $story_video3 = $this->getReviewBySku("story_video_3_data6686");
 ?>
 
 <style type="text/css">
@@ -1710,25 +1714,25 @@ require([
       <div class="swiper-container swiper-story">
           <div class="swiper-wrapper">
             <div class="swiper-slide swiper-slide-story">
-              <a href="https://youtu.be/S-A0qLTxf-U" data-lity allow="autoplay">
-                <img src="/media/o2sconcept/img/video_thumbnail1.png" >
+              <a href="<?php echo $story_video1[1]; ?>" data-lity allow="autoplay">
+                <img src="<?php echo $story_video1[2]; ?>" >
                 <div class="swiper-story-icon"></div>
               </a>
-              <h2>Câu chuyện tranh dán tường</h2>
+              <h2><?php echo $story_video1[0]; ?></h2>
             </div>
             <div class="swiper-slide swiper-slide-story">
-              <a href="https://youtu.be/dPMTD7ifzcQ" data-lity allow="autoplay">
-                <img src="/media/o2sconcept/img/video_thumbnail2.png" >
+              <a href="<?php echo $story_video2[1]; ?>" data-lity allow="autoplay">
+                <img src="<?php echo $story_video2[2]; ?>" >
                 <div class="swiper-story-icon"></div>
               </a>
-              <h2>Câu chuyện rèm cuộn</h2>
+              <h2><?php echo $story_video2[0]; ?></h2>
             </div>
             <div class="swiper-slide swiper-slide-story">
-              <a href="https://youtu.be/QlrHhn5YQNU" data-lity allow="autoplay">
-                <img src="/media/o2sconcept/img/video_thumbnail3.png" >
+              <a href="<?php echo $story_video3[1]; ?>" data-lity allow="autoplay">
+                <img src="<?php echo $story_video3[2]; ?>" >
                 <div class="swiper-story-icon"></div>
               </a>
-              <h2>Câu chuyện film dán nội thất</h2>
+              <h2><?php echo $story_video3[0]; ?></h2>
             </div>
           </div>
       </div>
