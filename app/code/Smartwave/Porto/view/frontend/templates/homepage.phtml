@@ -1518,7 +1518,6 @@ require([
     .swiper-parent-story {
       position: relative;
       padding-top: 2em;
-      padding-bottom: 2em;
       background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
       border-bottom: solid 1px;
       border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 0%,rgb(208, 179, 105) 50%, rgba(209, 156, 21, 0) 100%) 100% 0 0 0/3px 0 1px 0 stretch;
@@ -1591,6 +1590,10 @@ require([
     }
 
     @media (max-width: 1200px) {
+      .swiper-parent-story {
+        padding-bottom: 2em;
+      }
+
       .swiper-slide-story h2 {
         font-size: 2.5em;
       }
