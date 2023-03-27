@@ -1885,6 +1885,14 @@ require([
     }
 
     @media (max-width: 1200px) {
+      .review-comment-para:before {
+        padding-right: 1em;
+      }
+
+      .review-comment-para:after {
+        padding-left: 0;
+      }
+
       .review-title {
         font-size: 4em;
         margin-bottom: 2em;
@@ -1909,16 +1917,6 @@ require([
         height: 30em;
       }
 
-      .review-comment-para:before {
-        width: 20%;
-        padding-right: 1em;
-      }
-
-      .review-comment-para:after {
-        width: 20%;
-        padding-left: 0;
-      }
-
       .review-comment h2 {
         font-size: 3em;
       }
@@ -1927,14 +1925,6 @@ require([
     @media (max-width: 991px) {
       .review-title {
         margin-bottom: 0.5em;
-      }
-
-      .review-comment-para:before {
-        width: 10em;
-      }
-
-      .review-comment-para:after {
-        width: 10em;
       }
 
       .review-comment h2 {
