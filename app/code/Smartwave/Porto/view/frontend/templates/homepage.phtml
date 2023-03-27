@@ -1556,7 +1556,7 @@ require([
 
     .swiper-story-icon {
       position:absolute;
-      top: 40%;
+      top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       -webkit-transform: translate(-50%, -50%);
@@ -1715,22 +1715,28 @@ require([
           <div class="swiper-wrapper">
             <div class="swiper-slide swiper-slide-story">
               <a href="<?php echo $story_video1[1]; ?>" data-lity allow="autoplay">
-                <img src="<?php echo $story_video1[2]; ?>" >
-                <div class="swiper-story-icon"></div>
+                <div style="position: relative;">
+                  <img src="<?php echo $story_video1[2]; ?>" >
+                  <div class="swiper-story-icon"></div>
+                </div>
               </a>
               <h2><?php echo $story_video1[0]; ?></h2>
             </div>
             <div class="swiper-slide swiper-slide-story">
               <a href="<?php echo $story_video2[1]; ?>" data-lity allow="autoplay">
-                <img src="<?php echo $story_video2[2]; ?>" >
-                <div class="swiper-story-icon"></div>
+                <div style="position: relative;">
+                  <img src="<?php echo $story_video2[2]; ?>" >
+                  <div class="swiper-story-icon"></div>
+                </div>
               </a>
               <h2><?php echo $story_video2[0]; ?></h2>
             </div>
             <div class="swiper-slide swiper-slide-story">
               <a href="<?php echo $story_video3[1]; ?>" data-lity allow="autoplay">
-                <img src="<?php echo $story_video3[2]; ?>" >
-                <div class="swiper-story-icon"></div>
+                <div style="position: relative;">
+                  <img src="<?php echo $story_video3[2]; ?>" >
+                  <div class="swiper-story-icon"></div>
+                </div>
               </a>
               <h2><?php echo $story_video3[0]; ?></h2>
             </div>
