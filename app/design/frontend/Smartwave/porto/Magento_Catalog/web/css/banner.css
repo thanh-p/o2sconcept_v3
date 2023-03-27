@@ -9,7 +9,7 @@
 
 .category-custom-description {
     position: absolute;
-    top: 10%;
+    top: 35%;
     width: 100%;
     background-image: linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 50%, rgba(0,0,0,0.2) 100%);
     padding-bottom: 4vh;
@@ -35,6 +35,10 @@
     font-size: 1vw;
     font-weight: 300;
     font-family: 'Josefin Sans', sans-serif;
+}
+
+.category-description {
+    position: relative;
 }
 
 .category-description img {
@@ -65,10 +69,6 @@
 
 @media (max-width: 1200px) {
     .category-custom-description {
-        top: 8%;
-    }
-    
-    .category-custom-description {
         padding-bottom: 2em;
         padding-top: 2em;
     }
@@ -84,7 +84,6 @@
 
 @media (max-width: 991px) {
     .category-custom-description {
-        top: 8%;
         padding-bottom: 2em;
         padding-top: 2em;
         font-size: 12px;
@@ -110,7 +109,6 @@
 
 @media (max-width: 575px) {
     .category-custom-description {
-        top: 7%;
         font-size: 10px;
     }
 
