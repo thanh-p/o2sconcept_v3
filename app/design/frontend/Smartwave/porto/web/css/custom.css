@@ -300,10 +300,10 @@ html .btn-v-dark {color: #fff !important;background-color: #222529 !important;bo
 .minicart-items-wrapper{max-height:250px}
 .minicart-wrapper .block-minicart { padding: 10px 15px 5px;font-size: .8125rem;line-height: 1.5;font-weight: 700;}
 .minicart-wrapper .block-minicart li {padding: 15px 10px;border-bottom: 1px solid #e7e7e7;line-height: 24px;}
-.minicart-wrapper .block-minicart .total-count {display: flex;padding: 12px 10px;border-bottom: solid 1px #e7e7e7;color: #222529;text-transform: uppercase;}
+.minicart-wrapper .block-minicart .total-count {display: flex;padding: 12px 10px;border-bottom: solid 1px #e7e7e7;color: #222529;}
 .minicart-wrapper .block-minicart .total-count .actions {margin-left: auto;}
 .minicart-wrapper .block-minicart .total-count .actions a {color: inherit;}
-.minicart-wrapper .block-minicart .subtotal {padding: 15px 10px 25px;text-align: left;text-transform: uppercase;font-size: 14px;display: flex;align-items: center;letter-spacing: .14px;line-height: 24px;}
+.minicart-wrapper .block-minicart .subtotal {padding: 15px 10px 25px;text-align: left;font-size: 14px;display: flex;align-items: center;letter-spacing: .14px;line-height: 24px;}
 .minicart-wrapper .block-minicart .subtotal > span.label {display: flex;align-items: center;}
 .minicart-wrapper .block-minicart .subtotal .amount {margin-left: auto;}
 .minicart-wrapper .block-minicart .subtotal .amount .price {color: inherit;font-size: 15px;font-weight: 700;}
