@@ -720,7 +720,7 @@
 
 @media (max-width: 991px) {
   .swiper-text h2, .swiper-text-product p {
-    font-size: 2.5em !important;
+    font-size: 2em !important;
   }
 
   .swiper-slide-banner {
@@ -1270,6 +1270,10 @@ require([
     }
 
     @media (max-width: 575px) {
+      .swiper-text-product {
+        width: 60%;
+      }
+
       .swiper-slide-product {
         height: 50vw;
       }
@@ -1842,7 +1846,7 @@ require([
       border-image: linear-gradient(to left, rgba(209, 156, 21, 0) 0%,rgb(208, 179, 105) 50%, rgba(209, 156, 21, 0) 100%) 100% 0 100% 0/3px 0 3px 0 stretch;
     }
 
-    .review-title-div {
+    .review-title-home-div {
       justify-content: center;
       display: flex;
       margin: auto;
@@ -1851,7 +1855,7 @@ require([
         typing 8s steps(90, end) infinite;
     }
 
-    .review-title {
+    .review-title-home {
       color: rgb(209, 156, 21);
       font-weight: 400;
       font-size: 1.5vw;
@@ -1900,7 +1904,7 @@ require([
         padding-left: 0;
       }
 
-      .review-title {
+      .review-title-home {
         font-size: 4em;
         margin-bottom: 2em;
       }
@@ -1930,16 +1934,13 @@ require([
     }
 
     @media (max-width: 991px) {
-      .review-title {
+      .review-title-home {
         margin-bottom: 0.5em;
+        font-size: 4em;
       }
 
       .review-comment h2 {
         font-size: 3em;
-      }
-
-      .review-title {
-        font-size: 4em;
       }
 
       .review-comment-para {
@@ -1956,7 +1957,7 @@ require([
         font-size: 2em;
       }
 
-      .review-title {
+      .review-title-home {
         font-size: 3em;
       }
 
@@ -2010,8 +2011,8 @@ require([
   </script>
 
   <div class="review-body">
-    <div class="review-title-div">
-      <h1 class="review-title">ĐÁNH GIÁ CỦA KHÁCH HÀNG</h1>
+    <div class="review-title-home-div">
+      <h1 class="review-title-home">ĐÁNH GIÁ CỦA KHÁCH HÀNG</h1>
     </div>
     <div>
       <div class="swiper-container swiper-review">
