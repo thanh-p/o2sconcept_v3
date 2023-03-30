@@ -760,8 +760,8 @@ require([
       $('.type12').css("top", landing_block.offsetHeight);
       $('.type12').css("display", 'block');
 
-      var expected_bg5_height = adjust_full_height_css('/media/o2sconcept/img/asset5.png', 'bg5');
-      adjust_full_height_css('/media/o2sconcept/img/asset6.png', 'bg6');
+      var expected_bg5_height = adjust_full_height_css(1419, 'bg5');
+      adjust_full_height_css(1274, 'bg6');
 
       var featured_element = document.getElementById('featured-product-menu-container-id');
       featured_element.style.marginTop = expected_bg5_height * 0.24 + "px";
@@ -769,10 +769,9 @@ require([
 
    function adjust_full_height_css() {
       var max_h = 1080;
-      var bg= new Image();
-      bg.src= arguments[0];
+      bg_height = arguments[0];
       
-      var expected_bg_height = bg.height / max_h * window.innerHeight;
+      var expected_bg_height = bg_height / max_h * window.innerHeight;
 
       var bg_element = document.getElementById(arguments[1]);
       bg_element.style.height = expected_bg_height + "px";
