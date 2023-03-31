@@ -1427,7 +1427,7 @@ require([
       const currentSlide = swiper_featured_product.slides[index_currentSlide];
 
       var text_element = document.getElementById("swiper-text-product-id");
-      text_element.children[0].textContent = currentSlide.dataset.name;
+      text_element.children[0].innerHTML = currentSlide.dataset.name;
       text_element.children[1].textContent = currentSlide.dataset.sku;
     }
   </script>
