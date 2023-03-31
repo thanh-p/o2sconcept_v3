@@ -1429,6 +1429,12 @@ require([
       var text_element = document.getElementById("swiper-text-product-id");
       text_element.children[0].textContent = currentSlide.dataset.name;
       text_element.children[1].textContent = currentSlide.dataset.sku;
+
+      setTimeout(function() {
+        var temp = text_element.innerHTML;
+        text_element.innerHTML = ' ';
+        text_element.innerHTML = temp;
+      }, 200);
     }
   </script>
   
