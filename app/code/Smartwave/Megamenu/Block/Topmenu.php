@@ -364,6 +364,25 @@ class Topmenu extends \Magento\Framework\View\Element\Template
                 $html .= '</li>';
             }
         }
+
+        $html .= '<li class="ui-menu-item level0 fullwidth hide-in-large-scr">';
+        $html .= '<a href="https://o2sconcept.com/gioi-thieu" class="level-top" title="GIỚI THIỆU">';
+        $html .= '<span>GIỚI THIỆU</span>';
+        $html .= '</a>';
+        $html .= '</li>';
+
+        $html .= '<li class="ui-menu-item level0 fullwidth hide-in-large-scr">';
+        $html .= '<a href="https://o2sconcept.com/contact" class="level-top" title="LIÊN HỆ">';
+        $html .= '<span>LIÊN HỆ</span>';
+        $html .= '</a>';
+        $html .= '</li>';
+
+        $html .= '<li class="ui-menu-item level0 fullwidth hide-in-large-scr">';
+        $html .= '<a href="https://o2sconcept.com/customer/account/login/" class="level-top" title="TÀI KHOẢN">';
+        $html .= '<span>TÀI KHOẢN</span>';
+        $html .= '</a>';
+        $html .= '</li>';
+
         $html .= $this->getCustomBlockHtml('after');
 
         return $html;
