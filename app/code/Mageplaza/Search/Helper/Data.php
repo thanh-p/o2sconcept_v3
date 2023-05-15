@@ -659,7 +659,7 @@ class Data extends AbstractData
 
         $this->getMediaHelper()->createJsFile(
             $this->getAdditionJsFilePath($group, $store),
-            ';var mp_new_product_search = ' . $newProducts . ';
+            ';var mp_new_product_search = ' . json_encode($newProducts) . ';
             var mp_most_viewed_products = ' . $mostViewedProducts . ';
             var mp_bestsellers = ' . $bestsellers . ';'
         );
