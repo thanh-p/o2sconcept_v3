@@ -164,6 +164,12 @@ class RefreshSpecialPrices
             $attrConditionValue
         );
 
+        // Log the $select output to a file
+        $writer = new \Zend\Log\Writer\Stream(BP . '/var/log/query.log');
+        $logger = new \Zend\Log\Logger();
+        $logger->addWriter($writer);
+        $logger->info($select->__toString());
+
         $selectData = $connection->fetchCol($select, $identifierField);
 
         if (!empty($selectData)) {
