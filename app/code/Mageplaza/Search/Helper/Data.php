@@ -648,24 +648,36 @@ class Data extends AbstractData
             $this->getNewProducts($store, $group),
             Search::NEW_PRODUCTS
         );
-
+    
         $mostViewedProducts = $this->createJsonFileProduct(
             $store,
             $this->getMostViewedProducts($store),
             Search::MOST_VIEWED_PRODUCTS
         );
-
+    
         $bestsellers = $this->createJsonFileProduct($store, $this->getBestSellers($store, $group), Search::BESTSELLERS);
-
+    
+        $jsCode = '';
+        if (is_string($newProducts)) {
+            $jsCode .= ';var mp_new_product_search = ' . $newProducts . ';';
+        }
+    
+        if (is_string($mostViewedProducts)) {
+            $jsCode .= 'var mp_most_viewed_products = ' . $mostViewedProducts . ';';
+        }
+    
+        if (is_string($bestsellers)) {
+            $jsCode .= 'var mp_bestsellers = ' . $bestsellers . ';';
+        }
+    
         $this->getMediaHelper()->createJsFile(
             $this->getAdditionJsFilePath($group, $store),
-            ';var mp_new_product_search = ' . json_encode($newProducts) . ';
-            var mp_most_viewed_products = ' . $mostViewedProducts . ';
-            var mp_bestsellers = ' . $bestsellers . ';'
+            $jsCode
         );
-
+    
         return $this;
     }
+    
 
     /**
      * @return string
