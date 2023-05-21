@@ -98,32 +98,32 @@ class RefreshSpecialPrices
     {
         $connection = $this->_getConnection();
 
-        foreach ($this->_storeManager->getStores(true) as $store) {
-            $timestamp = $this->_localeDate->scopeTimeStamp($store);
-            $currDate = $this->_dateTime->formatDate($timestamp, false);
-            $currDateExpr = $connection->quote($currDate);
+        // foreach ($this->_storeManager->getStores(true) as $store) {
+        //     $timestamp = $this->_localeDate->scopeTimeStamp($store);
+        //     $currDate = $this->_dateTime->formatDate($timestamp, false);
+        //     $currDateExpr = $connection->quote($currDate);
 
-            // timestamp is locale based
-            if (date('H', $timestamp) == '00') {
-                $format = '%Y-%m-%d %H:%i:%s';
-                $this->_refreshSpecialPriceByStore(
-                    $store->getId(),
-                    'special_from_date',
-                    $connection->getDateFormatSql($currDateExpr, $format)
-                );
+        //     // timestamp is locale based
+        //     if (date('H', $timestamp) == '00') {
+        //         $format = '%Y-%m-%d %H:%i:%s';
+        //         $this->_refreshSpecialPriceByStore(
+        //             $store->getId(),
+        //             'special_from_date',
+        //             $connection->getDateFormatSql($currDateExpr, $format)
+        //         );
 
-                $dateTo = $connection->getDateAddSql(
-                    $currDateExpr,
-                    -1,
-                    \Magento\Framework\DB\Adapter\AdapterInterface::INTERVAL_DAY
-                );
-                $this->_refreshSpecialPriceByStore(
-                    $store->getId(),
-                    'special_to_date',
-                    $connection->getDateFormatSql($dateTo, $format)
-                );
-            }
-        }
+        //         $dateTo = $connection->getDateAddSql(
+        //             $currDateExpr,
+        //             -1,
+        //             \Magento\Framework\DB\Adapter\AdapterInterface::INTERVAL_DAY
+        //         );
+        //         $this->_refreshSpecialPriceByStore(
+        //             $store->getId(),
+        //             'special_to_date',
+        //             $connection->getDateFormatSql($dateTo, $format)
+        //         );
+        //     }
+        // }
     }
 
     /**
