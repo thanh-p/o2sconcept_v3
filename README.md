@@ -23,3 +23,19 @@
 -   Replace code of Home page with this code {{block class="Smartwave\Porto\Block\Template" template="homepage.phtml"}}
 
 => flush cache.
+
+### Fix elastic search
+1/ Check indexes
+curl -X GET "http://localhost:9200/_cat/indices?v"
+
+2/ Check mapping
+curl -X GET "http://localhost:9200/magento2_product_1_v1658/_mapping"
+
+3/ Delete wrong index
+curl -X DELETE "http://localhost:9200/magento2_product_1_v1658"
+
+4/ Generate new index
+bash deploy_reindex.bash
+
+5/ Check indexes again
+curl -X GET "http://localhost:9200/_cat/indices?v"
